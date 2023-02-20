@@ -1,7 +1,7 @@
 import "../assets/css/style.css"
 import logo from "../assets/img/Logo.png";
 
-export default function Navbar() {
+export const Navbar = () =>  {
   return (
     <nav  data-aos="fade-down" data-aos-duration="1000" className="nav">
         <div className="logo">

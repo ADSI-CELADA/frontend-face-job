@@ -15,7 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 /*---------scrolling bar-----------*/
 body::-webkit-scrollbar{
@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     justify-content: space-between;
     padding: 0 30px 0 30px;
-    align-items: center;
+    align-items: center;    
     height: 10vh;
     width: 100vw;
 }
@@ -69,7 +69,7 @@ body::-webkit-scrollbar-thumb{
     background-size: cover;
     height: 85vh;
     border-radius: 40px;   
-    margin: 0 30px 30px 30px;    
+    margin: 30px 30px 30px 30px;    
     display: flex;
     justify-content:space-between;
     align-items: center;    
@@ -98,24 +98,88 @@ body::-webkit-scrollbar-thumb{
     font-size: 50px;
     font-weight: 700;
 }
-/*-----------tutorial-------------*/
-.tutorial{
+/*-----------How You Do-------------*/
+.HowYouDo{
     display: flex;
-    justify-content: space-around;
-    border: #064663 solid 1px;
-    margin: 0 30px 30px 30px;   
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 80px;
 }
-.tutorial h1{
+.HowYouDo h1{
     font-weight: 600;
     font-size: 30px;
+    width: 20%;
 }
-.tutorial-text{
+.HowYouDo-text{
     display: flex;
     justify-content: space-around;
     width: 50vw;
 }
-.tutorial-text p{
-    
+.HowYouDo-text p{
+    width: 45%;
     font-weight: 400;
     font-size: 20px;
+}
+/*------------Contain Mini Card------------*/
+.contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 45vh;
+    margin:100px 30px;
+}
+.contain h2{
+    font-size: 30px;
+}
+.box-mini{
+    padding: 30px;
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+.mini-card{
+    background: var(--color-blanco);    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+    align-items: center;
+    height: 30vh;
+    width: 22vw;
+    display: flex;
+    padding: 20px;
+    border-radius: 25px;
+    gap: 20px;
+}
+.mini-card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.mini-card-info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 6px;
+    align-items: start;
+}
+.mini-card-info h2{
+    font-size:22px;
+}
+.mini-card-info a{
+    text-decoration: none;
+    border: var(--color-cuarto) 2px solid;
+    padding: 4px 10px;
+    color: var(--color-cuarto);
+}
+/*---------------Create-------------*/
+.create{
+    background:linear-gradient(#0646635d, #0969965d), url(../img/form.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    border-radius: 40px;   
+    margin: 30px 30px 30px 30px;    
+    display: flex;
+    justify-content:space-between;
+    align-items: center;    
 }
