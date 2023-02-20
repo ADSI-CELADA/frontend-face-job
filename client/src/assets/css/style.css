@@ -1,0 +1,121 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --color-primer:#52B5E3;
+    --color-segundo:#0E9FE3;
+    --color-tercer:#096A96;
+    --color-cuarto:#3C86A8;
+    --color-quinto:#064663;
+    --color-blanco: #f5f5f5;
+    --color-negro:#0c0c0c;
+    --boton-padding: 14px 34px;
+    background: var(--color-blanco);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+/*---------scrolling bar-----------*/
+body::-webkit-scrollbar{
+    width: 0;
+}
+body::-webkit-scrollbar-thumb{
+    background: var(--color-segundo);
+}
+/*---------------Navigation Bar---------------*/
+.nav{
+    background: var(--color-blanco);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+}
+.logo img{
+        height: 70px;
+        border-radius: 20px;
+        width: auto;
+        transition: all 0.5s ease 0s;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+}
+.navigation li{
+    list-style: none;
+}
+.navigation li a{
+    text-decoration: none;    
+    color: var(--color-quinto);
+    font-weight: 500;
+}
+.log-in{
+    background: var(--color-quinto);
+    padding: var(--boton-padding);
+    border-radius: 30px;
+}
+.log-in a{
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+/*---------------hero--------------------------*/
+.hero{
+    background:linear-gradient(#0646635d, #0969965d), url(../img/Hero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    border-radius: 40px;   
+    margin: 0 30px 30px 30px;    
+    display: flex;
+    justify-content:space-between;
+    align-items: center;    
+}
+.hero-body{
+    width: 45vw;
+    height: 80vh;
+    margin: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+}
+.hero-image{
+    width:50vw;
+    margin: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+}
+.hero-title{
+    color: var(--color-blanco);
+}
+.hero-title .text-primary{
+    font-weight: 400 ;
+    font-size: 30px;
+}
+.hero-title .text-second{
+    font-size: 50px;
+    font-weight: 700;
+}
+/*-----------tutorial-------------*/
+.tutorial{
+    display: flex;
+    justify-content: space-around;
+    border: #064663 solid 1px;
+    margin: 0 30px 30px 30px;   
+}
+.tutorial h1{
+    font-weight: 600;
+    font-size: 30px;
+}
+.tutorial-text{
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+.tutorial-text p{
+    
+    font-weight: 400;
+    font-size: 20px;
+}
