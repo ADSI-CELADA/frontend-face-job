@@ -1,4 +1,4 @@
-import { MiniCard } from "./Cards/MiniCard"
+import { MiniCard } from "./MiniCard"
 
 export const ContainMiniCard= () => {
   return (

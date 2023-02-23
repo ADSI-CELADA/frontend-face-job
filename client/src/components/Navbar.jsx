@@ -26,11 +26,11 @@ export const Navbar = () =>  {
               </a>
             </li>
           </ul>
-          <div className="log-in">
-              <a href="/inicioSesionC" className="btn">
+          {/* <div className="log-in">
+              <a href="/login" className="btn">
                 Iniciar Sesion
               </a>
-            </div>
+            </div> */}
     </nav>
   )
 }

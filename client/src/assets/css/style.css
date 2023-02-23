@@ -5,7 +5,7 @@
     --color-tercer:#096A96;
     --color-cuarto:#3C86A8;
     --color-quinto:#064663;
-    --color-blanco: #f5f5f5;
+    --color-blanco: #fdfdfd;
     --color-negro:#0c0c0c;
     --boton-padding: 14px 34px;
     background: var(--color-blanco);
@@ -316,12 +316,124 @@ footer h2{
     font-size: 26px;
     color: var(--color-quinto);
 }
+footer p{
+    font-size: 10px;
+    color: #5f5f5f;
+}
 .footer-info a{
     color: var(--color-negro);
     text-decoration: none;
     font-size: 18px;
 }
-footer p{
-    font-size: 10px;
+/*---------------Sign Up------------------------*/
+.sign-up{
+    background:linear-gradient(#064663b6, #064663b6), url(../img/form.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 93vh;
+    width: 96.5vw;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+}
+.sign-up-form{
+    background:var(--color-blanco);
+    height: 93vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px 0 0 18px;
+}
+.sign-up-form h2{
+    font-size: 30px;
+}
+.sign-up-form p{
+    font-size: 14px;
     color: #5f5f5f;
+}
+.sign-up-form section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sign-up-form section img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.sign-up-form section p{
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--color-quinto);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 20vw;
+}
+form input{
+    border: #c7c7c7 1px solid; 
+    border-radius: 20px;
+    padding:8px 28px;
+    width: 20vw;
+}
+form input:focus{
+    outline: none;
+}
+form button{
+    background: var(--color-quinto);
+    border-radius: 20px;
+    border: none;
+    padding:8px 28px;
+    color: var(--color-blanco);
+}
+/*------------------Log In--------------------*/
+.log-in{
+    background:linear-gradient(#064663b6, #064663b6), url(../img/form.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    height: 93vh;
+    width: 96.5vw;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+    display: flex;
+    justify-content: flex-end;
+}
+.log-in-form{
+    background:var(--color-blanco);
+    height: 93vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 18px 18px 0;
+}
+.log-in-form h2{
+    font-size: 30px;
+}
+.log-in-form p{
+    font-size: 14px;
+    color: #5f5f5f;
+}
+.log-in-form section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.log-in-form section img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.log-in-form section p{
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--color-quinto);
 }
