@@ -3,7 +3,7 @@ import logo from '../../assets/img/logo.png'
 export const SignUp = () => {
   return (
     <div className="sign-up">
-        <div className="sign-up-form">
+        <div data-aos="fade-right" data-aos-duration="1000" className="sign-up-form">
             <h2>Bienvenido a</h2>
             <section>
                 <img src={logo} alt="logo" />
@@ -19,6 +19,8 @@ export const SignUp = () => {
                 <input placeholder='Contraseña' type="password" id="password" />
                 <button>Registrarse</button>
             </form>
+            <a href='/login'>¿Ya tienes cuenta? Inicia sesion</a>
+              <a href="/">volver</a>
         </div>
     </div>
   )

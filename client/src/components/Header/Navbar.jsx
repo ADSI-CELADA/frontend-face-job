@@ -1,5 +1,5 @@
-import "../assets/css/style.css"
-import logo from "../assets/img/Logo.png";
+import "../../assets/css/style.css"
+import logo from "../../assets/img/Logo.png";
 
 export const Navbar = () =>  {
   return (
@@ -26,11 +26,11 @@ export const Navbar = () =>  {
               </a>
             </li>
           </ul>
-          {/* <div className="log-in">
+          <div className="login">
               <a href="/login" className="btn">
                 Iniciar Sesion
               </a>
-            </div> */}
+          </div>
     </nav>
   )
 }

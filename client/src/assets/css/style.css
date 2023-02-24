@@ -22,7 +22,7 @@ body::-webkit-scrollbar{
     width: 0;
 }
 body::-webkit-scrollbar-thumb{
-    background: var(--color-segundo);
+    background: none;
 }
 *::selection{
     background:var(--color-primer);
@@ -57,12 +57,12 @@ body::-webkit-scrollbar-thumb{
     color: var(--color-quinto);
     font-weight: 500;
 }
-.log-in{
+.login{
     background: var(--color-quinto);
     padding: var(--boton-padding);
     border-radius: 30px;
 }
-.log-in a{
+.login a{
     color: var(--color-blanco);
     text-decoration: none;
 }
@@ -345,11 +345,16 @@ footer p{
     justify-content: center;
     align-items: center;
     border-radius: 18px 0 0 18px;
+    gap: 10px;
 }
 .sign-up-form h2{
     font-size: 30px;
 }
 .sign-up-form p{
+    font-size: 14px;
+    color: #5f5f5f;
+}
+.sign-up-form a{
     font-size: 14px;
     color: #5f5f5f;
 }
@@ -413,12 +418,17 @@ form button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     border-radius: 0 18px 18px 0;
 }
 .log-in-form h2{
     font-size: 30px;
 }
 .log-in-form p{
+    font-size: 14px;
+    color: #5f5f5f;
+}
+.log-in-form a{
     font-size: 14px;
     color: #5f5f5f;
 }
