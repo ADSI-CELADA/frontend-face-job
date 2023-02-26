@@ -4,6 +4,7 @@ import { SignUp } from "../components/Forms/SignUp";
 // // import {RegistroC, InicioSC, ProfileC, CatalogueC, SubirPost, SubirPostText, EscojePost, DropdownMenu } from "../components/barril.js"
 // import { AuthContextProvider } from "../context/AuthContext.jsx";
 import Index from "../pages/Index"
+import { Profile } from "../pages/Profile";
 
 export const Router = () => {
   return (
@@ -13,6 +14,7 @@ export const Router = () => {
           <Route path="/" element={<Index />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/profile" element={<Profile />} />
           {/* 
           
           <Route path="/inicioSesionC" element={<InicioSC />} />
