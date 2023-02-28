@@ -13,7 +13,7 @@ export const Post = () => {
             </div>
             <div className="post-img"></div>
             <div className="post-content">
-                <p>post content</p>
+                <input type="text" placeholder='Post commnet'/>
             </div>
             <div className="post-stats">
                 <div className="post-like">❤</div>
