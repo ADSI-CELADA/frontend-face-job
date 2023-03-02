@@ -11,7 +11,9 @@ export const Post = () => {
                 <p>user profesion</p>
                 </div>
             </div>
-            <div className="post-img"></div>
+            <div className="post-img">
+                <p>esta caja puede contener texti y imagenes</p>
+            </div>
             <div className="post-content">
                 <input type="text" placeholder='Post commnet'/>
             </div>
