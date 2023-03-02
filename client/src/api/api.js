@@ -1,3 +1,6 @@
-import axios from "axios"
+import axios from "axios";
 
-const axios = 0;
+let url = "http://localhost:4000/";
+
+export const singInUser = async (values) =>
+  await axios.post(`${url}loginCliente`, values);
