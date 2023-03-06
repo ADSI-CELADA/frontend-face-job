@@ -2,9 +2,11 @@ import logo from "../../assets/img/logo.png";
 import { Form, Formik } from "formik";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 let url = "http://localhost:4000";
 
 export const LogIn = () => {
+ const  navigate=useNavigate()
   const singInUser = async (values) => {
     return await axios.post(`${url}/loginCliente`, values);
   };
@@ -42,6 +44,7 @@ export const LogIn = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
+              navigate('/profile')
             } else if (data == "PASSWORD_ERROR") {
               Swal.fire({
                 position: "top-end",

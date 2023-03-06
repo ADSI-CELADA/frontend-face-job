@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { LogIn } from "../components/Forms/LogIn";
 import { SignUp } from "../components/Forms/SignUp";
+import { Catalogue } from "../pages/Catalogue";
 // // import {RegistroC, InicioSC, ProfileC, CatalogueC, SubirPost, SubirPostText, EscojePost, DropdownMenu } from "../components/barril.js"
 // import { AuthContextProvider } from "../context/AuthContext.jsx";
 import Index from "../pages/Index"
@@ -15,6 +16,7 @@ export const Router = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/catalogue" element={<Catalogue/> } />
           {/* 
           
           <Route path="/inicioSesionC" element={<InicioSC />} />

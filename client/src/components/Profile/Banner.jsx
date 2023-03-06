@@ -1,5 +1,6 @@
 import React from 'react'
 import icon from '../../assets/img/bear.jpg'
+import { Link } from 'react-router-dom'
 
 export const Banner = () => {
   return (
@@ -8,9 +9,7 @@ export const Banner = () => {
             <section>
                 <div className="banner-icon">
                     <img src={icon} alt="icon"/>
-                    <div className="banner-icon-cape">
-                        <a href="/">📷</a>
-                    </div>
+                        <Link className='banner-icon-cape' to="/">Cambiar icono</Link>
                 </div>
                     <div className="banner-info">
                         <h2>User Name</h2>

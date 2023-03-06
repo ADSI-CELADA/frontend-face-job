@@ -38,9 +38,20 @@ body::-webkit-scrollbar-thumb{
     height: 10vh;
     width: 100vw;
 }
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-href{
+    color: var(--color-quinto);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
 .logo img{
-        height: 70px;
-        border-radius: 20px;
+        height: 60px;
+        border-radius: 25px;
         width: auto;
         transition: all 0.5s ease 0s;
 }
@@ -51,6 +62,9 @@ body::-webkit-scrollbar-thumb{
 }
 .navigation li{
     list-style: none;
+}
+.navigation li:hover{
+    text-decoration: underline 2px;
 }
 .navigation li a{
     text-decoration: none;    
@@ -473,6 +487,17 @@ form button{
     display: flex;
     gap: 25px;
 }
+.banner-icon{
+    background-color: #15a0e0e1;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;  
+    border-radius: 50%;
+}
 .banner-icon img{
     background:var(--color-blanco);
     border: #064663 1px solid;
@@ -483,30 +508,26 @@ form button{
     border-radius: 50%;
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.171);
 }
-.banner-icon-cape{
-    background-color: #0646631a;
-    background-position: center;
-    background-size: cover;
+.banner .banner-icon .banner-icon-cape{
     position: absolute;
-    top:0;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
     width: 300px;
     height: 300px;  
     border-radius: 50%;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.171);
-}
-.banner-icon:hover> .banner-icon-cape{
-    opacity: 1;
-    visibility: visible;
-}
-.banner-icon-cape a{
-    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0646639f;
+    bottom: 80;
+    left: 40;
+    color: #c7c7c7;
     text-decoration: none;
+    transform: translateY(25%);
+    opacity: 0;
+    transition:all ease-in 200ms;
+}
+.banner .banner-icon:hover .banner-icon-cape{
+    transform: translateY(0);
+    opacity: 1;
 }
 .banner-info{
     color: var(--color-blanco);
@@ -602,4 +623,29 @@ form button{
     display: flex;
     justify-content: space-around;
     margin: 12px;
+}
+/*----------------------Categorias/Catalogo/Perfiles------------------------*/
+.categories{
+    background:linear-gradient(#064663b6, #064663b6), url(../img/default.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 10vh;
+    width: 96.5vw;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.categories button{
+    background: none;
+    color: var(--color-blanco);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+}
+.categories button:hover{
+    cursor: pointer;
+    background: var(--color-cuarto);
 }

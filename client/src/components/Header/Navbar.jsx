@@ -1,29 +1,30 @@
 import "../../assets/css/style.css"
 import logo from "../../assets/img/Logo.png";
+import { NavLink } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const Navbar = () =>  {
   return (
-    <nav  data-aos="fade-down" data-aos-duration="1000" className="nav">
+    <nav data-aos="fade-down" data-aos-duration="1000" className="nav">
         <div className="logo">
-            <a href="/">
-                <img src={logo} alt="logo" />
-            </a>
+          <img src={logo} alt="logo" />
+            <Link href="/" className="logo-href">Face-Job</Link>
         </div>
         <ul className="navigation">
             <li>
-              <a className="navigation-link" href="#">
-                Catalogue
-              </a>
+              <NavLink className="navigation-link" to="/profile">
+                Perfiles
+              </NavLink>
             </li>
             <li>
-              <a className="navigation-link" href="#">
+              <NavLink className="navigation-link" to="/catalogue">
                 Publicaciones
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a className="navigation-link" href="#">
+              <NavLink className="navigation-link" to="/">
                 Consulta
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className="login">
