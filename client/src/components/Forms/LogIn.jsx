@@ -1,23 +1,91 @@
-import logo from '../../assets/img/logo.png'
+import logo from "../../assets/img/logo.png";
+import { Form, Formik } from "formik";
+import Swal from "sweetalert2";
+import axios from "axios";
+let url = "http://localhost:4000";
 
 export const LogIn = () => {
+  const singInUser = async (values) => {
+    return await axios.post(`${url}/loginCliente`, values);
+  };
+
   return (
     <div className="log-in">
-        <div data-aos="fade-left" data-aos-duration="1000"  className="log-in-form">
-            <h2>Bienvenido a</h2>
-            <section>
-                <img src={logo} alt="logo" />
-                <p>Face-Job</p>
-            </section>
-            <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>
-            <form action="">
-                <input placeholder='Correo Electronico' type="email" id="email" />
-                <input placeholder='Contraseña' type="password" id="password" />
-                <button>Iniciar Sesion</button>
-            </form>
-            <a href='/signup'>¿No tienes cuenta? registrate</a>
-              <a href="/">volver</a>
-        </div>
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        className="log-in-form"
+      >
+        <h2>Bienvenido a</h2>
+        <section>
+          <img src={logo} alt="logo" />
+          <p>Face-Job</p>
+        </section>
+        <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>
+        <Formik
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          onSubmit={async (values) => {
+            let response = await singInUser(values);
+            const {
+              data: { data, result, token },
+            } = response;
+            console.log(result);
+
+            if (data == "logueado") {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Logueado",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            } else if (data == "PASSWORD_ERROR") {
+              Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Contraseña incorrecta",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            } else {
+              Swal.fire({
+                position: "top-end",
+                icon: "warning",
+                title: "El usuario no existe",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          }}
+        >
+          {({ isSubmitting, handleChange, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <input
+                name="email"
+                placeholder="Correo Electronico"
+                type="email"
+                id="email"
+                onChange={handleChange}
+                required
+              />
+              <input
+                placeholder="Contraseña"
+                type="password"
+                id="password"
+                onChange={handleChange}
+                name="password"
+                required
+              />
+              <button type="submit">Iniciar Sesion</button>
+            </Form>
+          )}
+        </Formik>
+        <a href="/signup">¿No tienes cuenta? registrate</a>
+        <a href="/">volver</a>
+      </div>
     </div>
-  )
-}
+  );
+};

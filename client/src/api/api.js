@@ -6,4 +6,4 @@ export const singUpUser = async(values) =>
     await axios.post(`${url}/registroCliente`, values) 
 
 export const singInUser = async (values) =>
-  await axios.post(`${url}loginCliente`, values);
+  await axios.post(`${url}/loginCliente`, values);

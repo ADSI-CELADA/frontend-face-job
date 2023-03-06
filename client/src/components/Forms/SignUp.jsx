@@ -1,6 +1,6 @@
 import logo from "../../assets/img/logo.png";
 import { singUpUser } from "../../api/api";
-import sweet from "sweetalert2";
+import Swal from "sweetalert2";
 import { Form, Formik } from "formik";
 
 export const SignUp = () => {
@@ -21,7 +21,7 @@ export const SignUp = () => {
           initialValues={{
             name: "",
             lastname: "",
-            date : "",
+            date: "",
             number: "",
             profession: "",
             email: "",
@@ -29,19 +29,76 @@ export const SignUp = () => {
           }}
           onSubmit={async (values) => {
             const response = await singUpUser(values);
-            console.log(response);
+            const {
+              data: { data },
+            } = response;
+            if (data == "INSERT_OK") {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Registrado",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            } else {
+              Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "error",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
           }}
         >
-          {({handleChange, handleSubmit, isSubmitting}) => (
+          {({ handleChange, handleSubmit, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
-              <input placeholder="Nombre" type="text" name="name" onChange={handleChange}/>
-              <input placeholder="Apellido" type="text" name="lastname" onChange={handleChange}/>
-              <input placeholder="Fecha de Nacimiento" type="date" name="date" onChange={handleChange} />
-              <input placeholder="Telefono" type="text" name="number" onChange={handleChange}/>
-              <input placeholder="Profesion" type="text" name="profesion" onChange={handleChange}/>
-              <input placeholder="Correo Electronico" type="email" name="email" onChange={handleChange}/>
-              <input placeholder="Contraseña" type="password" name="password" onChange={handleChange}/>
-              <button> { isSubmitting ? 'Registrando...' : 'Registrar'} </button>
+              <input
+                placeholder="Nombre"
+                type="text"
+                name="name"
+                onChange={handleChange}
+              />
+              <input
+                placeholder="Apellido"
+                type="text"
+                name="lastname"
+                onChange={handleChange}
+              />
+              <input
+                placeholder="Fecha de Nacimiento"
+                type="date"
+                name="date"
+                onChange={handleChange}
+              />
+              <input
+                placeholder="Telefono"
+                type="text"
+                name="number"
+                onChange={handleChange}
+              />
+              <input
+                placeholder="Profesion"
+                type="text"
+                name="profession"
+                onChange={handleChange}
+              />
+              <input
+                placeholder="Correo Electronico"
+                type="email"
+                name="email"
+                onChange={handleChange}
+              />
+              <input
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                onChange={handleChange}
+              />
+              <button type="submit">
+                {" "}
+                {isSubmitting ? "Registrando..." : "Registrar"}{" "}
+              </button>
             </Form>
           )}
         </Formik>
