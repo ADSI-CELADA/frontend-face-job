@@ -1,7 +1,7 @@
 import React from 'react'
 import icon from '../../assets/img/bear.jpg'
 
-export const Post = () => {
+export const PostCard = () => {
   return (
     <section className="post-contain">
         <div data-aos="fade-up" data-aos-duration="500" className="post">

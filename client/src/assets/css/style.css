@@ -591,7 +591,7 @@ form button{
     align-items: center;
     display: flex;
 }
-.post-icon{
+.post-icon img{
     background: var(--color-blanco);
     width: 70px;
     height: 70px;
@@ -602,20 +602,29 @@ form button{
     background: var(--color-blanco);
     width: 600px;
     height: 350px;
+    padding: 10px;
 }
 .post-content{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin: 15px;
+    gap: 10px;
 }
 .post-content input{
     padding: 8px 12px;
     border-radius:15px;
-    margin: 15px;
     width: 550px;
     border: none;
 }
 .post-content input:focus{
     outline: none;
+}
+.post-content h2{
+    color: var(--color-blanco);
+}
+.post-content p{
+    color: var(--color-blanco);
 }
 .post-stats{
     align-items: center;
