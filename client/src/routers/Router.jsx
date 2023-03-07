@@ -3,10 +3,12 @@ import { LogIn } from "../components/Forms/LogIn";
 import { SignUp } from "../components/Forms/SignUp";
 // // import {RegistroC, InicioSC, ProfileC, CatalogueC, SubirPost, SubirPostText, EscojePost, DropdownMenu } from "../components/barril.js"
 // import { AuthContextProvider } from "../context/AuthContext.jsx";
+import { CreatePost } from "../components/Forms/FormsPosts/CreatePost";
 import Index from "../pages/Index"
 import { Profile } from "../pages/Profile";
 
 export const Router = () => {
+  
   return (
     <>
       {/* <AuthContextProvider> */}
@@ -15,6 +17,7 @@ export const Router = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/createPostUser" element={<CreatePost />} />
           {/* 
           
           <Route path="/inicioSesionC" element={<InicioSC />} />

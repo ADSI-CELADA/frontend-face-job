@@ -1,5 +1,6 @@
 
 import icon from '../../assets/img/bear.jpg'
+import { Link } from 'react-router-dom'
 
 export const MiniCard = () =>  {
   return (
@@ -9,7 +10,7 @@ export const MiniCard = () =>  {
         <h2>User Profile Name</h2>
         <p>Profesion</p>
         <hr />
-        <a href="/">Ver Mas</a>      
+        <Link href="/">Ver Mas</Link>      
       </div>
     </div>
   )

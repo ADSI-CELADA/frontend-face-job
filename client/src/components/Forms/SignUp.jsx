@@ -2,10 +2,12 @@ import logo from "../../assets/img/logo.png";
 import { singUpUser } from "../../api/api";
 import sweet from "sweetalert2";
 import { Form, Formik } from "formik";
+import { Navigate,Link } from "react-router-dom";
 
 export const SignUp = () => {
   return (
     <div className="sign-up">
+     
       <div
         data-aos="fade-right"
         data-aos-duration="1000"
@@ -30,6 +32,9 @@ export const SignUp = () => {
           onSubmit={async (values) => {
             const response = await singUpUser(values);
             console.log(response);
+          /* return <Navigate to="/login" />*/
+         
+
           }}
         >
           {({handleChange, handleSubmit, isSubmitting}) => (
@@ -45,8 +50,8 @@ export const SignUp = () => {
             </Form>
           )}
         </Formik>
-        <a href="/login">¿Ya tienes cuenta? Inicia sesion</a>
-        <a href="/">volver</a>
+        <Link to="/login">¿Ya tienes cuenta? Inicia sesion</Link>
+        <Link to="/">volver</Link>
       </div>
     </div>
   );

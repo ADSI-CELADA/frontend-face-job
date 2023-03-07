@@ -1,20 +1,27 @@
 import React from 'react'
 import icon from '../../assets/img/bear.jpg'
-
+import { useContext } from "react";
+import {contextUser} from '../../assets/context/usercContext'
+import { Link } from 'react-router-dom';
 export const Banner = () => {
+
+let userContextInfo=useContext(contextUser)
+
   return (
+    
     <section className="bnr">
+        
         <div className="banner">
             <section>
                 <div className="banner-icon">
-                    <img src={icon} alt="icon"/>
+                    <img src={userContextInfo.infoUser.iconUser} alt="icon"/>
                     <div className="banner-icon-cape">
-                        <a href="/">📷</a>
+                        <Link to="/">📷</Link>
                     </div>
                 </div>
                     <div className="banner-info">
-                        <h2>User Name</h2>
-                        <p>User Profesion</p>
+                        <h2>{userContextInfo.infoUser.name}</h2>
+                        <p>{userContextInfo.infoUser.profession}</p>
                         <div className="banner-stats">
                             <ul>
                                 <li>0 Seguidores</li>
@@ -28,10 +35,10 @@ export const Banner = () => {
             <div className="banner-nav">
                 <nav>
                     <ul>
-                        <li><a href="">Publicaciones</a></li>
-                        <li><a href="">Postales</a></li>
-                        <li><a href="">Publicar</a></li>
-                        <li><a href="">Ajustes</a></li>
+                        <li><Link to="">Publicaciones</Link></li>
+                        <li><Link to="">Postales</Link></li>
+                        <li><Link to="">Publicar</Link></li>
+                        <li><Link to="">Ajustes</Link></li>
                     </ul>
                 </nav>
             </div>

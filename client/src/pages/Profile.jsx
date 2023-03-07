@@ -9,7 +9,7 @@ export const Profile = () => {
       <Navbar/>
       <Banner/>
       <Post/>
-      <Post/>
+   
     </>
   )
 }
