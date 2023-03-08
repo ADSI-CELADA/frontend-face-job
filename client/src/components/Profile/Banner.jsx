@@ -24,16 +24,6 @@ export const Banner = () => {
                         </div>
                     </div>                
             </section>
-            <div className="banner-nav">
-                <nav>
-                    <ul>
-                        <li><a href="">Publicaciones</a></li>
-                        <li><a href="">Postales</a></li>
-                        <li><a href="">Publicar</a></li>
-                        <li><a href="">Ajustes</a></li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </section>
   )

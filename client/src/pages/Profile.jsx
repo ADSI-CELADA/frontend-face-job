@@ -1,15 +1,15 @@
 import React from 'react'
+import { PerfilLateral } from '../components/BarraLateral/PerfilLateral'
 import { Navbar } from '../components/Header/Navbar'
 import { Banner } from '../components/Profile/Banner'
-import { Post } from '../components/Profile/Post'
-
+import { ContainerPost } from '../components/Profile/ContainerPost'
 export const Profile = () => {
   return (
-    <>
+    <section className="section-profile">
       <Navbar/>
       <Banner/>
-      <Post/>
-      <Post/>
-    </>
+      <PerfilLateral/>
+      <ContainerPost/>
+    </section>
   )
 }

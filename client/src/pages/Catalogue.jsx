@@ -1,6 +1,6 @@
 import React from 'react'
 import { Categories } from '../components/Catalogue/Categories'
-import { PostCard } from '../components/Catalogue/PostCard'
+import { UserContain } from '../components/Catalogue/UserContain'
 import { Navbar } from '../components/Header/Navbar'
 
 export const Catalogue = () => {
@@ -8,9 +8,7 @@ export const Catalogue = () => {
     <>
     <Navbar/>
     <Categories/>
-    <PostCard/>
-    <PostCard/>
-    <PostCard/>
+    <UserContain/>
     </>
   )
 }

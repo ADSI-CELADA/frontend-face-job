@@ -462,6 +462,10 @@ form button{
     color: var(--color-quinto);
 }
 /*------------------------profile---------------------*/
+.section-profile{
+    display: flex;
+    flex-wrap: wrap;
+}
 .bnr{
     background:linear-gradient(#064663b6, #064663b6), url(../img/default.jpg) no-repeat;
     background-position: center;
@@ -482,6 +486,7 @@ form button{
     width: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .banner section{
     display: flex;
@@ -545,38 +550,18 @@ form button{
     list-style: none;
     justify-content: space-between;
 }
-.banner-nav{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-.banner-nav nav{
-    width: 45%;
-}
-.banner-nav nav ul{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    justify-content: space-between;
-}
-.banner-nav nav ul li a{
-    color: var(--color-blanco);
-    text-decoration: none;
-    padding: 8px 12px;
-}
-.banner-nav nav ul li a:hover{
-    background: var(--color-cuarto);
-    padding: 8px 12px;
-    border-radius: 20px;
-}
 /*---------------------posts----------------------------*/
+.container-post{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 .post-contain{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px;
-    width: 96.5vw;
 }
 .post{
     background: var(--color-quinto);
@@ -657,4 +642,85 @@ form button{
 .categories button:hover{
     cursor: pointer;
     background: var(--color-cuarto);
+}
+/*-----------------------user Card-------------------------*/
+.mega-user-contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px;
+    width: 96.5vw;
+}
+.user-contain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+.user-card{
+    background: var(--color-quinto);
+    border-radius: 20px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+.user-card button{
+    background: var(--color-blanco);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #064663;
+    cursor: pointer;
+}
+.user-info{
+    padding: 20px;
+    color: var(--color-blanco);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.user-info div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.user-icon img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+/*----------------------------Barras Laterales---------------------------------*/
+.banner-nav{
+    background: var(--color-quinto);
+    display: flex;
+    width: 20%;
+    height: 50vh;
+    margin: 0 0 0 30px;
+    border-radius:20px ;
+    justify-content: center;
+}
+.banner-nav nav{
+    width: 45%;
+}
+.banner-nav nav ul{
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    list-style: none;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.banner-nav nav ul li a{
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 8px 12px;
+}
+.banner-nav nav ul li a:hover{
+    background: var(--color-cuarto);
+    padding: 8px 12px;
+    border-radius: 20px;
 }
