@@ -6,6 +6,7 @@ import { Catalogue } from "../pages/Catalogue";
 // import { AuthContextProvider } from "../context/AuthContext.jsx";
 import Index from "../pages/Index"
 import { Profile } from "../pages/Profile";
+import { CreatePost } from "../components/Forms/FormsCreatePosts/PostImages/CreatePostImage";
 
 export const Router = () => {
   return (
@@ -17,6 +18,7 @@ export const Router = () => {
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalogue" element={<Catalogue/> } />
+          <Route path="/createPostImage" element={<CreatePost/> } />
           {/* 
           
           <Route path="/inicioSesionC" element={<InicioSC />} />

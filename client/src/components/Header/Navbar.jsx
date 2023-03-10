@@ -3,9 +3,10 @@ import logo from "../../assets/img/Logo.png";
 import { NavLink } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import { useContext } from "react";
+import {contextUser} from '../../Hooks/userContext'
 export const Navbar = () =>  {
-
+  let userContextInfo=useContext(contextUser)
   const [ fix, setFix ] = useState(false)
 
   function setFixedNavBar(){
@@ -17,11 +18,12 @@ export const Navbar = () =>  {
   }
 
   window.addEventListener('scroll',setFixedNavBar)
+ 
   return (
     <nav className={fix ? 'nav fixed' : 'nav'}> 
         <div className="logo">
-          <img src={logo} alt="logo" />
-            <Link href="/" className="logo-href">Face-Job</Link>
+       <img src={logo} alt="logo" />
+            <Link to="/" className="logo-href">Face-Job</Link>
         </div>
         <ul className="navigation">
             <li>
@@ -36,15 +38,21 @@ export const Navbar = () =>  {
             </li>
             <li>
               <NavLink className="navigation-link" to="/">
-                Consulta
+                Consulta 
               </NavLink>
             </li>
           </ul>
-          <div className="login">
-              <a href="/login" className="btn">
+          
+          { userContextInfo.loged ? <div className="login">
+              <Link to="/profile" className="btn">
+                {userContextInfo.infoUser.name}
+              </Link>
+          </div> : <div className="login">
+              <Link to="/login" className="btn">
                 Iniciar Sesion
-              </a>
-          </div>
+              </Link>
+          </div>}
+         
     </nav>
   )
 }

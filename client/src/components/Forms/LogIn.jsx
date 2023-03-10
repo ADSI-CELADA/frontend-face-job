@@ -44,6 +44,7 @@ export const LogIn = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
+              document.cookie=`token=${response.data.token};max-age=${60*1440};path=/;samesite=strict`
               navigate('/profile')
             } else if (data == "PASSWORD_ERROR") {
               Swal.fire({
