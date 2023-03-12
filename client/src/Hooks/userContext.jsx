@@ -10,6 +10,7 @@ export default function ContextUserData({children}){
     const [infoUser,setInfoUser]=useState(null)
     const [imagesTexts,setImagesTexts]=useState(true)
     const [recoverPass,setRecoverPass]=useState("")
+    const [emailProfessions,setEmailProfessions]=useState("null")
   useEffect(()=>{
     
     loadInfoUserPage()
@@ -28,7 +29,6 @@ async function loadInfoUserPage() {
     }else{
       setLoget(true)
       setInfoUser(result.data[0]);
-      console.log(result.data[0]);
       console.log("esta logeado");
     }
   }
@@ -41,8 +41,11 @@ function postTexts() {
 function changeEmail(newEmail) {
   setRecoverPass(newEmail)
 }
+function chageEmailProfessions(params) {
+  setEmailProfessions(params)
+}
     return(
-        <contextUser.Provider value={{recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts}}>
+        <contextUser.Provider value={{emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts}}>
             {children}
         </contextUser.Provider>
     )

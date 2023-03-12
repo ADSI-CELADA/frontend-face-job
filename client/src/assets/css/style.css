@@ -214,6 +214,13 @@ body::-webkit-scrollbar-thumb{
     height:max-content;
     padding:60px 30px; 
 }
+
+/*categorias cambia segun seleccione*/
+.title-Profession-Catalogue{
+    font-size: 70px;
+    margin-left: 30px;
+    color: var(--color-quinto);
+}
 .categorie-body{
     width: 50vw;
     height: max-content;

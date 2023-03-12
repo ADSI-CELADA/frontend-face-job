@@ -7,7 +7,6 @@ export const Catalogue = () => {
   return (
     <>
     <Navbar/>
-    <Categories/>
     <UserContain/>
     </>
   )

@@ -1,11 +1,11 @@
 import logo from '../../../../assets/img/logo.png'
 import { Form,Formik } from 'formik'
-import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { contextUser } from '../../../../Hooks/userContext'
 import { useContext } from 'react'
-import { validateCodeEmail } from '../../../../api/api'
-export const RecoverCode = () => {
+import { updatePasswordEmail } from '../../../../api/api'
+import { useNavigate } from 'react-router-dom'
+export const RecoverPassNewPass = () => {
     let context=useContext(contextUser)
     let navigate=useNavigate()
   return (
@@ -18,27 +18,27 @@ export const RecoverCode = () => {
                 <img src={logo} alt="logo" />
                 <p>Face-Job</p>
             </section>
-            <p>Escribe el codigo que se envio a tu correo</p>
+            <p>Ingresa una nueva contraseña</p>
             <Formik
             initialValues={
             {
-              codigo:"",
+                password:"",
        
           }
             }
             onSubmit={async (values)=>{
               console.log(context.recoverPass);
-            const result=await validateCodeEmail(context.recoverPass,values)
-            if(result.data.data=="CODE_VALIDE"){
-              navigate('/recoverNewPass')
-            }else{
-              alert('codigo incorrecto')
+            const result=await updatePasswordEmail(context.recoverPass,values)
+            console.log(result);
+            if (result.data.data=="PASSWORD_UPDATE") {
+                alert('tu contraseña se cambio exitosamente ve a iniciar sesion!')
+                navigate('/')
             }
             }}
             >
               {({handleChange,handleSubmit,isSubmitting})=>(
               <Form onSubmit={handleSubmit}>
-                <input placeholder='escribe el codigo' type="number" id="codigo" name='codigo' onChange={handleChange} />
+                <input placeholder='escribe tu nueva contraseña' type="password" id="password" name='password' onChange={handleChange} />
                  <button>enviar</button>
               </Form>
             )}

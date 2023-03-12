@@ -25,3 +25,18 @@ await axios.post(`${url}/recoveryEmail/${param}`, values);
 export const updatePasswordEmail = async (param,values) =>
 await axios.put(`${url}/updatePassEmail/${param}`, values);
 
+
+
+/* catalogo */
+export const consultProfessions = async (param) =>
+await axios.get(`${url}/consultCategories/${param}`,{
+  headers: {
+    token: token,
+  },
+})
+
+
+
+export const consultProfileProfessions = async (param) =>
+await axios.get(`${url}/consultProfile/${param}`);
+

@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { getPostsUser } from '../../api/apiPosts'
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import {
     AiFillHeart,
@@ -9,12 +9,14 @@ import {
     AiFillSetting,
     AiFillCloseCircle,
   } from "react-icons/ai";
+  import { contextUser } from '../../Hooks/userContext'
   import { IconContext } from "react-icons";
   import { Link } from "react-router-dom";
-  import { loadInfoUser } from '../../api/api'
+  import { consultProfileProfessions } from '../../api/api'
   import { poststexts,dislikeTexts,likeTexts ,DeletePostsText,updateText} from '../../api/apiPosts'
 
 export const PostsTexts = () => {
+  let contextPosts=useContext(contextUser)
     let navigate=useNavigate()
     const [posts, setPosts] = useState([]);
     const [settings, setSettings] = useState(false);
@@ -29,10 +31,13 @@ export const PostsTexts = () => {
     useEffect(() => {
      
         async function loadInfoUserk() {
-            const  result=await loadInfoUser()
+            const  result=await consultProfileProfessions(contextPosts.emailProfessions)
             setInfoUser(result.data[0])
             setChanges("change")
-         loadTexts()
+            if (infoUser!=null) {
+              loadTexts()
+            }
+         
         }
         loadInfoUserk()
        
@@ -41,18 +46,25 @@ async function loadTexts(){
   
     if (infoUser!=null) {
       let response = await  poststexts(infoUser.email);
-    setPosts(response.data)
-    console.log(response.data);
+      console.log(response);
+      setPosts(response.data.data1)
+      let newArray=response.data.data1
+      console.log(response.data);
+  
+     for (let i = 0; i < newArray.length; i++) {
+    
+    if (response.data.data2.length!=0) {
+      
+      if (response.data.data1[i].id==response.data.data2[i].id_textos) {
+        newArray[i].estado=response.data.data2[i].estado
+      }else{
+        newArray[i].estado="nomegusta"
+      }
+    }
+  }
+      setPosts(newArray)
  
     
-    if (infoUser!=null) {
-      setSettings(true);
-      setChanges("change")
-      
-    } else {
-      setSettings(false);
-      setChanges("changes")
-    }
     }else{
       console.log("not found");
       setChanges("cambios")
@@ -136,27 +148,7 @@ async function loadTexts(){
             </div>
             <div className="menu"
                   style={{ display: "flex", justifyContent: "flex-end" }}>
-            {settings ? (
-                    <span
-                      onClick={() => {
-                        postData(post.id, post.email);
-                      }}
-                    >
-                      <IconContext.Provider
-                        value={{
-                          size: "30px",
-                          color: "white",
-                          border: "solid #043248 ",
-                        }}
-                      >
-                        <div>
-                          <AiFillSetting />
-                        </div>
-                      </IconContext.Provider>
-                    </span>
-                  ) : (
-                    ""
-                  )}
+            
             </div>
         </div>
         <div className="post-img">

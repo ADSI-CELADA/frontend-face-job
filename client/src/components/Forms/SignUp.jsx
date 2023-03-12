@@ -2,8 +2,9 @@ import logo from "../../assets/img/logo.png";
 import { singUpUser } from "../../api/api";
 import Swal from "sweetalert2";
 import { Form, Formik } from "formik";
-
+import { useNavigate } from "react-router-dom";
 export const SignUp = () => {
+  let navigate=useNavigate()
   return (
     <div className="sign-up">
       <div
@@ -39,7 +40,9 @@ export const SignUp = () => {
                 title: "Registrado",
                 showConfirmButton: false,
                 timer: 1500,
+                
               });
+              navigate('/')
             } else {
               Swal.fire({
                 position: "top-end",
@@ -58,42 +61,49 @@ export const SignUp = () => {
                 type="text"
                 name="name"
                 onChange={handleChange}
+                required
               />
               <input
                 placeholder="Apellido"
                 type="text"
                 name="lastname"
                 onChange={handleChange}
+                required
               />
               <input
                 placeholder="Fecha de Nacimiento"
                 type="date"
                 name="date"
                 onChange={handleChange}
+                required
               />
               <input
                 placeholder="Telefono"
                 type="text"
                 name="number"
                 onChange={handleChange}
+                required
               />
               <input
                 placeholder="Profesion"
                 type="text"
                 name="profession"
                 onChange={handleChange}
+                required
               />
               <input
                 placeholder="Correo Electronico"
                 type="email"
                 name="email"
                 onChange={handleChange}
+                required
               />
               <input
                 placeholder="Contraseña"
                 type="password"
                 name="password"
                 onChange={handleChange}
+                required
               />
               <button type="submit">
                 {" "}

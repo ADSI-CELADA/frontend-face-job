@@ -7,7 +7,11 @@ export const createPostImage= async (param,data) =>
   await axios.post(`${url}/user/createpost/${param}`, data);
 
   export const getPostsUser= async (param) =>
-  await axios.get(`${url}/user/postsimagenes/${param}`);
+  await axios.get(`${url}/user/postsimagenes/${param}`,{
+    headers: {
+      token: token,
+    },
+  })
 
   export const changeImgProfile = async (formdata) =>
   await axios.put(`${url}/user/Image`, formdata, {
@@ -35,7 +39,11 @@ export const dislike = async (id) =>
 
   /* texts consumos*/
   export const poststexts = async (para) =>
-  await axios.get(`${url}/user/userPoststextos/${para}`);
+  await axios.get(`${url}/user/userPoststextos/${para}`,{
+  headers: {
+    token: token,
+  },
+})
 
   export const createPostText = async (param, data) =>
   await axios.post(`${url}/user/createposttext/${param}`, data);

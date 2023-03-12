@@ -10,6 +10,8 @@ import { CreatePost } from "../components/Forms/FormsCreatePosts/PostImages/Crea
 import { CreatePostTexts } from "../components/Forms/FormsCreatePosts/PostImages/CreatePostTexts";
 import {RecoveryPass} from '../components/Forms/FormsCreatePosts/postText/RecuperaPassEmail'
 import { RecoverCode } from "../components/Forms/FormsCreatePosts/postText/RecoverCode";
+import { RecoverPassNewPass } from "../components/Forms/FormsCreatePosts/postText/RecoverPassNewPass";
+import { ProfileP } from "../pages/ProfileProfession";
 export const Router = () => {
   return (
     <>
@@ -24,6 +26,8 @@ export const Router = () => {
           <Route path="/createPostText" element={<CreatePostTexts/> } />
           <Route path="/RecoveryPass" element={<RecoveryPass/> } />
           <Route path="/RecoverCode" element={<RecoverCode/> } />
+          <Route path="/recoverNewPass" element={<RecoverPassNewPass/> } />
+          <Route path="/ProfileProfessions" element={<ProfileP/> } />
     
           {/* 
           
