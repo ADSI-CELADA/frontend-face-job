@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import {contextUser} from '../../Hooks/userContext'
+import { AiOutlineImport } from "react-icons/ai";
+import Cookies from 'universal-cookie'
+
+
+
 export const Navbar = () =>  {
+  const cookies=new Cookies();
   let userContextInfo=useContext(contextUser)
   const [ fix, setFix ] = useState(false)
 
@@ -16,6 +22,10 @@ export const Navbar = () =>  {
           setFix(false)
       }
   }
+ const closeSesion=()=>{
+    cookies.remove('token',{path:"/"})
+    window.location.href="/"
+    }
 
   window.addEventListener('scroll',setFixedNavBar)
  
@@ -43,11 +53,12 @@ export const Navbar = () =>  {
             </li>
           </ul>
           
-          { userContextInfo.loged ? <div className="login">
+          { userContextInfo.loged ? <div> <div className="login">
               <Link to="/profile" className="btn">
                 {userContextInfo.infoUser.name}
               </Link>
-          </div> : <div className="login">
+             
+          </div> <span><AiOutlineImport onClick={closeSesion} /> </span></div>  : <div className="login">
               <Link to="/login" className="btn">
                 Iniciar Sesion
               </Link>

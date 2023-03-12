@@ -15,3 +15,13 @@ await axios.get(`${url}/dataUser`,{
     token: token,
   },
 })
+export const sendMailEmail = async (values) =>
+  await axios.post(`${url}/senMailEmail`, values);
+
+export const validateCodeEmail = async (param,values) =>
+await axios.post(`${url}/recoveryEmail/${param}`, values);
+
+
+export const updatePasswordEmail = async (param,values) =>
+await axios.put(`${url}/updatePassEmail/${param}`, values);
+

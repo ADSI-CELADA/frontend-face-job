@@ -1,7 +1,8 @@
+
 import React from 'react'
 import { getPostsUser } from '../../api/apiPosts'
 import { useState,useEffect } from 'react'
-import { contextUser } from '../../Hooks/userContext'
+import { useNavigate } from 'react-router-dom';
 import {
     AiFillHeart,
     AiOutlineHeart,
@@ -11,17 +12,17 @@ import {
   import { IconContext } from "react-icons";
   import { Link } from "react-router-dom";
   import { loadInfoUser } from '../../api/api'
-  import { like,dislike,DeletePostImage } from '../../api/apiPosts'
-export const Post = () => {
-    
+  import { poststexts,dislikeTexts,likeTexts ,DeletePostsText,updateText} from '../../api/apiPosts'
+
+export const PostsTexts = () => {
+    let navigate=useNavigate()
     const [posts, setPosts] = useState([]);
     const [settings, setSettings] = useState(false);
     const [changes,setChanges]=useState("not changes")
     const [boton,setBoton]=useState([])
-    const [gestionImg, setGestionImg] = useState({
+    const [gestionText, setgestionText] = useState({
         id: "0",
         email: "",
-        img: "",
       });
       const [infoUser,setInfoUser]=useState(null)
  
@@ -31,16 +32,17 @@ export const Post = () => {
             const  result=await loadInfoUser()
             setInfoUser(result.data[0])
             setChanges("change")
-         loadImages()
+         loadTexts()
         }
         loadInfoUserk()
        
     }, [changes,boton]);
-async function loadImages(){
+async function loadTexts(){
   
     if (infoUser!=null) {
-      let response = await  getPostsUser(infoUser.email);
+      let response = await  poststexts(infoUser.email);
     setPosts(response.data)
+    console.log(response.data);
  
     
     if (response.data[0].email == infoUser.email) {
@@ -58,10 +60,10 @@ async function loadImages(){
 
     
 }
-    function postData(id, email, img) {
+    function postData(id, email) {
       document.getElementById("lolbel").click();
-      let lista = { id: id, email: email, img: img };
-      setGestionImg(lista);
+      let lista = { id: id, email: email };
+      setgestionText(lista);
     }
 
 
@@ -73,7 +75,7 @@ async function loadImages(){
   
           const formdata = new FormData();
           formdata.append("id", id);
-          const result = await like(formdata);
+          const result = await likeTexts(formdata);
           console.log(result);
           setBoton(result)
         } else {
@@ -87,7 +89,7 @@ async function loadImages(){
        
           const formdata = new FormData();
           formdata.append("id", id);
-          const result = await dislike(formdata);
+          const result = await dislikeTexts(formdata);
           console.log(result);
           setBoton(result)
         } else {
@@ -98,14 +100,26 @@ async function loadImages(){
     function alert() {
       document.getElementById("lolbel3").click();
     }
-    async function deletePost() {
-      let id = gestionImg.id;
-      console.log("Se esta eliminando...");
-      const result = await DeletePostImage(id);
-      console.log("se elimino", result);
-      window.location.href = "/profile";
-    }
-  
+    function alertUpdate() {
+        document.getElementById("lolbel4").click();
+      }
+      async function deletePostTexts() {
+        let id = gestionText.id;
+        console.log("Se esta eliminando...");
+        const result = await DeletePostsText(id);
+        console.log("se elimino", result);
+        setBoton(result)
+      }
+      async function updatePostText() {
+        let id = gestionText.id;
+        let text = document.getElementById("newText").value;
+        const formdata = new FormData();
+        formdata.append("text", text);
+        const result = await updateText(id, formdata);
+        console.log("se elimino", result);
+        setBoton(result)
+        document.getElementById('closeOne').click
+      }
 
   return (
     <>
@@ -125,7 +139,7 @@ async function loadImages(){
             {settings ? (
                     <span
                       onClick={() => {
-                        postData(post.id, post.email, post.img);
+                        postData(post.id, post.email);
                       }}
                     >
                       <IconContext.Provider
@@ -146,7 +160,7 @@ async function loadImages(){
             </div>
         </div>
         <div className="post-img">
-            <img src={post.img} alt="" />
+           <p>{post.textos}</p>
         </div>
         <div className="post-content">
             <input type="text" placeholder='Post commnet'/>
@@ -197,72 +211,111 @@ async function loadImages(){
 
    ))}
  <div className="boton2-modal">
-            <label htmlFor="btn2-modal" id="lolbel">
-              Abrir Modal
-            </label>
-          </div>
-          <input type="checkbox" id="btn2-modal" />
-          <div className="container2-modal">
-            <div className="content2-modal">
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h2>Gestionar Publicacion</h2>{" "}
-                <span>
-                  <label htmlFor="btn2-modal">
-                    <IconContext.Provider value={{ size: "30px" }}>
-                      {" "}
-                      <div>
-                        {" "}
-                        <AiFillCloseCircle />
-                      </div>
-                    </IconContext.Provider>
-                  </label>
-                </span>
-              </div>
-
-              <p>Deseas eliminar  tu publicacion?</p>
-              <div className="btn2-cerrar">
-               
-                <label  onClick={alert}>
-                  Eliminar
-                </label>
-              </div>
+              <label htmlFor="btn2-modal" id="lolbel">
+                Abrir Modal
+              </label>
             </div>
-            <label htmlFor="btn2-modal" className="cerrar2-modal"></label>
-          </div>
-          <div className="boton3-modal">
-            <label htmlFor="btn3-modal" id="lolbel3">
-              Abrir Modal
-            </label>
-          </div>
-          <input type="checkbox" id="btn3-modal" />
-          <div className="container3-modal">
-            <div className="content3-modal">
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h2>Eliminar publicacion</h2>{" "}
-                <span>
-                  <label htmlFor="btn3-modal">
-                    <IconContext.Provider value={{ size: "30px" }}>
-                      {" "}
-                      <div>
+            <input type="checkbox" id="btn2-modal" />
+            <div className="container2-modal">
+              <div className="content2-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Gestionar Publicacion</h2>{" "}
+                  <span>
+                    <label htmlFor="btn2-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
                         {" "}
-                        <AiFillCloseCircle />
-                      </div>
-                    </IconContext.Provider>
-                  </label>
-                </span>
-              </div>
+                        <div id='closeOne'>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
 
-              <p>
-                Estas seguro de eliminar esta publicacion?
-                <img src={gestionImg.img} alt="imagen" />
-              </p>
-              <div className="btn3-cerrar">
-                <label onClick={deletePost}>Eliminar</label>
+                <p>Deseas eliminar o actualizar tu publicacion?</p>
+                <div className="btn2-cerrar">
+                  <label onClick={alertUpdate}> Actualizar </label>
+                  <label style={{ marginLeft: "20px" }} onClick={alert}>
+                    Eliminar
+                  </label>
+                </div>
               </div>
+              <label htmlFor="btn2-modal" className="cerrar2-modal"></label>
             </div>
-            <label htmlFor="btn3-modal" className="cerrar3-modal"></label>
-          </div>
-    
+            <div className="boton3-modal">
+              <label htmlFor="btn3-modal" id="lolbel3">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn3-modal" />
+            <div className="container3-modal">
+              <div className="content3-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Eliminar publicacion</h2>{" "}
+                  <span>
+                    <label htmlFor="btn3-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        {" "}
+                        <div>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
+
+                <p>Estas seguro de eliminar esta publicacion?</p>
+                <div className="btn3-cerrar">
+                  <label onClick={deletePostTexts}>Eliminar</label>
+                </div>
+              </div>
+              <label htmlFor="btn3-modal" className="cerrar3-modal"></label>
+            </div>
+            <div className="boton4-modal">
+              <label htmlFor="btn4-modal" id="lolbel4">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn4-modal" />
+            <div className="container4-modal">
+              <div className="content4-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Proceso de actualizacion</h2>{" "}
+                  <span>
+                    <label htmlFor="btn4-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        {" "}
+                        <div id='closeOne'>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
+
+                <textarea name="" id="newText" cols="40" rows="10"></textarea>
+                <div className="btn4-cerrar">
+                  <label onClick={updatePostText}>Actualizar</label>
+                </div>
+              </div>
+              <label htmlFor="btn4-modal" className="cerrar4-modal"></label>
+            </div>
+
+
+
+
+
+
+
 
  </>
   )

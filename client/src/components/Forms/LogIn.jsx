@@ -45,7 +45,7 @@ export const LogIn = () => {
                 timer: 1500,
               });
               document.cookie=`token=${response.data.token};max-age=${60*1440};path=/;samesite=strict`
-              navigate('/profile')
+              window.location.href="/"
             } else if (data == "PASSWORD_ERROR") {
               Swal.fire({
                 position: "top-end",
@@ -88,6 +88,7 @@ export const LogIn = () => {
           )}
         </Formik>
         <a href="/signup">¿No tienes cuenta? registrate</a>
+        <a href="/RecoveryPass">¿Olvidate tu contraseña? recuperala</a>
         <a href="/">volver</a>
       </div>
     </div>

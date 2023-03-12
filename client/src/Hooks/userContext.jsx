@@ -8,7 +8,8 @@ export const contextUser =React.createContext({})
 export default function ContextUserData({children}){
     const [loged,setLoget]=useState(false)
     const [infoUser,setInfoUser]=useState(null)
-  
+    const [imagesTexts,setImagesTexts]=useState(true)
+    const [recoverPass,setRecoverPass]=useState("")
   useEffect(()=>{
     
     loadInfoUserPage()
@@ -18,7 +19,7 @@ export default function ContextUserData({children}){
 async function loadInfoUserPage() {
     const result=await loadInfoUser();
     
-   if (!result.data.lengh==0) {
+   if (!result.data[0].name) {
       setLoget(false)
       setInfoUser("notloged")
       console.log("no esta logeado");
@@ -31,9 +32,17 @@ async function loadInfoUserPage() {
       console.log("esta logeado");
     }
   }
-
+function postImages() {
+  setImagesTexts(true)
+}
+function postTexts() {
+  setImagesTexts(false)
+}
+function changeEmail(newEmail) {
+  setRecoverPass(newEmail)
+}
     return(
-        <contextUser.Provider value={{loged,setLoget,infoUser,setInfoUser,loadInfoUserPage}}>
+        <contextUser.Provider value={{recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts}}>
             {children}
         </contextUser.Provider>
     )

@@ -9,5 +9,55 @@ export const createPostImage= async (param,data) =>
   export const getPostsUser= async (param) =>
   await axios.get(`${url}/user/postsimagenes/${param}`);
 
+  export const changeImgProfile = async (formdata) =>
+  await axios.put(`${url}/user/Image`, formdata, {
+    headers: {
+      token: token,
+    },
+  })
 
+  export const like = async (id) =>
+  await axios.post(`${url}/user/usermegusta/`,id,{
+    headers: {
+      token: token,
+    },
+  })
+export const dislike = async (id) =>
+  await axios.post(`${url}/user/usernomegusta`, id,{
+    headers: {
+      token: token,
+    },
+  })
+
+  export const DeletePostImage = async (para) =>
+  await axios.delete(`${url}/user/userEliminaPost/${para}`);
+
+
+  /* texts consumos*/
+  export const poststexts = async (para) =>
+  await axios.get(`${url}/user/userPoststextos/${para}`);
+
+  export const createPostText = async (param, data) =>
+  await axios.post(`${url}/user/createposttext/${param}`, data);
+
+
+  export const likeTexts = async (id) =>
+  await axios.post(`${url}/user/usermegustatext/`,id,{
+    headers: {
+      token: token,
+    },
+  })
+
+export const dislikeTexts = async (id) =>
+await axios.post(`${url}/user/usernomegustatext/`,id,{
+  headers: {
+    token: token,
+  },
+})
+
+export const DeletePostsText = async (para) =>
+await axios.delete(`${url}/user/userEliminaPostText/${para}`);
+
+export const updateText = async (para, text) =>
+await axios.put(`${url}/user/userUpdatePostText/${para}`, text);
   

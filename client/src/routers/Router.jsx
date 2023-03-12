@@ -7,7 +7,9 @@ import { Catalogue } from "../pages/Catalogue";
 import Index from "../pages/Index"
 import { Profile } from "../pages/Profile";
 import { CreatePost } from "../components/Forms/FormsCreatePosts/PostImages/CreatePostImage";
-
+import { CreatePostTexts } from "../components/Forms/FormsCreatePosts/PostImages/CreatePostTexts";
+import {RecoveryPass} from '../components/Forms/FormsCreatePosts/postText/RecuperaPassEmail'
+import { RecoverCode } from "../components/Forms/FormsCreatePosts/postText/RecoverCode";
 export const Router = () => {
   return (
     <>
@@ -19,6 +21,10 @@ export const Router = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalogue" element={<Catalogue/> } />
           <Route path="/createPostImage" element={<CreatePost/> } />
+          <Route path="/createPostText" element={<CreatePostTexts/> } />
+          <Route path="/RecoveryPass" element={<RecoveryPass/> } />
+          <Route path="/RecoverCode" element={<RecoverCode/> } />
+    
           {/* 
           
           <Route path="/inicioSesionC" element={<InicioSC />} />
