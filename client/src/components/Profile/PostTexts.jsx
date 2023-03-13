@@ -3,6 +3,7 @@ import React from 'react'
 import { getPostsUser } from '../../api/apiPosts'
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import {  BsFillSendFill } from "react-icons/bs";
 import {
     AiFillHeart,
     AiOutlineHeart,
@@ -61,7 +62,7 @@ async function loadTexts(){
     
 }
     function postData(id, email) {
-      document.getElementById("lolbel").click();
+      document.getElementById("lolbel").click();  
       let lista = { id: id, email: email };
       setgestionText(lista);
     }
@@ -163,7 +164,10 @@ async function loadTexts(){
            <p>{post.textos}</p>
         </div>
         <div className="post-content">
-            <input type="text" placeholder='Post commnet'/>
+        <p style={{display:"flex"}}>
+            <input type="text" placeholder="Post commnet"  id='coment' /> <p style={{marginTop:"10px",marginLeft:"5px"}}><BsFillSendFill onClick={()=>{comment(post.id)}} /></p>
+          </p>
+            
             <h2>{post.name}</h2>
             <p>{post.description}</p>
         </div>

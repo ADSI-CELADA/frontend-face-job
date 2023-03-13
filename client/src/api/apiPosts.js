@@ -68,4 +68,12 @@ await axios.delete(`${url}/user/userEliminaPostText/${para}`);
 
 export const updateText = async (para, text) =>
 await axios.put(`${url}/user/userUpdatePostText/${para}`, text);
-  
+ 
+
+
+export const insertComment = async (id,commet) =>
+await axios.post(`${url}/user/insertComment/${id}`,commet,{
+  headers: {
+    token: token,
+  },
+})

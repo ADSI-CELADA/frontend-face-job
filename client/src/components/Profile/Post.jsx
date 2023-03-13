@@ -8,10 +8,11 @@ import {
     AiFillSetting,
     AiFillCloseCircle,
   } from "react-icons/ai";
+  import {  BsFillSendFill } from "react-icons/bs";
   import { IconContext } from "react-icons";
   import { Link } from "react-router-dom";
   import { loadInfoUser } from '../../api/api'
-  import { like,dislike,DeletePostImage } from '../../api/apiPosts'
+  import { like,dislike,DeletePostImage,insertComment } from '../../api/apiPosts'
 export const Post = () => {
     
     const [posts, setPosts] = useState([]);
@@ -105,7 +106,14 @@ async function loadImages(){
       console.log("se elimino", result);
       window.location.href = "/profile";
     }
-  
+async  function comment(id) {
+    console.log('send',id);
+    let comment=document.getElementById('coment').value
+    const formdata=new FormData()
+    formdata.append("comment",comment)
+    const result=await insertComment(id,formdata)
+    console.log(result);
+  }
 
   return (
     <>
@@ -149,7 +157,10 @@ async function loadImages(){
             <img src={post.img} alt="" />
         </div>
         <div className="post-content">
-            <input type="text" placeholder='Post commnet'/>
+          <p style={{display:"flex"}}>
+            <input type="text" placeholder="Post commnet"  id='coment' /> <p style={{marginTop:"10px",marginLeft:"5px"}}><BsFillSendFill onClick={()=>{comment(post.id)}} /></p>
+          </p>
+            
             <h2>{post.name}</h2>
             <p>{post.description}</p>
         </div>
