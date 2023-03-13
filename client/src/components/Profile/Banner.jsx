@@ -1,8 +1,6 @@
 import React, { useState,useContext, useEffect } from 'react'
-import icon from '../../assets/img/bear.jpg'
 import follow from '../../assets/img/follow.png'
 import like from '../../assets/img/like.png'
-import send from '../../assets/img/send.png'
 import post from '../../assets/img/post.png'
 import { changeImgProfile } from '../../api/apiPosts'
 import { contextUser } from '../../Hooks/userContext'
@@ -86,10 +84,9 @@ console.log(e.target.files[0]);
                         <p>{infoUser.profession}</p>
                         <div className="banner-stats">
                             <ul>
-                                <li><img src={follow}/></li>
-                                <li><img src={like}/></li>
-                                <li><img src={send}/></li>
-                                <li><img src={post}/></li>
+                                <li><i class='bx bx-user-plus bx-md'></i></li>
+                                <li><i class='bx bx-heart bx-md'></i></li>
+                                <li><i class='bx bx-folder-plus bx-md' ></i></li>
                             </ul>
                         </div>
                     </div>  

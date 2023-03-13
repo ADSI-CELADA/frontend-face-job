@@ -7,8 +7,8 @@ export const ProfileP = () => {
   return (
     <section className="section-profile">
       <Navbar/>
-      <Banner  />
-      <ContainerPost />
+      <Banner/>
+      <ContainerPost/>
     </section>
   )
 }

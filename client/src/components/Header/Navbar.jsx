@@ -53,12 +53,17 @@ export const Navbar = () =>  {
             </li>
           </ul>
           
-          { userContextInfo.loged ? <div> <div className="login">
+          { userContextInfo.loged ? 
+          <div>
+            <div className="login">
               <Link to="/profile" className="btn">
                 {userContextInfo.infoUser.name}
               </Link>
-             
-          </div> <span><AiOutlineImport onClick={closeSesion} /> </span></div>  : <div className="login">
+              <span>
+                <i class='bx bx-log-out bx-sm bx-border-circle' onClick={closeSesion} ></i>
+              </span>  
+            </div> 
+         </div>  : <div className="login">
               <Link to="/login" className="btn">
                 Iniciar Sesion
               </Link>

@@ -128,32 +128,25 @@ async function loadTexts(){
     <section className="post-contain" key={post.id}>
     <div data-aos="fade-up" data-aos-duration="500" className="post">
         <div className="post-info">
+        <div className='post-info--c'>
             <div className="post-icon">
-                <img src={post.iconUser} alt="icon"/>
+                  <img src={post.iconUser} alt="icon"/>
             </div>
-            <div>
-            <h2>{post.name}</h2>
-            <p>{post.profession}</p>
-            </div>
-            <div className="menu"
-                  style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div>
+                <h2>{post.name}</h2>
+                <p>{post.profession}</p>
+              </div>
+          </div>
+          <div className="menu">
             {settings ? (
                     <span
                       onClick={() => {
-                        postData(post.id, post.email);
+                        postData(post.id, post.email, post.img);
                       }}
                     >
-                      <IconContext.Provider
-                        value={{
-                          size: "30px",
-                          color: "white",
-                          border: "solid #043248 ",
-                        }}
-                      >
                         <div>
-                          <AiFillSetting />
+                          <i class='bx bxs-cog bx-sm' ></i>
                         </div>
-                      </IconContext.Provider>
                     </span>
                   ) : (
                     ""
@@ -164,15 +157,22 @@ async function loadTexts(){
            <p>{post.textos}</p>
         </div>
         <div className="post-content">
-        <p style={{display:"flex"}}>
-            <input type="text" placeholder="Post commnet"  id='coment' /> <p style={{marginTop:"10px",marginLeft:"5px"}}><BsFillSendFill onClick={()=>{comment(post.id)}} /></p>
-          </p>
-            
+          <div>
+            <input type="text" placeholder="Post commnet"  id='coment' />
+            <p>
+              <i class='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
+              </i>
+            </p>
+          </div>
+
             <h2>{post.name}</h2>
             <p>{post.description}</p>
         </div>
         <div className="post-stats">
-            <div className="post-like"><p style={{display:"flex",cursor:"pointer"}}>Likes {post.likes}   <span
+            <div className="post-like">
+              <p>
+                   
+                <span
                         onClick={() => {
                           likeThis(post.id);
                         }}
@@ -180,34 +180,48 @@ async function loadTexts(){
                           notLikeThis(post.id);
                         }}
                       > {post.estado == "megusta" ? (
-                          <IconContext.Provider
-                            value={{
-                              size: "30px",
-                              color: "red",
-                              border: "solid #043248 ",
-                            }}
-                          >
+                          
                             <div>
-
-                              <AiFillHeart />
+                              <div className="heart">
+                                <i class='bx bxs-heart bx-sm bx-border-circle' ></i>
+                                </div>
                             </div>
-                          </IconContext.Provider>
                         ) : (
-                          <IconContext.Provider
-                            value={{
-                              size: "30px",
-                              color: "red",
-                              border: "solid #043248 ",
-                            }}
-                          >
-                            <div>
-
-                              <AiOutlineHeart />
-                            </div>
-                          </IconContext.Provider>
-                        )}</span></p></div>
+                          
+                              <div>
+                                <div className="heart">
+                                  <i class='bx bx-heart bx-sm bx-border-circle'></i>
+                                </div>                            
+                              </div>
+                        )}</span>
+                        {post.likes}
+                        </p>
+                      </div>
            
-            <div className="post-comment">📝</div>
+                      <div className="post-comment">
+            <div className="post-like">
+              <p>
+                   
+                <span
+                        onClick={() => {
+                          likeThis(post.id);
+                        }}
+                        onDoubleClick={() => {
+                          notLikeThis(post.id);
+                        }}
+                      > 
+                          
+                            <div>
+                              <div className="message">
+                           <Link to="/"> <i class='bx bxs-message-alt-dots bx-sm bx-border-circle'  ></i></Link>    
+                                </div>
+                            </div>
+                        </span>
+                        {post.likes}
+                        </p>
+                      </div>
+
+            </div>
           
         </div>
     </div>

@@ -8,7 +8,6 @@ export const MiniCard = () =>  {
       <div className="mini-card-info">
         <h2>User Profile Name</h2>
         <p>Profesion</p>
-        <hr />
         <a href="/">Ver Mas</a>      
       </div>
     </div>
