@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { loadInfoUser } from "../../api/api"
-import { insertComment,getCommentsUsers } from "../../api/apiPosts"
+import { insertComment,getCommentsUsers,updateComments,deleteComments } from "../../api/apiPosts"
 import { Navbar } from "../Header/Navbar"
 import { contextUser } from "../../Hooks/userContext"
 import {AiFillCloseCircle} from "react-icons/ai";
@@ -14,6 +14,7 @@ export  const Comments=()=>{
    const [comments,setComments]=useState([])
    const [changes,setChanges]=useState("")
    const [infoComment,setInfoComments]=useState(0)
+   
 
    useEffect(()=>{
         async function loadInfo() {
@@ -53,25 +54,52 @@ async function sendComment() {
 }
 function openModal(id) {
    setInfoComments(id)
-    document.getElementById('lolbel5').click
+   
+  let res= document.getElementById('lolbel5').click()
+  console.log(res);
     console.log('hola');
 }
-function deleteComment() {
-    document.getElementById('lolbel3').click
-    console.log(infoComment," eliminanda");
-}
 function alert() {
-    console.log(infoComment," esta seguro de elimar...");
+    document.getElementById('lolbel3').click()
+    console.log(infoComment," eliminanda");
+    
+}
+async function deleteComment() {
+  if (infoComment!=0) {
+    const formdata=new FormData();
+    formdata.append('param',context.idComment)
+   const result=await deleteComments(infoComment,formdata)
+    console.log(result);
+    document.getElementById('closetwo').click()
+    document.getElementById('closeOne').click()
+    setChanges("camb")
+  }else{
+    console.log('hubo un error');
+  }
+  
 }
 function alertUpdate() {
-    document.getElementById('lolbel4').click
+    document.getElementById('lolbel4').click()
 }
-function updateComment() {
-    console.log("se actualizo");
+async function updateComment() {
+ let newText= document.getElementById('newText').value
+
+ if (infoComment!=0) {
+  const formdata=new FormData();
+  formdata.append('comment',newText)
+   let result=await updateComments(infoComment,formdata)
+    console.log(result);
+    document.getElementById('newText').value=null
+    document.getElementById('closeT').click()
+    document.getElementById('closeOne').click()
+    setChanges("camb")
+ }else{
+  console.log("hubo un error");
+ }
+   
+    
 }
-function fun() {
-    console.log("hola");
-}
+
 
     return(
         <div>
@@ -91,7 +119,43 @@ function fun() {
         </section>
     </main>
  
-   
+    <div className="boton5-modal">
+              <label htmlFor="btn5-modal" id="lolbel5">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn5-modal" />
+            <div className="container5-modal">
+              <div className="content5-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Gestionar Comentarios</h2>{" "}
+                  <span>
+                    <label htmlFor="btn5-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        {" "}
+                        <div id='closeOne'>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
+
+                <p>Deseas eliminar o actualizar tu Comentario?</p>
+                <div className="btn5-cerrar" style={{marginTop:"10px"}}>
+                  <label onClick={alertUpdate}> Actualizar </label>
+                  <label style={{ marginLeft: "20px" }} onClick={alert}>
+                    Eliminar
+                  </label>
+                </div>
+              </div>
+              <label htmlFor="btn5-modal" className="cerrar5-modal"></label>
+            </div>
+
+
    
    {comments.map((com)=>(
    <ul id="cometarios" class="conenedor-2" key={com.id}>
@@ -112,43 +176,7 @@ function fun() {
    
 </div>
 
- <div className="boton5-modal">
-              <label htmlFor="btn5-modal" id="lolbel5">
-                Abrir Modal
-              </label>
-            </div>
-            <input type="checkbox" id="btn5-modal" />
-            <div className="container5-modal">
-              <div className="content5-modal">
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <h2>Gestionar Publicacion</h2>{" "}
-                  <span>
-                    <label htmlFor="btn5-modal">
-                      <IconContext.Provider value={{ size: "30px" }}>
-                        {" "}
-                        <div id='closeOne'>
-                          {" "}
-                          <AiFillCloseCircle />
-                        </div>
-                      </IconContext.Provider>
-                    </label>
-                  </span>
-                </div>
-
-                <p>Deseas eliminar o actualizar tu publicacion?</p>
-                <div className="btn5-cerrar">
-                  <label onClick={alertUpdate}> Actualizar </label>
-                  <label style={{ marginLeft: "20px" }} onClick={alert}>
-                    Eliminar
-                  </label>
-                </div>
-              </div>
-              <label htmlFor="btn5-modal" className="cerrar5-modal"></label>
-            </div>
-
-
+ 
 
 
 <div className="boton3-modal">
@@ -162,12 +190,12 @@ function fun() {
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <h2>Eliminar publicacion</h2>{" "}
+                  <h2>Eliminar Comentario</h2>{" "}
                   <span>
                     <label htmlFor="btn3-modal">
                       <IconContext.Provider value={{ size: "30px" }}>
                         {" "}
-                        <div>
+                        <div id='closetwo'>
                           {" "}
                           <AiFillCloseCircle />
                         </div>
@@ -176,7 +204,7 @@ function fun() {
                   </span>
                 </div>
 
-                <p>Estas seguro de eliminar esta publicacion?</p>
+                <p>Estas seguro de eliminar este Comentario?</p>
                 <div className="btn3-cerrar">
                   <label onClick={deleteComment}>Eliminar</label>
                 </div>
@@ -199,7 +227,7 @@ function fun() {
                     <label htmlFor="btn4-modal">
                       <IconContext.Provider value={{ size: "30px" }}>
                         {" "}
-                        <div id='closeOne'>
+                        <div id='closeT'>
                           {" "}
                           <AiFillCloseCircle />
                         </div>

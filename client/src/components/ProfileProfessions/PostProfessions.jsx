@@ -217,7 +217,7 @@ async function loadImages(){
                                 </div>
                             </div>
                         </span>
-                        {post.likes}
+                        {post.comments}
                         </p>
                       </div>
 

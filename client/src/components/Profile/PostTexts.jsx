@@ -2,7 +2,6 @@
 import React from 'react'
 import { getPostsUser } from '../../api/apiPosts'
 import { useState,useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import {  BsFillSendFill } from "react-icons/bs";
 import {
     AiFillHeart,
@@ -11,11 +10,14 @@ import {
     AiFillCloseCircle,
   } from "react-icons/ai";
   import { IconContext } from "react-icons";
+  import { useNavigate } from 'react-router-dom';
   import { Link } from "react-router-dom";
   import { loadInfoUser } from '../../api/api'
-  import { poststexts,dislikeTexts,likeTexts ,DeletePostsText,updateText} from '../../api/apiPosts'
-
+  import { poststexts,dislikeTexts,likeTexts ,DeletePostsText,updateText,insertCommentText} from '../../api/apiPosts'
+import { contextUser } from '../../Hooks/userContext';
+import { useContext } from 'react';
 export const PostsTexts = () => {
+  let context=useContext(contextUser)
     let navigate=useNavigate()
     const [posts, setPosts] = useState([]);
     const [settings, setSettings] = useState(false);
@@ -121,7 +123,24 @@ async function loadTexts(){
         setBoton(result)
         document.getElementById('closeOne').click
       }
-
+      async  function commentText(id) {
+        console.log('send',id);
+        let comment=document.getElementById('coment').value
+        const formdata=new FormData()
+        formdata.append("coment",comment)
+        const result=await insertCommentText(id,formdata)
+        console.log(result);
+        document.getElementById('coment').value=null
+      }
+      
+      function commentsUsers(params) {
+        context.changeIdComment(params)
+      if (context.idComment==params) {
+        navigate("/CommentsTextUsers")
+      }else{
+    document.getElementById('comentar').click
+      }
+      }
   return (
     <>
    {posts.map((post)=>(
@@ -160,7 +179,7 @@ async function loadTexts(){
           <div>
             <input type="text" placeholder="Post commnet"  id='coment' />
             <p>
-              <i class='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
+              <i class='bx bxs-send bx-sm' onClick={()=>{commentText(post.id)}}>
               </i>
             </p>
           </div>
@@ -203,21 +222,17 @@ async function loadTexts(){
               <p>
                    
                 <span
-                        onClick={() => {
-                          likeThis(post.id);
-                        }}
-                        onDoubleClick={() => {
-                          notLikeThis(post.id);
-                        }}
+                       
                       > 
                           
                             <div>
-                              <div className="message">
-                           <Link to="/"> <i class='bx bxs-message-alt-dots bx-sm bx-border-circle'  ></i></Link>    
+                            <div className="message">
+                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
                                 </div>
                             </div>
+                            
                         </span>
-                        {post.likes}
+                        {post.comments}
                         </p>
                       </div>
 

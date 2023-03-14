@@ -13,6 +13,7 @@ import { RecoverCode } from "../components/Forms/FormsCreatePosts/postText/Recov
 import { RecoverPassNewPass } from "../components/Forms/FormsCreatePosts/postText/RecoverPassNewPass";
 import { ProfileP } from "../pages/ProfileProfession";
 import {Comments} from "../components/Profile/Comments"
+import { CommentsText } from "../components/Profile/CommentsText";
 export const Router = () => {
   return (
     <>
@@ -30,6 +31,7 @@ export const Router = () => {
           <Route path="/recoverNewPass" element={<RecoverPassNewPass/> } />
           <Route path="/ProfileProfessions" element={<ProfileP/> } />
           <Route path="/CommentsUsers" element={<Comments/> } />
+          <Route path="/CommentsTextUsers" element={<CommentsText/> } />
     
           {/* 
           

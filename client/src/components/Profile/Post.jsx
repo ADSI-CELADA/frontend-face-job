@@ -210,7 +210,7 @@ document.getElementById('comentar').click
                                 </div>
                             </div>
                         </span>
-                        {post.likes}
+                        {post.comments}
                         </p>
                       </div>
 
