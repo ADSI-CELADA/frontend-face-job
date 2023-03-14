@@ -11,7 +11,8 @@ import {
   import { IconContext } from "react-icons";
   import { Link } from "react-router-dom";
   import { consultProfileProfessions } from '../../api/api'
-  import { like,dislike,DeletePostImage } from '../../api/apiPosts'
+  import { like,dislike,DeletePostImage,insertComment } from '../../api/apiPosts'
+  import { useNavigate } from 'react-router-dom';
 export const Post = () => {
   let contextPosts=useContext(contextUser)
     const [posts, setPosts] = useState([]);
@@ -121,36 +122,64 @@ async function loadImages(){
       console.log("se elimino", result);
       window.location.href = "/profile";
     }
-  
+    async  function comment(id) {
+      console.log('send',id);
+      let comment=document.getElementById('coment').value
+      const formdata=new FormData()
+      formdata.append("coment",comment)
+      const result=await insertComment(id,formdata)
+      console.log(result);
+      document.getElementById('coment').value=null
+    }
+    let navigate=useNavigate()
+    function commentsUsers(params) {
+      contextPosts.changeIdComment(params)
+    if (contextPosts.idComment==params) {
+      navigate("/CommentsUsers")
+    }else{
+  document.getElementById('comentar').click
+    }
+    }
 
   return (
     <>
-   {posts.map((post)=>(
+  {posts.map((post)=>(
     <section className="post-contain" key={post.id}>
     <div data-aos="fade-up" data-aos-duration="500" className="post">
         <div className="post-info">
+          <div className='post-info--c'>
             <div className="post-icon">
-                <img src={post.iconUser} alt="icon"/>
+                  <img src={post.iconUser} alt="icon"/>
             </div>
-            <div>
-            <h2>{post.name}</h2>
-            <p>{post.profession}</p>
-            </div>
-            <div className="menu"
-                  style={{ display: "flex", justifyContent: "flex-end" }}>
-          
+              <div>
+                <h2>{post.name}</h2>
+                <p>{post.profession}</p>
+              </div>
+          </div>
+            <div className="menu">
+           
             </div>
         </div>
         <div className="post-img">
             <img src={post.img} alt="" />
         </div>
         <div className="post-content">
-            <input type="text" placeholder='Post commnet'/>
+          <div>
+            <input type="text" placeholder="Post commnet"  id='coment' />
+            <p>
+              <i class='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
+              </i>
+            </p>
+          </div>
+
             <h2>{post.name}</h2>
             <p>{post.description}</p>
         </div>
         <div className="post-stats">
-            <div className="post-like"><p style={{display:"flex",cursor:"pointer"}}>Likes {post.likes}   <span
+            <div className="post-like">
+              <p>
+                   
+                <span
                         onClick={() => {
                           likeThis(post.id);
                         }}
@@ -158,34 +187,41 @@ async function loadImages(){
                           notLikeThis(post.id);
                         }}
                       > {post.estado == "megusta" ? (
-                          <IconContext.Provider
-                            value={{
-                              size: "30px",
-                              color: "red",
-                              border: "solid #043248 ",
-                            }}
-                          >
+                          
                             <div>
-
-                              <AiFillHeart />
+                              <div className="heart">
+                                <i className='bx bxs-heart bx-sm bx-border-circle' ></i>
+                                </div>
                             </div>
-                          </IconContext.Provider>
                         ) : (
-                          <IconContext.Provider
-                            value={{
-                              size: "30px",
-                              color: "red",
-                              border: "solid #043248 ",
-                            }}
-                          >
-                            <div>
-
-                              <AiOutlineHeart />
-                            </div>
-                          </IconContext.Provider>
-                        )}</span></p></div>
+                          
+                              <div>
+                                <div className="heart">
+                                  <i className='bx bx-heart bx-sm bx-border-circle'></i>
+                                </div>                            
+                              </div>
+                        )}</span>
+                        {post.likes}
+                        </p>
+                      </div>
            
-            <div className="post-comment">📝</div>
+            <div className="post-comment">
+            <div className="post-like">
+              <p>
+                   
+                <span> 
+                          
+                            <div>
+                              <div className="message">
+                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
+                                </div>
+                            </div>
+                        </span>
+                        {post.likes}
+                        </p>
+                      </div>
+
+            </div>
           
         </div>
     </div>

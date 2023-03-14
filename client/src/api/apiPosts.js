@@ -77,3 +77,13 @@ await axios.post(`${url}/user/insertComment/${id}`,commet,{
     token: token,
   },
 })
+
+export const getCommentsUsers=async(id)=>
+await axios.get(`${url}/user/getComments/${id}`)
+
+
+export const updateComments=async(id,comment)=>
+await axios.put(`${url}/user/updateComments/${id}`,comment)
+
+
+
