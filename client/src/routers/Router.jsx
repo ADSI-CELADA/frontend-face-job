@@ -14,6 +14,8 @@ import { RecoverPassNewPass } from "../components/Forms/FormsCreatePosts/postTex
 import { ProfileP } from "../pages/ProfileProfession";
 import {Comments} from "../components/Profile/Comments"
 import { CommentsText } from "../components/Profile/CommentsText";
+import { Ajustes } from "../pages/Ajustes";
+import { Update } from "../components/Forms/Update";
 export const Router = () => {
   return (
     <>
@@ -32,6 +34,8 @@ export const Router = () => {
           <Route path="/ProfileProfessions" element={<ProfileP/> } />
           <Route path="/CommentsUsers" element={<Comments/> } />
           <Route path="/CommentsTextUsers" element={<CommentsText/> } />
+          <Route path="/Ajustes" element={<Ajustes/> } />
+          <Route path="/UpdateForm" element={<Update/> } />
     
           {/* 
           
