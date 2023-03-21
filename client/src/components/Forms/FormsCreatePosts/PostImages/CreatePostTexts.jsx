@@ -44,7 +44,7 @@ let navigate=useNavigate()
             <div>
                 <input  name='textos' id='description' placeholder='texto ' type="text"   onChange={handleChange}/>
                 <input name='description' placeholder='description' type="text"   onChange={handleChange}/>
-                <button id="mandar" >  {isSubmitting ? "publicando..." : "publicar" }r</button>
+                <button id="mandar" >  {isSubmitting ? "publicando..." : "publicar" }</button>
             </div>
             <a href='/signup'>¿No tienes cuenta? registrate</a>
               <a href="/">volver</a>

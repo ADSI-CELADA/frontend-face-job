@@ -50,7 +50,7 @@ export const CreatePost = () => {
                 <p>Face-Job</p>
             </section>
             <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>
-            <div>
+            <div className="form-post">
                 <input id='description' placeholder='description image' type="text"   onChange={selectedDescription}/>
                 <input placeholder='image' type="file" id="file" onChange={selectedHandler} />
                 <button id="mandar" onClick={sendHandler}>subir</button>
