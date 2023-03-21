@@ -77,7 +77,7 @@ console.log(e.target.files[0]);
             <section>
                 <div className="banner-icon" onClick={changesFor}>
                     <img src={infoUser.iconUser} alt="icon"/>
-                        <div className='banner-icon-cape' >Cambiar icono</div>
+                    <div className='banner-icon-cape' >Cambiar icono</div>
                 </div>
                     <div className="banner-info">
                         <h2>{infoUser.name}</h2>
