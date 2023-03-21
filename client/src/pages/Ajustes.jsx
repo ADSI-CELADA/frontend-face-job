@@ -5,19 +5,27 @@ import { Navbar } from "../components/Header/Navbar";
 
 export const Ajustes = () => {
   const [infoUser, setInfoUser] = useState([]);
+  const [infoAge, setInfoAge] = useState([]);
 
   useEffect(() => {
-    async function loadInfoUserAjustes() {
+    async function loadInfoUserSettings() {
       const result = await loadInfoUser();
       setInfoUser(result.data[0]);
     }
-    loadInfoUserAjustes();
+    loadInfoUserSettings();
   }, []);
 
-  /* async function deleteUser() {
-        const result = await 
-    }*/
-
+    useEffect(() => {
+      async function loadInfoUserSettings() {
+        const result = await loadInfoUser();
+        let age=""
+        for (let i = 0; i < 10; i++) {
+        age = age+result.data[0].age[i]; 
+        }
+        setInfoAge(age);
+      }
+      loadInfoUserSettings();
+    }, []);
   return (
     <>
       <Navbar />
@@ -64,7 +72,7 @@ export const Ajustes = () => {
             <p>Nombres: {infoUser.name}</p>
             <p>Apellidos: {infoUser.lastname}</p>
             <p>Numero: {infoUser.number}</p>
-            <p>Fecha de nacimiento: {infoUser.age}</p>
+            <p>Fecha de nacimiento: {infoAge}</p>
             <p>Profesion: {infoUser.profession}</p>
           </div>
         </div>

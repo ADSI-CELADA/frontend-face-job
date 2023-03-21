@@ -44,7 +44,7 @@ export const Update = () => {
                 }
             }}
             >
-            {({ handleChange, handleSubmit }) => (
+            {({ handleChange, handleSubmit, isSubmitting }) => (
                 <Form onSubmit={handleSubmit}>
                 <input
                     name="name"
@@ -79,7 +79,7 @@ export const Update = () => {
                     required
                 />
                 
-                <button type="submit">Actualizar</button>
+                <button type="submit">{isSubmitting ? "Actualizando..." : "Actualizar" }</button>
                 </Form>
             )}
             </Formik>
