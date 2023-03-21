@@ -1,20 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { getPostsUser } from '../../api/apiPosts'
 import { useState,useEffect } from 'react'
 import { contextUser } from '../../Hooks/userContext'
+import { Comments } from './Comments'
 import {
-    AiFillHeart,
-    AiOutlineHeart,
-    AiFillSetting,
-    AiFillCloseCircle,
+    AiFillCloseCircle
   } from "react-icons/ai";
   import {  BsFillSendFill } from "react-icons/bs";
   import { IconContext } from "react-icons";
-  import { Link } from "react-router-dom";
+  import { Link,useNavigate } from "react-router-dom";
   import { loadInfoUser } from '../../api/api'
   import { like,dislike,DeletePostImage,insertComment } from '../../api/apiPosts'
 export const Post = () => {
-    
+    let context=useContext(contextUser)
     const [posts, setPosts] = useState([]);
     const [settings, setSettings] = useState(false);
     const [changes,setChanges]=useState("not changes")
@@ -110,11 +108,20 @@ async  function comment(id) {
     console.log('send',id);
     let comment=document.getElementById('coment').value
     const formdata=new FormData()
-    formdata.append("comment",comment)
+    formdata.append("coment",comment)
     const result=await insertComment(id,formdata)
     console.log(result);
+    document.getElementById('coment').value=null
   }
-
+  let navigate=useNavigate()
+  function commentsUsers(params) {
+    context.changeIdComment(params)
+  if (context.idComment==params) {
+    navigate("/CommentsUsers")
+  }else{
+document.getElementById('comentar').click
+  }
+  }
   return (
     <>
    {posts.map((post)=>(
@@ -138,7 +145,7 @@ async  function comment(id) {
                       }}
                     >
                         <div>
-                          <i class='bx bxs-cog bx-sm' ></i>
+                          <i className='bx bxs-cog bx-sm' ></i>
                         </div>
                     </span>
                   ) : (
@@ -176,14 +183,14 @@ async  function comment(id) {
                           
                             <div>
                               <div className="heart">
-                                <i class='bx bxs-heart bx-sm bx-border-circle' ></i>
+                                <i className='bx bxs-heart bx-sm bx-border-circle' ></i>
                                 </div>
                             </div>
                         ) : (
                           
                               <div>
                                 <div className="heart">
-                                  <i class='bx bx-heart bx-sm bx-border-circle'></i>
+                                  <i className='bx bx-heart bx-sm bx-border-circle'></i>
                                 </div>                            
                               </div>
                         )}</span>
@@ -195,22 +202,15 @@ async  function comment(id) {
             <div className="post-like">
               <p>
                    
-                <span
-                        onClick={() => {
-                          likeThis(post.id);
-                        }}
-                        onDoubleClick={() => {
-                          notLikeThis(post.id);
-                        }}
-                      > 
+                <span> 
                           
                             <div>
                               <div className="message">
-                           <Link to="/"> <i class='bx bxs-message-alt-dots bx-sm bx-border-circle'  ></i></Link>    
+                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
                                 </div>
                             </div>
                         </span>
-                        {post.likes}
+                        {post.comments}
                         </p>
                       </div>
 

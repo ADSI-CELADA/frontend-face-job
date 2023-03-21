@@ -11,6 +11,7 @@ export default function ContextUserData({children}){
     const [imagesTexts,setImagesTexts]=useState(true)
     const [recoverPass,setRecoverPass]=useState("")
     const [emailProfessions,setEmailProfessions]=useState("null")
+    const [idComment,setIdComment]=useState(null)
   useEffect(()=>{
     
     loadInfoUserPage()
@@ -44,8 +45,11 @@ function changeEmail(newEmail) {
 function chageEmailProfessions(params) {
   setEmailProfessions(params)
 }
+function changeIdComment(params) {
+  setIdComment(params)
+}
     return(
-        <contextUser.Provider value={{emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts}}>
+        <contextUser.Provider value={{idComment,changeIdComment,emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts}}>
             {children}
         </contextUser.Provider>
     )

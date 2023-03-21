@@ -84,9 +84,9 @@ console.log(e.target.files[0]);
                         <p>{infoUser.profession}</p>
                         <div className="banner-stats">
                             <ul>
-                                <li><i class='bx bx-user-plus bx-md'></i></li>
-                                <li><i class='bx bx-heart bx-md'></i></li>
-                                <li><i class='bx bx-folder-plus bx-md' ></i></li>
+                                <li><i className='bx bx-user-plus bx-md'></i></li>
+                                <li><i className='bx bx-heart bx-md'></i></li>
+                                <li><i className='bx bx-folder-plus bx-md' ></i></li>
                             </ul>
                         </div>
                     </div>  
@@ -95,8 +95,8 @@ console.log(e.target.files[0]);
                             <ul>
                                 <li><a href="#" ><span onClick={postImages}>Publicaciones</span> </a></li>
                                 <li><a href="#" ><span onClick={postText}>Postales</span></a></li>
-                                <li><a href="#"> <Link to="/createPostImage"  >Publicar</Link> </a></li>
-                                <li><a href="#">Ajustes</a></li>
+                                <li> <Link to="/createPostImage" >Publicar</Link></li>
+                                <li> <Link to="/Ajustes" >Ajustes</Link></li>
                             </ul>
                         </nav>
                     </div>              

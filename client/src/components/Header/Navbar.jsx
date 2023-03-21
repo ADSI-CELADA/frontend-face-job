@@ -60,7 +60,7 @@ export const Navbar = () =>  {
                 {userContextInfo.infoUser.name}
               </Link>
               <span>
-                <i class='bx bx-log-out bx-sm bx-border-circle' onClick={closeSesion} ></i>
+                <i className='bx bx-log-out bx-sm bx-border-circle' onClick={closeSesion} ></i>
               </span>  
             </div> 
          </div>  : <div className="login">

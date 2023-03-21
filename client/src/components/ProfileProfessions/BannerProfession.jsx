@@ -97,11 +97,10 @@ console.log(e.target.files[0]);
                         <h2>{infoUser.name}</h2>
                         <p>{infoUser.profession}</p>
                         <div className="banner-stats">
-                            <ul>
-                                <li><img src={follow}/></li>
-                                <li><img src={like}/></li>
-                                <li><img src={send}/></li>
-                                <li><img src={post}/></li>
+                        <ul>
+                                <li><i class='bx bx-user-plus bx-md'></i></li>
+                                <li><i class='bx bx-heart bx-md'></i></li>
+                                <li><i class='bx bx-folder-plus bx-md' ></i></li>
                             </ul>
                         </div>
                     </div>  

@@ -12,6 +12,11 @@ import {RecoveryPass} from '../components/Forms/FormsCreatePosts/postText/Recupe
 import { RecoverCode } from "../components/Forms/FormsCreatePosts/postText/RecoverCode";
 import { RecoverPassNewPass } from "../components/Forms/FormsCreatePosts/postText/RecoverPassNewPass";
 import { ProfileP } from "../pages/ProfileProfession";
+import {Comments} from "../components/Profile/Comments"
+import { CommentsText } from "../components/Profile/CommentsText";
+import { Ajustes } from "../pages/Ajustes";
+import { Update } from "../components/Forms/Update";
+import { DeleteUser } from "../components/Forms/DeleteUser";
 export const Router = () => {
   return (
     <>
@@ -28,6 +33,11 @@ export const Router = () => {
           <Route path="/RecoverCode" element={<RecoverCode/> } />
           <Route path="/recoverNewPass" element={<RecoverPassNewPass/> } />
           <Route path="/ProfileProfessions" element={<ProfileP/> } />
+          <Route path="/CommentsUsers" element={<Comments/> } />
+          <Route path="/CommentsTextUsers" element={<CommentsText/> } />
+          <Route path="/Ajustes" element={<Ajustes/> } />
+          <Route path="/UpdateForm" element={<Update/> } />
+          <Route path="/DeleteForm" element={<DeleteUser/> } />
     
           {/* 
           

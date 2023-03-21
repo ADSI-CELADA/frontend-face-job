@@ -70,10 +70,34 @@ export const updateText = async (para, text) =>
 await axios.put(`${url}/user/userUpdatePostText/${para}`, text);
  
 
-
+/* comentarios*/
 export const insertComment = async (id,commet) =>
 await axios.post(`${url}/user/insertComment/${id}`,commet,{
   headers: {
     token: token,
   },
 })
+
+export const getCommentsUsers=async(id)=>
+await axios.get(`${url}/user/getComments/${id}`)
+
+
+export const updateComments=async(id,comment)=>
+await axios.put(`${url}/user/updateComments/${id}`,comment)
+
+export const deleteComments=async(id,param)=>
+await axios.put(`${url}/user/deleteComments/${id}`,param)
+
+
+export const insertCommentText = async (id,commet) =>
+await axios.post(`${url}/user/insertCommentText/${id}`,commet,{
+  headers: {
+    token: token,
+  },
+})
+
+export const getCommentsUsersText=async(id)=>
+await axios.get(`${url}/user/getCommentsText/${id}`)
+
+export const deleteCommentsText=async(id,param)=>
+await axios.put(`${url}/user/deleteCommentsText/${id}`,param)

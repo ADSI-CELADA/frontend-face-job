@@ -25,7 +25,15 @@ await axios.post(`${url}/recoveryEmail/${param}`, values);
 export const updatePasswordEmail = async (param,values) =>
 await axios.put(`${url}/updatePassEmail/${param}`, values);
 
+export const updateDataUser = async (values) =>
+await axios.post(`${url}/updateInfoU`,values,{headers:{token: token,}});
 
+export const deleteDataUser = async (values) =>
+await axios.post(`${url}/deleteClient`,values,{
+  headers: {
+    token: token,
+  },
+});
 
 /* catalogo */
 export const consultProfessions = async (param) =>
@@ -34,8 +42,6 @@ await axios.get(`${url}/consultCategories/${param}`,{
     token: token,
   },
 })
-
-
 
 export const consultProfileProfessions = async (param) =>
 await axios.get(`${url}/consultProfile/${param}`);
