@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { Update } from '../components/Forms/Update'
 import { loadInfoUser } from "../api/api";
 
 export const Ajustes = () =>{
@@ -13,6 +12,10 @@ export const Ajustes = () =>{
         }
         loadInfoUserAjustes()
     },[])
+
+   /* async function deleteUser() {
+        const result = await 
+    }*/
 
     return (
     <section className='ajustes-section'>
@@ -40,7 +43,7 @@ export const Ajustes = () =>{
                 <li class="list__item">
                     <div class="list__button">
                         <img src="https://res.cloudinary.com/dwczm63h6/image/upload/v1676145449/message-square-x-solid-24_ckmic3.png" class="list__img"/>
-                        <a href="#" class="nav__link">Eliminar perfil</a>
+                        <a href="#" class="nav__link" ><Link to="/DeleteForm" className='nav__link'>Eliminar perfil</Link></a>
                     </div>
                 </li>
             </ul>

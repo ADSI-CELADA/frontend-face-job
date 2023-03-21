@@ -16,6 +16,7 @@ import {Comments} from "../components/Profile/Comments"
 import { CommentsText } from "../components/Profile/CommentsText";
 import { Ajustes } from "../pages/Ajustes";
 import { Update } from "../components/Forms/Update";
+import { DeleteUser } from "../components/Forms/DeleteUser";
 export const Router = () => {
   return (
     <>
@@ -36,6 +37,7 @@ export const Router = () => {
           <Route path="/CommentsTextUsers" element={<CommentsText/> } />
           <Route path="/Ajustes" element={<Ajustes/> } />
           <Route path="/UpdateForm" element={<Update/> } />
+          <Route path="/DeleteForm" element={<DeleteUser/> } />
     
           {/* 
           

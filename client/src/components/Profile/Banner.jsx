@@ -95,8 +95,8 @@ console.log(e.target.files[0]);
                             <ul>
                                 <li><a href="#" ><span onClick={postImages}>Publicaciones</span> </a></li>
                                 <li><a href="#" ><span onClick={postText}>Postales</span></a></li>
-                                <li><a href="#"> <Link to="/createPostImage"  >Publicar</Link> </a></li>
-                                <li><a href="#"> <Link to="/Ajustes"  >Ajustes</Link></a></li>
+                                <li> <Link to="/createPostImage" >Publicar</Link></li>
+                                <li> <Link to="/Ajustes" >Ajustes</Link></li>
                             </ul>
                         </nav>
                     </div>              

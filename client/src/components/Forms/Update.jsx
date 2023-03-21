@@ -2,14 +2,10 @@ import React from 'react'
 import { Form, Formik } from "formik";
 import { updateDataUser } from "../../api/api";
 import logo from "../../assets/img/logo.png";
-import Cookies from 'universal-cookie'
+import { useNavigate } from "react-router-dom";
 
 export const Update = () => {
-    const cookies=new Cookies();
-    const closeSesion=()=>{
-        cookies.remove('token',{path:"/"})
-        window.location.href="/"
-        }
+    let navigate=useNavigate()
 
     return (
     <div className='log-in'>
@@ -34,9 +30,10 @@ export const Update = () => {
             onSubmit={async(values) => {
                 try {
                     const result = await updateDataUser(values)
+                    console.log(values);
                     console.log(result);
                     if (result.data.data == "UPDATE_INFO") {
-                        closeSesion()
+                        navigate('/Ajustes')
                     }
                     if(result.data.data == "UPDATE_NOT"){
                         alert("no se actualizo")
