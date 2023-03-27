@@ -891,6 +891,90 @@ form button{
     height: 250px;
     border-radius: 50%;
 }
+/*-----------------------------MEMBRESIA-----------------------------------------*/
+
+.contain-membresia{
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+}
+
+.member{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #043248;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    gap:20px;
+}
+
+.member_section{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 55%;
+}
+
+.member h2{
+    color: var(--color-blanco);
+    font-size: 250%;
+    font-weight: 400;
+}
+
+.member_section-card{
+    background: url(../../../public/layered-waves-haikei.svg) ;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color-blanco);
+    width: 30%;
+    border-radius: 5px;
+}
+
+
+.member_section-card h3{
+    font-size: 100%;
+    font-weight: 300;
+    padding-bottom: 2%;
+    border-bottom: solid 3px #043248;
+}
+
+.price p:first-child{
+    font-size: 150%;
+    font-weight: 500;
+}
+.price p:nth-child(2){
+    font-size: 55%;
+    font-weight: 500;
+    width: 100%;
+    align-items: center;
+}
+
+.list-benefits ul{
+    list-style: none;
+}
+
+.list-benefits li{
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.list-benefits li span{
+    font-size: 120%;
+    font-weight: 400;
+    color:#25a51a;
+}
+
+.member-button{
+    background-color: var(--color-blanco);
+    padding: 4% 25% 4% 25%;
+    border-radius: 25px;
+    font-size: 70%;
+}
 
 /*-----------------------------------*/
 /*:::Boton-Modal:::*/

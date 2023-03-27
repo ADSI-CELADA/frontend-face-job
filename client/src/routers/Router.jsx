@@ -17,6 +17,7 @@ import { CommentsText } from "../components/Profile/CommentsText";
 import { Ajustes } from "../pages/Ajustes";
 import { Update } from "../components/Forms/Update";
 import { DeleteUser } from "../components/Forms/DeleteUser";
+import { Membresia } from "../pages/Membresia";
 export const Router = () => {
   return (
     <>
@@ -27,6 +28,9 @@ export const Router = () => {
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalogue" element={<Catalogue/> } />
+          <Route path="/membresia" element={<Membresia />} />
+
+
           <Route path="/createPostImage" element={<CreatePost/> } />
           <Route path="/createPostText" element={<CreatePostTexts/> } />
           <Route path="/RecoveryPass" element={<RecoveryPass/> } />

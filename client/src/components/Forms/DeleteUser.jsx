@@ -38,7 +38,10 @@ export const DeleteUser = () => {
                     console.log(result);
                     if (result.data.data == "eliminado") {
                         closeSesion()
-                        navigate('/')
+                        
+                        setTimeout(() => {
+                          navigate('/')  
+                        }, 1500);
                     }
                     else{
                         alert("no se elimino")
