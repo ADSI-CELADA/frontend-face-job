@@ -6,6 +6,7 @@ export const Membresia = () => {
     <div className="contain-membresia">
         <section className="member">
             <h2>Membresia</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus nobis distinctio sunt officiis rem id asperiores, aut illo doloremque assumenda! Quo, non ea sapiente iusto fuga dolorum quasi voluptas ipsa.</p>
             <div className="member_section">
                 <div className="member_section-card">
                     <h3>Basic</h3>
@@ -21,7 +22,9 @@ export const Membresia = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    <Link className="member-button" to="/">Choose</Link>
+                    <Link className="member-button" to="/">
+                        Choose <i class='bx bx-chevron-right'></i>
+                    </Link>
                 </div>
                 <div className="member_section-card">
                     <h3>Standar</h3>
@@ -37,7 +40,9 @@ export const Membresia = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    <Link className="member-button" to="/">Choose</Link>
+                    <Link className="member-button" to="/">
+                        Choose <i class='bx bx-chevron-right'></i>
+                    </Link>
                 </div>
                 <div className="member_section-card">
                     <h3>Premium</h3>
@@ -53,7 +58,9 @@ export const Membresia = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    <Link className="member-button" to="/">Choose</Link>
+                    <Link className="member-button" to="/">
+                        Choose <i class='bx bx-chevron-right'></i>
+                    </Link>
                 </div>
             </div>
         </section>
