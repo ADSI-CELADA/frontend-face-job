@@ -46,3 +46,10 @@ await axios.get(`${url}/consultCategories/${param}`,{
 export const consultProfileProfessions = async (param) =>
 await axios.get(`${url}/consultProfile/${param}`);
 
+/*Pasarela de pagos*/
+
+export const checkout = async (values) =>
+await axios.post(`${url}/checkout`,values);
+
+export const updatePack = async (values) =>
+await axios.post(`${url}/updatePack/`,values,{headers:{token: token,}});

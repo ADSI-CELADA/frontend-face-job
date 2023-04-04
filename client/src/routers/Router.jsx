@@ -17,7 +17,11 @@ import { CommentsText } from "../components/Profile/CommentsText";
 import { Ajustes } from "../pages/Ajustes";
 import { Update } from "../components/Forms/Update";
 import { DeleteUser } from "../components/Forms/DeleteUser";
-import { Membresia } from "../pages/Membresia";
+import { Paquetes } from "../pages/Paquetes";
+import  FormPay1  from "../components/Forms/FormsPayment/FormPay1";
+import  FormPay2  from "../components/Forms/FormsPayment/FormPay2";
+import  FormPay3  from "../components/Forms/FormsPayment/FormPay3";
+
 export const Router = () => {
   return (
     <>
@@ -28,7 +32,10 @@ export const Router = () => {
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalogue" element={<Catalogue/> } />
-          <Route path="/membresia" element={<Membresia />} />
+          <Route path="/paquetes" element={<Paquetes />} />
+          <Route path="/FormPay1" element={<FormPay1 />} />
+          <Route path="/FormPay2" element={<FormPay2 />} />
+          <Route path="/FormPay3" element={<FormPay3 />} />
 
 
           <Route path="/createPostImage" element={<CreatePost/> } />
