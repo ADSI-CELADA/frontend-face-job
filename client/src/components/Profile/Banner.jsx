@@ -86,6 +86,9 @@ console.log(e.target.files[0]);
      function postTextRedirect(){
       navigate('/createPostText')
    }
+   function Chat() {
+    navigate('/Chat')
+   }
 
   return (
   
@@ -101,9 +104,9 @@ console.log(e.target.files[0]);
                         <p>{infoUser.profession}</p>
                         <div className="banner-stats">
                             <ul>
-                                <li><i className='bx bx-user-plus bx-md'></i></li>
+                           
                                 <li><i className='bx bx-heart bx-md'></i></li>
-                                <li><i className='bx bx-folder-plus bx-md' ></i></li>
+                                <li onClick={Chat}><i class='bx bx-message bx-md' ></i></li>
                             </ul>
                         </div>
                     </div>  

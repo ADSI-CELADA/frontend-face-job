@@ -20,14 +20,15 @@ useEffect(()=>{
 async function goProfile(params) {
   if (context.loged) {
     const resView = await checkView({emailUser:params})
-    console.log(resView.data);
     await context.chageEmailProfessions(params)
     if(resView.data == "Yes seen"){
       
         if (context.emailProfessions!="null") {
         navigate('/ProfileProfessions')
         }else{
-        console.log("no cambio");
+          if (context.emailProfessions!="null") {
+            navigate('/ProfileProfessions')
+            }
         }
     }
     if(resView.data == "Not seen"){

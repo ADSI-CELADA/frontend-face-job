@@ -23,7 +23,7 @@ export const LogIn = () => {
           <img src={logo} alt="logo" />
           <p>Face-Job</p>
         </section>
-        <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>
+        <p>Hola de nuevo, inicia sesion para continuar</p>
         <Formik
           initialValues={{
             email: "",

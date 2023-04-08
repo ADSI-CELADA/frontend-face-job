@@ -8,7 +8,7 @@ import { changeImgProfile } from '../../api/apiPosts'
 import { contextUser } from '../../Hooks/userContext'
 import { consultProfileProfessions } from '../../api/api'
 import { Link,useNavigate } from 'react-router-dom'
-
+import { createNewChat } from '../../api/apiChat'
 export const Banner = () => {
   let navigate=useNavigate()
 let contextPosts=useContext(contextUser)
@@ -78,13 +78,23 @@ console.log(e.target.files[0]);
       };
       function postImages() {
         contextPosts.postImages() 
-        console.log(contextPosts.imagesTexts);
+        
       }
       function postText() {
         contextPosts.postTexts() 
-        console.log(contextPosts.imagesTexts);
+     
       }
-
+     async function Chat() {
+    
+      let email=contextPosts.emailProfessions
+        const response=await createNewChat(email)
+        console.log(response.data);
+        if (response.data=='connected') {
+          navigate('/Chat')
+        }else{
+          alert('este usuario esta en proceso de revision por algunos comportamientos toxicos')
+        }
+       }
   return (
     <section className={fix ? 'bnr fixed' : 'bnr'}>
         <div className="banner">
@@ -98,9 +108,9 @@ console.log(e.target.files[0]);
                         <p>{infoUser.profession}</p>
                         <div className="banner-stats">
                         <ul>
-                                <li><i className='bx bx-user-plus bx-md'></i></li>
+                               
                                 <li><i className='bx bx-heart bx-md'></i></li>
-                                <li><i className='bx bx-folder-plus bx-md' ></i></li>
+                                <li onClick={Chat}><i class='bx bx-message bx-md' ></i></li>
                             </ul>
                         </div>
                     </div>  

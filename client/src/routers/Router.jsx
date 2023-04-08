@@ -21,6 +21,7 @@ import { Paquetes } from "../pages/Paquetes";
 import  FormPay1  from "../components/Forms/FormsPayment/FormPay1";
 import  FormPay2  from "../components/Forms/FormsPayment/FormPay2";
 import  FormPay3  from "../components/Forms/FormsPayment/FormPay3";
+import Chat from "../pages/Chat";
 
 export const Router = () => {
   return (
@@ -49,6 +50,7 @@ export const Router = () => {
           <Route path="/Ajustes" element={<Ajustes/> } />
           <Route path="/UpdateForm" element={<Update/> } />
           <Route path="/DeleteForm" element={<DeleteUser/> } />
+          <Route path="/Chat" element={<Chat/> } />
     
           {/* 
           

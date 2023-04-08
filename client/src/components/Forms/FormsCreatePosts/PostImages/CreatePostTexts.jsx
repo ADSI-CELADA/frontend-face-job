@@ -49,15 +49,14 @@ let navigate=useNavigate()
                 <p>Face-Job</p>
             </section>
             
-            <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>
+            <p>Crea tu publicación</p>
             <Form onSubmit={handleSubmit}>
             <div>
-                <input  name='textos' id='description' placeholder='texto ' type="text"   onChange={handleChange}/>
-                <input name='description' placeholder='description' type="text"   onChange={handleChange}/>
-                <button id="mandar" >  {isSubmitting ? "publicando..." : "publicar" }</button>
+                <input  name='textos' id='description' placeholder='texto ' type="text"  style={{marginTop:"10px"}}  onChange={handleChange}/>
+                <input name='description' placeholder='description' type="text"  style={{marginTop:"10px"}}  onChange={handleChange}/>
+                <button id="mandar"  style={{marginTop:"10px"}}>  {isSubmitting ? "publicando..." : "publicar" }</button>
             </div>
-            <a href='/signup'>¿No tienes cuenta? registrate</a>
-              <a href="/">volver</a>
+           
               </Form>
         </div>
        
