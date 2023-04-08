@@ -6,8 +6,24 @@ import { Separate } from "../components/Main/Separate"
 import { Categorie } from "../components/Main/Categorie"
 import { Section } from "../components/Main/Section"
 import { Footer } from "../components/Footer"
+import { useState,useEffect } from "react";
+import { getInfoPack } from "../api/api";
 
 export default function Index() {
+  const [ pack, setPack] = useState(true)
+
+  useEffect(() => {
+    async function loadUser() {
+      const resp = await getInfoPack()
+      if (resp.data == "view pack") {
+        setPack(true)
+      }else{
+        setPack(false)
+      }
+      
+    }
+    loadUser()
+  },[])
   return (
   <>
     <Navbar/>
@@ -16,7 +32,10 @@ export default function Index() {
     <ContainMiniCard/>
     <Separate/>
     <Categorie/>
-    <Section/>
+    { pack ?
+    <Section/> :
+    <></>
+    } 
     <Footer/>
    </>
   )

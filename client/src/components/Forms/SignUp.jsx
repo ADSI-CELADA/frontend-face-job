@@ -35,17 +35,19 @@ export const SignUp = () => {
             } = response;
             if (data == "INSERT_OK") {
               Swal.fire({
-                position: "top-end",
+                position: "center",
                 icon: "success",
                 title: "Registrado",
                 showConfirmButton: false,
                 timer: 1500,
                 
               });
-              navigate('/')
+              setTimeout(()=>{
+                navigate('/')
+              },1500)
             } else {
               Swal.fire({
-                position: "top-end",
+                position: "center",
                 icon: "error",
                 title: "error",
                 showConfirmButton: false,

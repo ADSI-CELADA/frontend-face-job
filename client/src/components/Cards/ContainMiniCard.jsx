@@ -6,9 +6,6 @@ export const ContainMiniCard= () => {
         <h2>Algunos de nuestros perfiles</h2>
         <div className="box-mini">
         <MiniCard/>
-        <MiniCard/>
-        <MiniCard/>
-        <MiniCard/>
         </div>
     </div>
   )

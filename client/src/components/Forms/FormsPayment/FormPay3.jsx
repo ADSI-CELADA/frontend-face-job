@@ -64,7 +64,7 @@ const CheckoutForm=()=>{
       }
       return(
         <form onSubmit={handleSubmit}>
-          <h1>paquete 3</h1>
+          <h2>paquete 3</h2>
           <CardElement className="inputPayment"/>
           <button disabled={!stripe}>{loading ? "cargando..." : "comprar"}
           </button>

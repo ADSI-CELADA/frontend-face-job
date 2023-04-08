@@ -3,14 +3,14 @@ import { getPostsUser } from '../../api/apiPosts'
 import { useState,useEffect } from 'react'
 import { contextUser } from '../../Hooks/userContext'
 import { Comments } from './Comments'
-import {
-    AiFillCloseCircle
-  } from "react-icons/ai";
-  import {  BsFillSendFill } from "react-icons/bs";
-  import { IconContext } from "react-icons";
-  import { Link,useNavigate } from "react-router-dom";
-  import { loadInfoUser } from '../../api/api'
-  import { like,dislike,DeletePostImage,insertComment } from '../../api/apiPosts'
+import { AiFillCloseCircle } from "react-icons/ai";
+import {  BsFillSendFill } from "react-icons/bs";
+import { IconContext } from "react-icons";
+import { Link,useNavigate } from "react-router-dom";
+import { loadInfoUser } from '../../api/api'
+import { like,dislike,DeletePostImage,insertComment } from '../../api/apiPosts'
+import Swal from "sweetalert2";
+
 export const Post = () => {
     let context=useContext(contextUser)
     const [posts, setPosts] = useState([]);
@@ -102,15 +102,24 @@ async function loadImages(){
       console.log("Se esta eliminando...");
       const result = await DeletePostImage(id);
       console.log("se elimino", result);
-      window.location.href = "/profile";
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Se elimino la publicación",
+        showConfirmButton: false,
+        timer: 1500,
+      }); 
+      setTimeout(()=>{
+        window.location.href="/profile"
+      },1500)
+       
     }
 async  function comment(id) {
-    console.log('send',id);
     let comment=document.getElementById('coment').value
     const formdata=new FormData()
     formdata.append("coment",comment)
     const result=await insertComment(id,formdata)
-    console.log(result);
+    setChanges(result)
     document.getElementById('coment').value=null
   }
   let navigate=useNavigate()
@@ -158,9 +167,9 @@ document.getElementById('comentar').click
         </div>
         <div className="post-content">
           <div>
-            <input type="text" placeholder="Post commnet"  id='coment' />
+            <input type="text" placeholder="Escriba un comentario"  id='coment' />
             <p>
-              <i class='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
+              <i className='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
               </i>
             </p>
           </div>
@@ -206,7 +215,7 @@ document.getElementById('comentar').click
                           
                             <div>
                               <div className="message">
-                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
+                           <i className='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
                                 </div>
                             </div>
                         </span>

@@ -2,25 +2,67 @@ import React, { useEffect, useState,useContext } from 'react'
 import icon from '../../assets/img/bear.jpg'
 import { useNavigate } from 'react-router-dom';
 import { contextUser } from '../../Hooks/userContext';
+import { infoPack,checkView,updateView } from "../../api/api";
+import Swal from "sweetalert2";
+
 export const UserCard = ({arrayProfessions}) => {
   const [professions,setProfessions]=useState([]);
 let context=useContext(contextUser)
 let navigate=useNavigate()
 useEffect(()=>{
- async function loadCards() {
-     await setProfessions(arrayProfessions.arrayProfessions)
-     console.log(professions);
+  function loadCards() {
+     setProfessions(arrayProfessions.arrayProfessions)
   }
   loadCards()
  
 },[arrayProfessions.arrayProfessions])
+
 async function goProfile(params) {
- await context.chageEmailProfessions(params)
-  if (context.emailProfessions!="null") {
-    navigate('/ProfileProfessions')
+  if (context.loged) {
+    const resView = await checkView({emailUser:params})
+    console.log(resView.data);
+    await context.chageEmailProfessions(params)
+    if(resView.data == "Yes seen"){
+      
+        if (context.emailProfessions!="null") {
+        navigate('/ProfileProfessions')
+        }else{
+        console.log("no cambio");
+        }
+    }
+    if(resView.data == "Not seen"){
+      const response = await infoPack()
+      if (response.data.data == "access") {
+        const update = await updateView({emailUser:params})
+        console.log(update.data);
+        if (context.emailProfessions!="null") {
+        navigate('/ProfileProfessions')
+        }else{
+        console.log("no cambio");
+        }
+      }else{
+        Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: "Necesitas un paquete para ver el perfil",
+          showConfirmButton: false,
+          timer: 1500,
+        }); 
+        navigate('/paquetes')
+      }
+    }
+    
   }else{
-    console.log("no cambio");
+    Swal.fire({
+      position: "center",
+      icon: "warning",
+      title: "Necesitas iniciar sesión",
+      showConfirmButton: false,
+      timer: 1500,
+    }); 
+    navigate('/login')
   }
+ 
 }
   return (
 <>
@@ -37,7 +79,7 @@ async function goProfile(params) {
             <p>{prof.profession}</p>
           </div>
         </div>
-        <button onClick={()=>{goProfile(prof.email)}}>See more</button>
+        <button onClick={()=>{goProfile(prof.email)}}>Ver más</button>
       </div>
     </section>
    

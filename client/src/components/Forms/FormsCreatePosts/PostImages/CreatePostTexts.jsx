@@ -4,6 +4,7 @@ import { contextUser } from '../../../../Hooks/userContext';
 import { createPostText } from '../../../../api/apiPosts';
 import { Formik, Form } from "formik";
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 export const CreatePostTexts = () => {
 let navigate=useNavigate()
@@ -20,9 +21,18 @@ let navigate=useNavigate()
           onSubmit={async (values) => {
            try {
              let email=usercContextInfo.infoUser.email
-          let response = await createPostText(email,values)
+            let response = await createPostText(email,values)
              console.log(response);
-             navigate('/profile')
+             Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Se cargo la publicación exitosamente",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            setTimeout(()=>{
+              navigate('/profile')
+            },1500)
              
             } catch  {
             console.log("error");

@@ -46,6 +46,12 @@ await axios.get(`${url}/consultCategories/${param}`,{
 export const consultProfileProfessions = async (param) =>
 await axios.get(`${url}/consultProfile/${param}`);
 
+export const consultTarget = async () =>
+await axios.get(`${url}/consultTarget`,{headers:{token: token,}});
+
+export const consultViews = async () =>
+await axios.get(`${url}/consultViews`,{headers:{token: token,}});
+
 /*Pasarela de pagos*/
 
 export const checkout = async (values) =>
@@ -53,3 +59,15 @@ await axios.post(`${url}/checkout`,values);
 
 export const updatePack = async (values) =>
 await axios.post(`${url}/updatePack/`,values,{headers:{token: token,}});
+
+export const infoPack = async () =>
+await axios.get(`${url}/infoPack`,{headers:{token: token,}});
+
+export const checkView = async (values) =>
+await axios.post(`${url}/checkView`,values,{headers:{token: token,}});
+
+export const updateView = async (values) =>
+await axios.post(`${url}/updateView`,values,{headers:{token: token,}});
+
+export const getInfoPack = async () =>
+await axios.get(`${url}/getInfoPack`,{headers:{token: token,}});

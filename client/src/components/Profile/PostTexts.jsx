@@ -16,6 +16,8 @@ import {
   import { poststexts,dislikeTexts,likeTexts ,DeletePostsText,updateText,insertCommentText} from '../../api/apiPosts'
 import { contextUser } from '../../Hooks/userContext';
 import { useContext } from 'react';
+import Swal from "sweetalert2";
+
 export const PostsTexts = () => {
   let context=useContext(contextUser)
     let navigate=useNavigate()
@@ -112,6 +114,16 @@ async function loadTexts(){
         const result = await DeletePostsText(id);
         console.log("se elimino", result);
         setBoton(result)
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Se elimino la publicación",
+          showConfirmButton: false,
+          timer: 1500,
+        }); 
+        
+          window.location.href="/profile"
+        
       }
       async function updatePostText() {
         let id = gestionText.id;
@@ -122,14 +134,24 @@ async function loadTexts(){
         console.log("se elimino", result);
         setBoton(result)
         document.getElementById('closeOne').click
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Se actualizo la publicación",
+          showConfirmButton: false,
+          timer: 1500,
+        }); 
+        setTimeout(()=>{
+          window.location.href="/profile"
+        },1500)
       }
+
       async  function commentText(id) {
-        console.log('send',id);
         let comment=document.getElementById('coment').value
         const formdata=new FormData()
         formdata.append("coment",comment)
         const result=await insertCommentText(id,formdata)
-        console.log(result);
+        setChanges(result)
         document.getElementById('coment').value=null
       }
       
@@ -164,7 +186,7 @@ async function loadTexts(){
                       }}
                     >
                         <div>
-                          <i class='bx bxs-cog bx-sm' ></i>
+                          <i className='bx bxs-cog bx-sm' ></i>
                         </div>
                     </span>
                   ) : (
@@ -177,9 +199,9 @@ async function loadTexts(){
         </div>
         <div className="post-content">
           <div>
-            <input type="text" placeholder="Post commnet"  id='coment' />
+            <input type="text" placeholder="Escriba un comentario"  id='coment' />
             <p>
-              <i class='bx bxs-send bx-sm' onClick={()=>{commentText(post.id)}}>
+              <i className='bx bxs-send bx-sm' onClick={()=>{commentText(post.id)}}>
               </i>
             </p>
           </div>
@@ -202,14 +224,14 @@ async function loadTexts(){
                           
                             <div>
                               <div className="heart">
-                                <i class='bx bxs-heart bx-sm bx-border-circle' ></i>
+                                <i className='bx bxs-heart bx-sm bx-border-circle' ></i>
                                 </div>
                             </div>
                         ) : (
                           
                               <div>
                                 <div className="heart">
-                                  <i class='bx bx-heart bx-sm bx-border-circle'></i>
+                                  <i className='bx bx-heart bx-sm bx-border-circle'></i>
                                 </div>                            
                               </div>
                         )}</span>
@@ -227,7 +249,7 @@ async function loadTexts(){
                           
                             <div>
                             <div className="message">
-                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
+                           <i className='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
                                 </div>
                             </div>
                             

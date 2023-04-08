@@ -134,12 +134,11 @@ async function loadTexts(){
       }
 
       async  function commentText(id) {
-        console.log('send',id);
         let comment=document.getElementById('coment').value
         const formdata=new FormData()
         formdata.append("coment",comment)
         const result=await insertCommentText(id,formdata)
-        console.log(result);
+        setChanges(result)
         document.getElementById('coment').value=null
       }
       
@@ -175,7 +174,7 @@ async function loadTexts(){
                       }}
                     >
                         <div>
-                          <i class='bx bxs-cog bx-sm' ></i>
+                          <i className='bx bxs-cog bx-sm' ></i>
                         </div>
                     </span>
                   ) : (
@@ -188,7 +187,7 @@ async function loadTexts(){
         </div>
         <div className="post-content">
           <div>
-            <input type="text" placeholder="Post commnet"  id='coment' />
+            <input type="text" placeholder="Escriba un comentario"  id='coment' />
             <p>
               <i class='bx bxs-send bx-sm' onClick={()=>{commentText(post.id)}}>
               </i>
@@ -220,7 +219,7 @@ async function loadTexts(){
                           
                               <div>
                                 <div className="heart">
-                                  <i class='bx bx-heart bx-sm bx-border-circle'></i>
+                                  <i className='bx bx-heart bx-sm bx-border-circle'></i>
                                 </div>                            
                               </div>
                         )}</span>
@@ -238,7 +237,7 @@ async function loadTexts(){
                           
                             <div>
                             <div className="message">
-                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
+                           <i className='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
                                 </div>
                             </div>
                             

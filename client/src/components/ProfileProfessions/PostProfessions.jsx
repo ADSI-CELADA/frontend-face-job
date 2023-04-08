@@ -123,12 +123,11 @@ async function loadImages(){
       window.location.href = "/profile";
     }
     async  function comment(id) {
-      console.log('send',id);
       let comment=document.getElementById('coment').value
       const formdata=new FormData()
       formdata.append("coment",comment)
       const result=await insertComment(id,formdata)
-      console.log(result);
+      setChanges(result)
       document.getElementById('coment').value=null
     }
     let navigate=useNavigate()
@@ -165,9 +164,9 @@ async function loadImages(){
         </div>
         <div className="post-content">
           <div>
-            <input type="text" placeholder="Post commnet"  id='coment' />
+            <input type="text" placeholder="Escriba un comentario"  id='coment' />
             <p>
-              <i class='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
+              <i className='bx bxs-send bx-sm' onClick={()=>{comment(post.id)}}>
               </i>
             </p>
           </div>
@@ -213,7 +212,7 @@ async function loadImages(){
                           
                             <div>
                               <div className="message">
-                           <i class='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
+                           <i className='bx bxs-message-alt-dots bx-sm bx-border-circle' onClick={()=>commentsUsers(post.id) } id="comentar" ></i>  
                                 </div>
                             </div>
                         </span>

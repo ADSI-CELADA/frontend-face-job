@@ -84,6 +84,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     gap: 20px;
+    cursor: pointer;
 }
 .login a{
     cursor: pointer;
@@ -190,22 +191,24 @@ body::-webkit-scrollbar-thumb{
     height: 100px;
     border-radius: 50%;
 }
-.container-post
+
 .mini-card-info{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: column;
+    height: 100%;
     gap: 6px;
     align-items: start;
 }
 .mini-card-info h2{
     font-size:22px;
 }
-.mini-card-info a{
+.mini-card-info span{
     text-decoration: none;
     border: var(--color-cuarto) 1px solid;
     padding: 4px 10px;
     color: var(--color-cuarto);
+    cursor: pointer;
 }
 /*--------------Separator--------------------------------*/
 .separate{
@@ -491,6 +494,7 @@ form button{
     border: none;
     padding:8px 28px;
     color: var(--color-blanco);
+    cursor: pointer;
 }
 /*------------------Log In--------------------*/
 .log-in{
@@ -699,6 +703,17 @@ form button{
     padding: 8px 12px;
 }
 .banner-nav nav ul li a:hover{
+    background: var(--color-cuarto);
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+.modal-type-post{
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.modal-type-post:hover{
     background: var(--color-cuarto);
     padding: 8px 12px;
     border-radius: 20px;
@@ -1316,17 +1331,97 @@ form button{
     }
 }
 
+/*:::Boton-Modal:::*/
+.boton6-modal{
+    display: none;
+}
+.boton6-modal label{
+   display:none
+}
+.boton6-modal label:hover{
+   display: none;
+}
+/*:::Fin Boton-Modal:::*/
 
+/*:::Ventana Modal:::*/
+#btn6-modal{
+    display: none;
+}
+.container6-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
 
-
-
-
-
-
-
-
-
-
+#btn6-modal:checked ~ .container6-modal{
+    display: flex;
+}
+.content6-modal{
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #043248;
+}
+.content6-modal h2{
+    margin-bottom: 25px;
+  
+}
+.content6-modal p{
+    padding: 15px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 20px;
+}
+.content6-modal p span{
+   margin-top: 50px;
+   height: 40px;
+}
+.content6-modal .btn6-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content6-modal .btn6-cerrar label{
+    padding: 7px 10px;
+    background-color: #5488a3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content6-modal .btn6-cerrar label:hover{
+    background-color:#185E83;
+}
+.cerrar6-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top:0; left: 0;
+    z-index: -1;
+}
+@media screen and (max-width:800px) {
+    .content6-modal{
+        width: 90%;
+    }
+}
+/*:::Boton-Modal:::*/
+.boton3-modal{
+    display: none;
+}
+.boton3-modal label{
+   display:none
+}
+.boton3-modal label:hover{
+   display: none;
+}
 
 
 
@@ -1509,26 +1604,40 @@ form button{
 /*Pasarela de pagos*/
   .inputPayment{
     width: 100%;
+    padding: 3%;
+    border:solid 2px #064663;
+    border-radius: 10px;
   }
   
+  .container-formPay h2{
+    font-size: 170%;
+    color: #043248;
+  }
+
   .container-formPay{
-    margin: 30px 30px 0px 30px;
+    background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 40px;  
+    margin: 30px;
     height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .container-formPay form{
+    background-color: var(--color-blanco);
     height: 60%;
     width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: solid #043248;
-    padding: 5%;
+    border-radius: 20px;
+    padding: 2%;
   }
 
-/*-----------------------------Paquetes-----------------------------------------*/
+/*-----------------------------Membresia-----------------------------------------*/
 
 .contain-membresia{
     width: 100%;
@@ -1537,10 +1646,12 @@ form button{
 }
 
 .member{
+    background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #043248;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -1559,9 +1670,10 @@ form button{
     font-size: 250%;
     font-weight: 400;
 }
-.member p{
+.member-info{
     text-align: center;
     width: 70%;
+    color: var(--color-blanco);
 }
 .member_section-card{
     background: url(../../../public/layered-waves-haikei.svg) ;

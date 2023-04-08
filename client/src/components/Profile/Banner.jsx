@@ -6,7 +6,12 @@ import { changeImgProfile } from '../../api/apiPosts'
 import { contextUser } from '../../Hooks/userContext'
 import { loadInfoUser } from '../../api/api'
 import { Link } from 'react-router-dom'
+import { IconContext } from "react-icons";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+
 export const Banner = () => {
+  let navigate=useNavigate()
 let contextPosts=useContext(contextUser)
 const [infoUser,setInfoUser]=useState([])
 const [file, setFile] = useState(null);
@@ -71,7 +76,19 @@ console.log(e.target.files[0]);
         console.log(contextPosts.imagesTexts);
       }
 
+      function typePost() {
+        document.getElementById("lolbel-post").click();
+      }
+     function postImagesRedirect(){
+        navigate('/createPostImage')
+     }
+
+     function postTextRedirect(){
+      navigate('/createPostText')
+   }
+
   return (
+  
     <section className={fix ? 'bnr fixed' : 'bnr'}>
         <div className="banner">
             <section>
@@ -95,7 +112,7 @@ console.log(e.target.files[0]);
                             <ul>
                                 <li><a href="#" ><span onClick={postImages}>Publicaciones</span> </a></li>
                                 <li><a href="#" ><span onClick={postText}>Postales</span></a></li>
-                                <li> <Link to="/createPostImage" >Publicar</Link></li>
+                                <li> <span className='modal-type-post' onClick={()=>{typePost()}}>Publicar</span></li>
                                 <li> <Link to="/Ajustes" >Ajustes</Link></li>
                             </ul>
                         </nav>
@@ -134,7 +151,44 @@ console.log(e.target.files[0]);
           </div>
           <label htmlFor="btn-modal" className="cerrar-modal"></label>
         </div>
-    
+    <div className="boton6-modal">
+    <label htmlFor="btn6-modal" id="lolbel-post">
+      Abrir Modal
+    </label>
+  </div>
+  <input type="checkbox" id="btn6-modal" />
+  <div className="container6-modal">
+    <div className="content6-modal">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h2>Tipo de publicación</h2>{" "}
+        <span>
+          <label htmlFor="btn6-modal">
+            <IconContext.Provider value={{ size: "30px" }}>
+              {" "}
+              <div>
+                {" "}
+                <AiFillCloseCircle />
+              </div>
+            </IconContext.Provider>
+          </label>
+        </span>
+      </div>
+
+      <p>Que tipo de publicación desea realizar?</p>
+      <div className="btn6-cerrar">
+       
+        <label style={{marginRight:"10px"}} onClick={postImagesRedirect}>
+          Imagen
+        </label>
+        <label  onClick={postTextRedirect}>
+          Texto
+        </label>
+      </div>
+    </div>
+    <label htmlFor="btn6-modal" className="cerrar6-modal"></label>
+  </div>
     </section>
+  
+  
   )
 }

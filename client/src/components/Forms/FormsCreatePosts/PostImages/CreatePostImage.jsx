@@ -3,7 +3,7 @@ import { useState,useContext } from 'react';
 import { contextUser } from '../../../../Hooks/userContext';
 import { createPostImage } from '../../../../api/apiPosts';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from "sweetalert2";
 
 export const CreatePost = () => {
     const  navigate=useNavigate()
@@ -37,7 +37,17 @@ export const CreatePost = () => {
     document.getElementById("file").value = null;
     setFile(null);
     setDescriptions("");
-    navigate('/profile')
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Se cargo la publicación exitosamente",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    setTimeout(()=>{
+      navigate('/profile')
+    },1500)
+    
     
   };
 
