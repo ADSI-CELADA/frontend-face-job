@@ -10,7 +10,7 @@ export const CreatePost = () => {
    let usercContextInfo=useContext(contextUser)
     const [descriptions, setDescriptions] = useState("");
   const [file, setFile] = useState(null);
-
+  const[textoLoad,setTextoLoad]=useState('Subir')
   const selectedHandler = (e) => {
     setFile(e.target.files[0]);
   };
@@ -26,6 +26,7 @@ export const CreatePost = () => {
       
       
     } else {
+      setTextoLoad('Subiendo...')
       let email = usercContextInfo.infoUser.email;
       const formdata = new FormData();
       formdata.append("description", descriptions);
@@ -45,6 +46,7 @@ export const CreatePost = () => {
       timer: 1500,
     });
     setTimeout(()=>{
+      setTextoLoad('Subir')
       navigate('/profile')
     },1500)
     
@@ -63,7 +65,7 @@ export const CreatePost = () => {
             <div className="form-post">
                 <input id='description' placeholder='description image' type="text"   onChange={selectedDescription}/>
                 <input placeholder='image' type="file" id="file" onChange={selectedHandler} />
-                <button id="mandar" onClick={sendHandler}>subir</button>
+                <button id="mandar" onClick={sendHandler}>{textoLoad}</button>
             </div>
           
         </div>

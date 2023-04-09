@@ -3,6 +3,7 @@ import { singUpUser } from "../../api/api";
 import Swal from "sweetalert2";
 import { Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 export const SignUp = () => {
   let navigate=useNavigate()
   return (
@@ -114,8 +115,8 @@ export const SignUp = () => {
             </Form>
           )}
         </Formik>
-        <a href="/login">¿Ya tienes cuenta? Inicia sesion</a>
-        <a href="/">volver</a>
+        <Link to="/login">¿Ya tienes cuenta? Inicia sesion</Link>
+        <Link to="/">volver</Link>
       </div>
     </div>
   );

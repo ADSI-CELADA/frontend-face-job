@@ -51,3 +51,10 @@ await axios.get(`${url}/createNewChat/${param}`,{
     token:token,
   },
 })
+
+export const sendReport=async(param,report)=>
+await axios.post(`${url}/sendReport/${param}`,report,{
+  headers:{
+    token:token,
+  },
+})

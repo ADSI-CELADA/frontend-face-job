@@ -19,7 +19,9 @@ useEffect(()=>{
 
 async function goProfile(params) {
   if (context.loged) {
-    const resView = await checkView({emailUser:params})
+
+   
+      const resView = await checkView({emailUser:params})
     await context.chageEmailProfessions(params)
     if(resView.data == "Yes seen"){
       
@@ -52,6 +54,8 @@ async function goProfile(params) {
         navigate('/paquetes')
       }
     }
+    
+    
     
   }else{
     Swal.fire({

@@ -13,6 +13,7 @@ import Swal from "sweetalert2";
 
 export const Post = () => {
     let context=useContext(contextUser)
+    const soket=context.soket
     const [posts, setPosts] = useState([]);
     const [settings, setSettings] = useState(false);
     const [changes,setChanges]=useState("not changes")
@@ -23,6 +24,7 @@ export const Post = () => {
         img: "",
       });
       const [infoUser,setInfoUser]=useState(null)
+      const[loading,setLoading]=useState(true)
  
     useEffect(() => {
      
@@ -35,6 +37,15 @@ export const Post = () => {
         loadInfoUserk()
        
     }, [changes,boton]);
+   
+   
+    
+  
+
+
+
+
+
 async function loadImages(){
   
     if (infoUser!=null) {
@@ -66,32 +77,38 @@ async function loadImages(){
 
 
     async function likeThis(id) {
+      setLoading(false)
       for (let i = 0; i < posts.length; i++) {
-        if (posts[i].estado == "nomegusta" && posts[i].id == id) {
+        if (posts[i].estado == "nomegusta" && posts[i].id == id  ) {
          
   
           const formdata = new FormData();
           formdata.append("id", id);
           const result = await like(formdata);
-          console.log(result);
+        
           setBoton(result)
-        } else {
-          console.log("ya dio like");
-        }
+          setTimeout(()=>{
+            setLoading(true)
+          },1000)
+        } 
       }
     }
     async function notLikeThis(id) {
+      setLoading(false)
       for (let i = 0; i < posts.length; i++) {
         if (posts[i].estado == "megusta" && posts[i].id == id) {
        
           const formdata = new FormData();
           formdata.append("id", id);
           const result = await dislike(formdata);
-          console.log(result);
+          
+          
           setBoton(result)
-        } else {
-          console.log("ya dio dislike");
-        }
+          setTimeout(()=>{
+            setLoading(true)
+          },1000)
+          
+        } 
       }
     }
     function alert() {
@@ -181,13 +198,14 @@ document.getElementById('comentar').click
             <div className="post-like">
               <p>
                    
-                <span
+                <span  
                         onClick={() => {
                           likeThis(post.id);
                         }}
                         onDoubleClick={() => {
                           notLikeThis(post.id);
                         }}
+                      
                       > {post.estado == "megusta" ? (
                           
                             <div>

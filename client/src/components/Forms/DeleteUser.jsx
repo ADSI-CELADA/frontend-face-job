@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Formik } from "formik";
 import {deleteDataUser } from "../../api/api";
 import logo from "../../assets/img/logo.png";
@@ -8,7 +8,7 @@ import Cookies from 'universal-cookie'
 export const DeleteUser = () => {
     let navigate=useNavigate()
     const cookies=new Cookies();
-
+    const[textDelete,setTextDelete]=useState('Eliminar')
     const closeSesion=()=>{
         cookies.remove('token',{path:"/"})
         window.location.href="/"
@@ -33,10 +33,12 @@ export const DeleteUser = () => {
             }}
             onSubmit={async(values) => {
                 try {
+                    setTextDelete('Eleminando...')
                     const result = await deleteDataUser(values)
                     console.log(values);
                     console.log(result);
                     if (result.data.data == "eliminado") {
+                        setTextDelete('Eliminar')
                         closeSesion()
                         
                         setTimeout(() => {
@@ -63,7 +65,7 @@ export const DeleteUser = () => {
                     name="password"
                     required
                 />
-                <button type="submit">Confirmar</button>
+                <button type="submit">{textDelete}</button>
                 </Form>
             )}
             </Formik>

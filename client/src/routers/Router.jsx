@@ -23,6 +23,8 @@ import  FormPay2  from "../components/Forms/FormsPayment/FormPay2";
 import  FormPay3  from "../components/Forms/FormsPayment/FormPay3";
 import Chat from "../pages/Chat";
 
+
+
 export const Router = () => {
   return (
     <>
@@ -31,6 +33,7 @@ export const Router = () => {
           <Route path="/" element={<Index />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
+
           <Route path="/profile" element={<Profile />} />
           <Route path="/catalogue" element={<Catalogue/> } />
           <Route path="/paquetes" element={<Paquetes />} />

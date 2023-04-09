@@ -52,19 +52,12 @@ async function loadImages(){
      setPosts(response.data.data1)
       let newArray=response.data.data1
    
-  
+ 
   for(let i = 0; i < newArray.length;i++) {
-    
-    
-      
-    
-      if(response.data.data2.estado==undefined){
-        newArray[i].estado="nomegusta"
-         if (response.data.data1[i].id==response.data.data2[i].id_megusta) {
-        newArray[i].estado=response.data.data2[i].estado
-      }
-      }
-   
+        if (newArray[i].id==response.data.data2[i].id_megusta) {
+          newArray[i].estado=response.data.data2[i].estado
+          
+        }
   }
    setPosts(newArray)
     

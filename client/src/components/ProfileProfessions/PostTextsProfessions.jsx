@@ -50,17 +50,12 @@ async function loadTexts(){
       setPosts(response.data.data1)
       let newArray=response.data.data1
       console.log(response.data);
-  
-     for (let i = 0; i < newArray.length; i++) {
-    
-    if (response.data.data2.length!=0) {
       
-      if (response.data.data1[i].id==response.data.data2[i].id_textos) {
-        newArray[i].estado=response.data.data2[i].estado
-      }else{
-        newArray[i].estado="nomegusta"
-      }
-    }
+      for(let i = 0; i < newArray.length;i++) {
+        if (newArray[i].id==response.data.data2[i].id_textos) {
+          newArray[i].estado=response.data.data2[i].estado
+          
+        }
   }
       setPosts(newArray)
  

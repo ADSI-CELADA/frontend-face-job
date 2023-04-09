@@ -71,3 +71,5 @@ await axios.post(`${url}/updateView`,values,{headers:{token: token,}});
 
 export const getInfoPack = async () =>
 await axios.get(`${url}/getInfoPack`,{headers:{token: token,}});
+
+

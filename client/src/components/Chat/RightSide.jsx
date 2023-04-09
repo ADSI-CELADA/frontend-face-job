@@ -1,8 +1,15 @@
-import { sendMenssageUser,messagesPrivateUsers,dataUsuerChat,workingUsers,delteChatComversations } from '../../api/apiChat'
+import { sendMenssageUser,messagesPrivateUsers,dataUsuerChat,sendReport,workingUsers,delteChatComversations } from '../../api/apiChat'
 import { loadInfoUser } from '../../api/api'
 import { useState,useEffect } from 'react'
 import { useContext } from 'react'
 import { contextUser } from "../../Hooks/userContext"
+import {
+  AiFillHeart,
+  AiOutlineHeart,
+  AiFillSetting,
+  AiFillCloseCircle,
+} from "react-icons/ai";
+import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/img/Logo.png";
@@ -128,13 +135,27 @@ async function workingUser() {
   };
   
 
-  async function deleteChatComplete(params) {
-    const response=await delteChatComversations(infoProfe.email,{"report":params})
-    window.location.href="/chat"
+  async function deleteChatComplete() {
+    document.getElementById('lolbel4').click()
   }
 
+ async function deletereportsave(params) {
+  let report= document.getElementById('newText').value
+ if (report) {
+  const formdata=new FormData();
+  formdata.append('report',report)
   
- 
+      const resposes=await sendReport(infoProfe.email,formdata)
+      if (resposes.data=="reportado") {
+        const response=await delteChatComversations(infoProfe.email,{"report":params})
+    window.location.href="/chat"
+      }
+ }else{
+  alert('Escriba nuevamente el reporte')
+ }
+     
+  }
+
 
     return(<div className="rightSide-chat">
     <div className="header-chat">
@@ -210,7 +231,7 @@ async function workingUser() {
               <p>¿Deseas eliminar este chat ? <br /> ten en cuenta que hay dos opciones con una puedes reportar a un usuario y con la otra solo lo eliminas</p>
               <div className="btn2-cerrar">
                
-              <label style={{background:" #d84c4c"}} onClick={()=>deleteChatComplete(1)}> Reportar y eliminar</label>
+              <label style={{background:" #d84c4c"}} onClick={deleteChatComplete}> Reportar y eliminar</label>
                   <label style={{ marginLeft: "20px"}} onClick={()=>deleteChatComplete(0)} >
                     Eliminar
                   </label>
@@ -218,6 +239,39 @@ async function workingUser() {
             </div>
             <label htmlFor="btn2-modal" className="cerrar2-modal"></label>
           </div>
+          
+          <div className="boton4-modal">
+              <label htmlFor="btn4-modal" id="lolbel4">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn4-modal" />
+            <div className="container4-modal">
+              <div className="content4-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Proceso de Reporte</h2>{" "}
+                  <span>
+                    <label htmlFor="btn4-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        {" "}
+                        <div id='closeOne'>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
+
+                <textarea name="" id="newText" cols="40" rows="10"></textarea>
+                <div className="btn4-cerrar">
+                  <label onClick={()=>deletereportsave(1)}>Reportar</label>
+                </div>
+              </div>
+              <label htmlFor="btn4-modal" className="cerrar4-modal"></label>
+            </div>
 
 
 

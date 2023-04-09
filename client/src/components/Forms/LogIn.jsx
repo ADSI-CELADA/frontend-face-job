@@ -3,7 +3,9 @@ import { Form, Formik } from "formik";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 let url = "http://localhost:4000";
+
 
 export const LogIn = () => {
  const  navigate=useNavigate()
@@ -90,9 +92,9 @@ export const LogIn = () => {
             </Form>
           )}
         </Formik>
-        <a href="/signup">¿No tienes cuenta? registrate</a>
-        <a href="/RecoveryPass">¿Olvidate tu contraseña? recuperala</a>
-        <a href="/">volver</a>
+        <Link to="/signup">¿No tienes cuenta? registrate</Link>
+        <Link to="/RecoveryPass">¿Olvidate tu contraseña? recuperala</Link>
+        <Link to="/">volver</Link>
       </div>
     </div>
   );

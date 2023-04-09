@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { loadInfoUser } from "../api/api"
 import React from "react";
-
+import io from 'socket.io-client'
 export const contextUser =React.createContext({})
 
 
@@ -57,8 +57,12 @@ function  changePramUserChat(params) {
 function changesMenssageUser(params) {
   setChangesMenssage(params)
 }
+
+
+
+const soket=io('http://localhost:4000')
     return(
-        <contextUser.Provider value={{idComment,changeIdComment,emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts,paramUserChat,changePramUserChat,changesMenssageUser,changesMenssage}}>
+        <contextUser.Provider value={{soket,idComment,changeIdComment,emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts,paramUserChat,changePramUserChat,changesMenssageUser,changesMenssage}}>
             {children}
         </contextUser.Provider>
     )
