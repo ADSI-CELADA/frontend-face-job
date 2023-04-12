@@ -1987,10 +1987,10 @@ overflow: hidden;
 
 
 .message-p-chat b{
-    background: #0E9FE3;
-    color: #fff;
-    min-width: 20px;
-    height: 20px;
+    background: #fff;/*cambie aqui para el estilo cuando hay un nuevo mensaje*/
+    color: #096A96;
+    min-width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -2201,7 +2201,7 @@ overflow: hidden;
         text-decoration: none;
         color: #0E9FE3;
     }
-    
+   
     
     
     

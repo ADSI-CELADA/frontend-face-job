@@ -133,6 +133,7 @@ function LeftSide({text}) {
                     </div>
                     <div className="message-p-chat">
                         <p>{chat.mensaje ? chat.mensaje : ""}</p>
+                       {  /*cambie aqui*/  chat.remitente!=infoUser.email ? <b className="b-IconMessage"><i class='bx bxs-message-alt-add'></i></b> : "" }  
                     </div>
                 </div>
             </div>) )) : "No hay chats aun"}  
