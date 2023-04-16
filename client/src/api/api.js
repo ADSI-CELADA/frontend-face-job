@@ -52,6 +52,9 @@ await axios.get(`${url}/consultTarget`,{headers:{token: token,}});
 export const consultViews = async () =>
 await axios.get(`${url}/consultViews`,{headers:{token: token,}});
 
+export const postCategories = async () =>
+await axios.get(`${url}/postCategories`,{headers:{token: token,}});
+
 /*Pasarela de pagos*/
 
 export const checkout = async (values) =>

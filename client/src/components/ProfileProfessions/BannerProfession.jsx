@@ -110,7 +110,7 @@ console.log(e.target.files[0]);
                         <ul>
                                
                                 <li><i className='bx bx-heart bx-md'></i></li>
-                                <li onClick={Chat}><i class='bx bx-message bx-md' ></i></li>
+                                <li onClick={Chat}><i className='bx bx-message bx-md' ></i></li>
                             </ul>
                         </div>
                     </div>  

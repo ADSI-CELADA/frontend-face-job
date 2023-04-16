@@ -485,6 +485,12 @@ form input{
     padding:8px 28px;
     width: 20vw;
 }
+form textarea{
+    border: #c7c7c7 1px solid; 
+    border-radius: 20px;
+    padding:8px 28px;
+    width: 20vw;
+}
 form input:focus{
     outline: none;
 }
@@ -2206,3 +2212,58 @@ overflow: hidden;
     
     
     /* fin chat*/
+
+    /*publicaciones aleatoria*/
+
+    .posts-randoms{
+        display: flex;
+        justify-content: center;
+    }
+
+    .posts-random-container{
+        margin-top: 2%;
+        width: 37.5%;
+    }
+
+    /*reclamos quejas*/
+
+    .claims{
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    .claims-contain{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .claims-contain h2{
+        font-size: 24px;
+        color: var(--color-quinto);
+    }
+    .claims-contain p{
+        text-align: center;
+    }
+    .claims-form{
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid var(--color-quinto);
+        padding: 5%;
+        border-radius: 20px;
+    }
+    .claims-form form{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .claims-form form h2{
+        font-size: 24px;
+        color: var(--color-quinto);
+    }

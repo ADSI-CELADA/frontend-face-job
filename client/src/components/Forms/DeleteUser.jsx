@@ -33,7 +33,7 @@ export const DeleteUser = () => {
             }}
             onSubmit={async(values) => {
                 try {
-                    setTextDelete('Eleminando...')
+                    setTextDelete('Eliminando...')
                     const result = await deleteDataUser(values)
                     console.log(values);
                     console.log(result);

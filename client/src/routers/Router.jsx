@@ -22,6 +22,8 @@ import  FormPay1  from "../components/Forms/FormsPayment/FormPay1";
 import  FormPay2  from "../components/Forms/FormsPayment/FormPay2";
 import  FormPay3  from "../components/Forms/FormsPayment/FormPay3";
 import Chat from "../pages/Chat";
+import { PostCategories } from "../pages/PostCategories";
+import { Claims } from "../pages/Claims";
 
 
 
@@ -40,6 +42,8 @@ export const Router = () => {
           <Route path="/FormPay1" element={<FormPay1 />} />
           <Route path="/FormPay2" element={<FormPay2 />} />
           <Route path="/FormPay3" element={<FormPay3 />} />
+          <Route path="/posts" element={<PostCategories />} />
+          <Route path="/claims" element={<Claims />} />
 
 
           <Route path="/createPostImage" element={<CreatePost/> } />

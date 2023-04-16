@@ -42,13 +42,13 @@ export const Navbar = () =>  {
               </NavLink>
             </li>
             <li>
-              <NavLink className="navigation-link" to="/">
+              <NavLink className="navigation-link" to="/posts">
                 Publicaciones
               </NavLink>
             </li>
             <li>
-              <NavLink className="navigation-link" to="/">
-                Consulta 
+              <NavLink className="navigation-link" to="/claims">
+                Sobre nosotros 
               </NavLink>
             </li>
           </ul>

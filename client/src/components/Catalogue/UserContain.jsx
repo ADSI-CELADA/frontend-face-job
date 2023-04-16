@@ -7,7 +7,7 @@ import { contextUser } from '../../Hooks/userContext';
 export const UserContain = () => {
 
   let context=useContext(contextUser)
-  const [categories,setCategories]=useState("Profesor")
+  const [categories,setCategories]=useState("Desarrollador de software")
   const [professions,setProfessions]=useState([])
   const [loged,setLoged]=useState(false)
 
@@ -43,17 +43,17 @@ useEffect(()=>{
    }
    
   }
-
+console.log(categories);
   return (
 
     <div>
       <section className="categories">
-        <button onClick={chageCategorie}>Profesor</button>
-        <button onClick={chageCategorie}>Programador</button>
-        <button onClick={chageCategorie}>Diseñador</button>
-        <button onClick={chageCategorie}>Administrador</button>
-        <button onClick={chageCategorie}>Constructor</button>
-        <button onClick={chageCategorie}>Otros</button>
+        <button onClick={chageCategorie}>Desarrollador de<br /> software</button>
+        <button onClick={chageCategorie}>Diseñador grafico</button>
+        <button onClick={chageCategorie}>Coach personal</button>
+        <button onClick={chageCategorie}>Desarrollador de<br /> aplicaciones moviles</button>
+        <button onClick={chageCategorie}>Diseñador de interiores</button>
+        <button onClick={chageCategorie}>Fotografo</button>
         {loged ? <button onClick={chageCategorie}>Vistos</button> : <></>}
     </section>
       <p className='title-Profession-Catalogue'>{categories}</p>

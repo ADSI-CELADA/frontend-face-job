@@ -54,7 +54,7 @@ export const Ajustes = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav__link">
+                  <a href="#" className="nav__link">
                     <Link to="/DeleteForm" className="nav__link">
                       Eliminar perfil
                     </Link>
@@ -74,6 +74,8 @@ export const Ajustes = () => {
             <p>Numero: {infoUser.number}</p>
             <p>Fecha de nacimiento: {infoAge}</p>
             <p>Profesion: {infoUser.profession}</p>
+            <p>Numero de paquete: {infoUser.cod_paquete}</p>
+            <p>Numero de vistas disponibles: {infoUser.info_paquete }</p>
           </div>
         </div>
       </section>
