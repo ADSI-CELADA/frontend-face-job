@@ -85,4 +85,7 @@ await axios.post(`${url}/solucion`,form,{headers:{token:token}})
 
 export const messagesUsers=async(form)=>
 await axios.post(`${url}/messagesUsers`,form,{headers:{token:token}})
+
+export const deleteAccountAdmin=async(form)=>
+await axios.post(`${url}/deleteAccountAdmin`,form,{headers:{token:token}})
 /*admin*/

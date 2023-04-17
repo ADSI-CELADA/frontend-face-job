@@ -1,5 +1,5 @@
 import Cookies from 'universal-cookie'
-import { reports,solucion,messagesUsers } from '../../api/api';
+import { reports,solucion,messagesUsers,deleteAccountAdmin } from '../../api/api';
 import { useEffect, useState } from 'react';
 
 function Admin() {
@@ -12,6 +12,8 @@ function Admin() {
     const [chat,setchat]=useState(true)
     const [messages,setMessages]=useState([])
     const [userDefault,setuserDefault]=useState('')
+    const [deleteUser,setDeleteUser]=useState({'user':'','id':''})
+    const [pass,setPass]=useState('')
 useEffect(()=>{
     async function loadReports() {
        const response=await reports()
@@ -63,6 +65,38 @@ const changeInterface=()=>{
 function reLoad() {
     let number=Math.random*10
     setChanges([{data:number}])
+    document.getElementById('pass').value=''
+}
+function alertDelete(reportado,id) {
+    setDeleteUser({'user':reportado,'id':id})
+    document.getElementById('pass').value=''
+    document.getElementById('lolbel3').click()
+}
+async function Delete() {
+  
+if (deleteUser.user!='' && pass!='' && deleteUser.id!='') {
+    const formdata=new FormData()
+    formdata.append('password',pass)
+    formdata.append('reportado',deleteUser.user)
+    formdata.append('id',deleteUser.id)
+    const response=await deleteAccountAdmin(formdata)
+    document.getElementById('pass').value=''
+    setDeleteUser({'user':'','id':''})
+    setPass('')
+    if (response.data.data=="eliminado") {
+        document.getElementById('lolbel3').click()
+        alert('Usuario eliminado exitosamente')
+        reLoad()
+    }else{
+        document.getElementById('lolbel3').click()
+        alert('ocurrio un error')
+    }
+}else{
+    document.getElementById('lolbel3').click()
+    alert('no hay datos aun')
+}
+
+   
 }
     return(
        <>
@@ -89,7 +123,7 @@ function reLoad() {
         <p className="admin-pointer " onClick={()=>openRazon(report.razon)}>Ver Razon <i className='bx bxs-folder'></i></p>
         <p className="admin-pointer " onClick={()=>seeChatUsers(report.email_remitente,report.reportado_email)}>Ver Chat <i className='bx bx-chat'></i></p>
         <button className="admin-buttons" onClick={()=>solucionReport(report.email_remitente,report.reportado_email,report.id_reporte)}>Solucionado</button>
-        <button className="admin-buttons2">Eliminar</button>
+        <button className="admin-buttons2" onClick={()=>alertDelete(report.reportado_email,report.id_reporte)}>Eliminar</button>
         </section>
        )) : "no hay reportes"}
        
@@ -127,7 +161,34 @@ function reLoad() {
           </div>
         </div>
         <label htmlFor="btn2-modal" className="cerrar2-modal"></label>
-      </div></>
+      </div>
+      <div className="boton3-modal">
+              <label htmlFor="btn3-modal" id="lolbel3">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn3-modal" />
+            <div className="container3-modal">
+              <div className="content3-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Eliminar Cuenta</h2>{" "}
+                  <span>
+                    <label htmlFor="btn3-modal">
+                      
+                    </label>
+                  </span>
+                </div>
+
+                <p>Estas seguro de eliminar esta Cuenta? <p><input type="password" placeholder='Contraseña' id='pass' style={{borderRadius:"10px"}}  onChange={(e)=>setPass(e.target.value)}/></p></p>
+                <div className="btn3-cerrar">
+                  <label onClick={Delete}>Eliminar</label>
+                </div>
+              </div>
+              <label htmlFor="btn3-modal" className="cerrar3-modal"></label>
+            </div>
+      </>
        ) : ( <section className="chat-section">
        <div className="container-chat">
        <div className="rightSide-chat">
