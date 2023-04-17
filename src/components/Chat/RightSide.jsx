@@ -135,7 +135,7 @@ async function workingUser() {
   };
   
 
-  async function deleteChatComplete() {
+  async function deleteChatCompleteUser() {
     document.getElementById('lolbel4').click()
   }
 
@@ -155,7 +155,12 @@ async function workingUser() {
  }
      
   }
-
+async function deleteOnly(params) {
+  if (params==0) {
+    const response=await delteChatComversations(infoProfe.email,{"report":params})
+    window.location.href="/chat"
+  }
+}
 
     return(<div className="rightSide-chat">
     <div className="header-chat">
@@ -231,8 +236,8 @@ async function workingUser() {
               <p>¿Deseas eliminar este chat ? <br /> ten en cuenta que hay dos opciones con una puedes reportar a un usuario y con la otra solo lo eliminas</p>
               <div className="btn2-cerrar">
                
-              <label style={{background:" #d84c4c"}} onClick={deleteChatComplete}> Reportar y eliminar</label>
-                  <label style={{ marginLeft: "20px"}} onClick={()=>deleteChatComplete(0)} >
+              <label style={{background:" #d84c4c"}} onClick={deleteChatCompleteUser}> Reportar y eliminar</label>
+                  <label style={{ marginLeft: "20px"}} onClick={()=>deleteOnly(0)} >
                     Eliminar
                   </label>
               </div>

@@ -37,7 +37,7 @@ export const LogIn = () => {
               data: { data, result, token },
             } = response;
             console.log(result);
-
+           
             if (data == "logueado") {
               Swal.fire({
                 position: "center",
@@ -59,6 +59,18 @@ export const LogIn = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
+            } else if (data=="admin") {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Logueado Administrador",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              setTimeout(()=>{
+                document.cookie=`token=${response.data.token};max-age=${60*1440};path=/;samesite=strict`
+                window.location.href="/ADMIN"
+              },1500)
             } else {
               Swal.fire({
                 position: "center",

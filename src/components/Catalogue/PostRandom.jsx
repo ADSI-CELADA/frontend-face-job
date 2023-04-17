@@ -13,7 +13,7 @@ export const PostRandom = () =>{
     useEffect(()=>{
         async function loaddPosts() {
             const response = await postCategories()
-            console.log(response.data);
+          
             let postArray=[]
             for (let i = 0; i < response.data.length; i++) {
               if (response.data[i] != null) {
@@ -29,7 +29,7 @@ export const PostRandom = () =>{
     async function goProfile(params) {
         if (context.loged) {
           const resView = await checkView({emailUser:params})
-          console.log(resView.data);
+       
           await context.chageEmailProfessions(params)
           if(resView.data == "Yes seen"){
             
@@ -43,7 +43,6 @@ export const PostRandom = () =>{
             const response = await infoPack()
             if (response.data.data == "access") {
               const update = await updateView({emailUser:params})
-              console.log(update.data);
               if (context.emailProfessions!="null") {
               navigate('/ProfileProfessions')
               }else{
@@ -89,9 +88,9 @@ export const PostRandom = () =>{
                   </div>
               </div>
             </div>
-            <div className="post-img">
-                <img src={post.img} alt="" />
-            </div>
+            <div className="post-img" >
+            <img src={post.img} alt="" />
+        </div>
             <div className="post-content">
                 <h2>{post.name}</h2>
                 <p>{post.description}</p>

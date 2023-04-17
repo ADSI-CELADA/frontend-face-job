@@ -9,14 +9,17 @@ import { Footer } from "../components/Footer"
 import { useState,useEffect } from "react";
 import { getInfoPack } from "../api/api";
 
-export default function Index() {
-  const [ pack, setPack] = useState(true)
 
+export default function Index() {
+ 
+  const [ pack, setPack] = useState(true)
+ 
   useEffect(() => {
     async function loadUser() {
       const resp = await getInfoPack()
       if (resp.data == "view pack") {
         setPack(true)
+       
       }else{
         setPack(false)
       }

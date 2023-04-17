@@ -76,3 +76,13 @@ export const getInfoPack = async () =>
 await axios.get(`${url}/getInfoPack`,{headers:{token: token,}});
 
 
+/*Admin*/
+export const reports=async()=>
+await axios.get(`${url}/reports`,{headers:{token:token}})
+
+export const solucion=async(form)=>
+await axios.post(`${url}/solucion`,form,{headers:{token:token}})
+
+export const messagesUsers=async(form)=>
+await axios.post(`${url}/messagesUsers`,form,{headers:{token:token}})
+/*admin*/

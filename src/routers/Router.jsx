@@ -24,53 +24,82 @@ import  FormPay3  from "../components/Forms/FormsPayment/FormPay3";
 import Chat from "../pages/Chat";
 import { PostCategories } from "../pages/PostCategories";
 import { Claims } from "../pages/Claims";
-
-
-
+import AdminChats from "../pages/Admin";
+import Cookies from "universal-cookie"
+import ProtectedRoute from "../components/ProtectedRoutes/ProtectedRoute";
+import { loadInfoUser } from "../api/api";
+import { useEffect, useState } from "react";
 export const Router = () => {
+  const cookies = new Cookies();
+  const valorCookie = cookies.get('token');
+  const [infoUser,setInfoUser]=useState({"rol":""})
+useEffect(()=>{
+async function loadInfo() {
+  const response=await loadInfoUser()
+  console.log(response.data[0].rol);
+  setInfoUser(response.data[0])
+}
+loadInfo()
+},[])
   return (
     <>
       {/* <AuthContextProvider> */}
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route element={<ProtectedRoute isAllowsed={infoUser.rol!="ADMIN"} redirectTo={infoUser.rol=="ADMIN" ? "/ADMIN" : "/"}/>}>
+        <Route path="/" element={<Index />} />
+        <Route path="/paquetes" element={<Paquetes />} />
+        <Route path="/catalogue" element={<Catalogue/> } />
+          </Route>
+        
 
+
+
+        {/* no loged */}
+       
+        <Route element={<ProtectedRoute isAllowsed={valorCookie==undefined} redirectTo={infoUser.rol=="ADMIN" ? "/ADMIN" : "/"}/>}>
+
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/RecoveryPass" element={<RecoveryPass/> } />
+        <Route path="/RecoverCode" element={<RecoverCode/> } />
+        <Route path="/recoverNewPass" element={<RecoverPassNewPass/> } />
+        </Route>
+        
+         
+        {/* no loged */}
+          
+          {/* loged */}
+          <Route element={<ProtectedRoute isAllowsed={infoUser.rol=="Cliente"} redirectTo={infoUser.rol=="ADMIN" ? "/ADMIN" : "/"}/>}>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/catalogue" element={<Catalogue/> } />
-          <Route path="/paquetes" element={<Paquetes />} />
           <Route path="/FormPay1" element={<FormPay1 />} />
           <Route path="/FormPay2" element={<FormPay2 />} />
           <Route path="/FormPay3" element={<FormPay3 />} />
           <Route path="/posts" element={<PostCategories />} />
-          <Route path="/claims" element={<Claims />} />
-
-
           <Route path="/createPostImage" element={<CreatePost/> } />
           <Route path="/createPostText" element={<CreatePostTexts/> } />
-          <Route path="/RecoveryPass" element={<RecoveryPass/> } />
-          <Route path="/RecoverCode" element={<RecoverCode/> } />
-          <Route path="/recoverNewPass" element={<RecoverPassNewPass/> } />
-          <Route path="/ProfileProfessions" element={<ProfileP/> } />
+          <Route path="/ProfileProfessions" element={<ProfileP/> } /> 
           <Route path="/CommentsUsers" element={<Comments/> } />
           <Route path="/CommentsTextUsers" element={<CommentsText/> } />
           <Route path="/Ajustes" element={<Ajustes/> } />
           <Route path="/UpdateForm" element={<Update/> } />
           <Route path="/DeleteForm" element={<DeleteUser/> } />
           <Route path="/Chat" element={<Chat/> } />
-    
-          {/* 
+          </Route>
           
-          <Route path="/inicioSesionC" element={<InicioSC />} />
-          <Route path="/profile" element={<ProfileC />} />
-          <Route path="/catalogue" element={<CatalogueC />} />
-          <Route path="/subirPost" element={<SubirPost />} />
-          <Route path="/subirPostText" element={<SubirPostText />} />
-          <Route path="/escojePost" element={<EscojePost />} />
-          <Route path="/manegeProfile" element={<DropdownMenu />} />
-          <Route path="*" element={<Error />} /> */}
+          {/* loged */}
+
+          
+         {/* admin */}
+         <Route element={<ProtectedRoute isAllowsed={infoUser.rol=="ADMIN"}/>}>
+        <Route path="/ADMIN" element={<AdminChats/>} />
+         </Route>
+         
+        {/* admin */}
+          
+          
+          
         </Routes>
-      {/* </AuthContextProvider> */}
+   
     </>
   );
 };

@@ -2267,3 +2267,142 @@ overflow: hidden;
         font-size: 24px;
         color: var(--color-quinto);
     }
+
+        /*admin*/
+.admin-section{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    flex-direction: column;
+    padding-left: 15px;
+  
+}
+.admin-section div{
+    height: 93vh;
+    width: 98vw;
+    background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: auto; 
+    
+}
+.admin-section div h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 35px;
+    width: 100%;
+   
+}
+.admin-logOut{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -55px;
+    margin-right: 20px;
+    cursor: pointer;
+ 
+}
+.admin-infoReport{
+    display: flex;
+    width: 83%;
+    color: #fff;
+    margin-top: 40px;
+    height: 30px;
+  
+}
+.admin-Reporte-margin{
+    margin-left: 13%;
+    font-size: 25px;
+   height: 30px;
+}
+.admin-Reportado-margin{
+    margin-left: 13%;
+    font-size: 25px;
+    height: 30px;
+}
+.admin-Razones-margin{
+    margin-left: 8%;
+    font-size: 25px;
+    height: 30px;
+  
+}
+.admin-chast-margin{
+    margin-left: 7%;
+    font-size: 25px;
+    height: 30px;
+    
+}
+.admin-reports{
+    display: flex;
+    justify-content: center;
+     flex-direction: column;
+     width: 95%; 
+}
+.admin-reportUsers{
+    display: flex;
+    justify-content: space-around;
+    background: #064663;
+    width: 92%;
+    height: 70px;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-left: 80px;
+
+}
+.admin-reportUsers p{
+   margin-top: 20px;
+   color: #fff;
+}
+.admin-pointer{
+    cursor: pointer;
+
+}
+.admin-pointer:hover{
+    cursor: pointer;
+    font-size: 22px;
+}
+.admin-buttons:hover{
+    margin-top: 8px;
+    height: 50px;
+    width: 130px;
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    color: #0c0c0c;
+    border-radius: 30px;
+}
+.admin-buttons{
+    margin-top: 8px;
+    height: 50px;
+    width: 130px;
+    cursor: pointer;
+    background-color: #0b4d6b;
+    border: solid #fff 1px;
+    color: #fff;
+    border-radius: 30px;
+}
+.admin-buttons2:hover{
+    margin-top: 8px;
+    height: 50px;
+    width: 130px;
+    cursor: pointer;
+    background: #bd2323;
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+}
+.admin-buttons2{
+    margin-top: 8px;
+    height: 50px;
+    width: 130px;
+    cursor: pointer;
+    background-color: #0b4d6b;
+    border: solid #fff 1px;
+    color: #fff;
+    border-radius: 30px;
+}
+.admin-emails{
+    width: 280px;
+}
+    /*admin*/

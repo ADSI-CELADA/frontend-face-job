@@ -43,7 +43,7 @@ useEffect(()=>{
    }
    
   }
-console.log(categories);
+
   return (
 
     <div>
