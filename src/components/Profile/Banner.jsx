@@ -1,7 +1,4 @@
 import React, { useState,useContext, useEffect } from 'react'
-import follow from '../../assets/img/follow.png'
-import like from '../../assets/img/like.png'
-import post from '../../assets/img/post.png'
 import { changeImgProfile } from '../../api/apiPosts'
 import { contextUser } from '../../Hooks/userContext'
 import { loadInfoUser } from '../../api/api'

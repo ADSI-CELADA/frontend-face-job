@@ -33,6 +33,7 @@ const CheckoutForm=()=>{
             })
             console.log(data);
             if (data=="confirm") {
+
                 Swal.fire({
                     position: "center",
                     icon: "success",
