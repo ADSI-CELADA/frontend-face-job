@@ -49,7 +49,6 @@ loadInfo()
         <Route path="/" element={<Index />} />
         <Route path="/paquetes" element={<Paquetes />} />
         <Route path="/catalogue" element={<Catalogue/> } />
-        <Route path="/claims" element={<Claims/> } />
           </Route>
         
 
