@@ -11,7 +11,7 @@ export const Hero = () =>  {
               <p data-aos="fade-up" data-aos-duration="1500" className="text-second">Contacta Con Trabajadores</p>
             </h1>
           </div>
-          <div data-aos="fade-right" data-aos-duration="1000" className="hero-image">
+          <div className="hero-image">
               <img src={image} alt="Contact" />
           </div>
       </div>

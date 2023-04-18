@@ -664,7 +664,7 @@ form button{
     display: flex;
     flex-direction: column;
     align-items: center;   
-    width: 50%; 
+    width: max-content; 
 }
 .banner-info h2{
     font-size: 25px;
@@ -1438,61 +1438,30 @@ form button{
 
 .contanerCommentsComponent{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    gap: 7px;
+    padding: 30px;
+    gap: 20px;
     background:linear-gradient(#064663b6, #064663b6), url(../img/form.jpg) ;
     background-position: center center;
     background-repeat: no-repeat ;
     background-size: cover;
     background-attachment: fixed;
-     
- 
-}
-.contenedor{
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 600px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 20px; 
-}
-.contenedor-2{
-    width: 600%;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 30px 20px 30px 20px;
-    gap: 20px;
-    text-transform: capitalize;
-    border-radius: 20px;
-}
-.comentario{
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 100%;
-    height:  60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 0 0 20px;
-    border-radius: 20px;
-    color: black;
 }
 .contenedorsec{
     display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 700px;
+    height: max-content;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 10px;
-    
+    gap: 10px; 
 }
 .imagen-usuario{
     width: 50px;
@@ -1501,9 +1470,12 @@ form button{
     justify-content: center;
     align-items: flex-start;
 }
+.imagen-usuario img{
+    border-radius: 50px;
+}
 
 .input-com{
-    width: 500px;
+    width: 600px;
     height: 100px;
     background: none;
     display: flex;
@@ -1514,7 +1486,6 @@ form button{
 #nuevoComentario{
     outline: none;
     border: 0;
-    width: 100%;
     height: 50px;
     padding: 0px 10px 0px 10px;
     font-size: 15px;
@@ -1537,11 +1508,11 @@ form button{
     padding: 0px 5px 0px 0px;
 }
 .buttonComments{
-    padding: 12px 20px 12px 20px;
+    padding: 12px 18px ;
     border-radius: 20px;
     border: 0;
     outline: none;
-    font-size: 25px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -1554,19 +1525,14 @@ form button{
 
 .commentText{
     width:600px;
-    margin-left: 8px;
 }
 .comments{
-    background-color: rgba(255, 255, 255, 0.7);
     width: 100%;
+    gap: 15px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 0 0 20px;
-    border-radius: 20px;
+    align-items: flex-start;
     color: black;
     justify-content: center;
-    padding: 20px;
 }
 .imgcomment{
     width: 50px;
@@ -1812,27 +1778,23 @@ form button{
 
 .nav-icons-chat{
     display: flex;
-
+    align-items: center;
+    justify-content: space-between;
 }
 .nav-icons-chat li ion-icon{
     font-size: 25px;
-    margin-top: 3px;
+    margin-left: 5px;
 }
 .nav-icons-chat li{
-   
     list-style: none;
     cursor: pointer;
     color: #096A96;
-    font-size: 1.5em;
-    margin-left: 22px;
+    font-size: 20px;
 }
 .nav-icons-chat li:hover{
-    display: flex;
     list-style: none;
     cursor: pointer;
     color: #0E9FE3;
-    font-size: 1.5em;
-    margin-left: 22px;
 }
 .search-chat{
     position: relative;
@@ -1880,8 +1842,10 @@ form button{
     position: relative;
     height: calc(100% - 191px );
     overflow: auto;
-    
-    
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .chatlist-chat .block-chat{
 position: relative;
@@ -1891,7 +1855,7 @@ align-items: center;
 padding: 15px;
 border-bottom: 1px solid rgba(242, 239, 239, 0.966);
 cursor: pointer;
-border-radius: 30px;/* falta decidir*/
+border-radius: 20px;/* falta decidir*/
 
 }
 .chatlist-chat .block-chat2{
@@ -2119,18 +2083,14 @@ overflow: hidden;
     }
     .chatbox_input-chat ion-icon{
        cursor: pointer;
-        font-size: 1.8em;
+        font-size: 1.6em;
         color: #fff;
-    }
-    .chatbox_input-chat ion-icon:nth-child(1){
-        margin-right: 15px;
     }
     
     .chatbox_input-chat input{
         position: relative;
         width: 90%;
-        margin: 0 20;
-        padding: 10px 20px;
+        padding: 8px 15px;
         border: none;
         outline: none;
         border-radius:30px ;
@@ -2222,7 +2182,6 @@ overflow: hidden;
 
     .posts-random-container{
         margin-top: 2%;
-        width: 37.5%;
     }
 
     /*reclamos quejas*/

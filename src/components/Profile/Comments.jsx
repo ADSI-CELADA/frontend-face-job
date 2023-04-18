@@ -41,7 +41,7 @@ if (infoUserC!=null ) {
 
 async function sendComment() {
     let commentUser=document.getElementById('nuevoComentario').value
-    if (context.idComment!=null || commentUser!=undefined) {
+    if (context.idComment!=null && commentUser!=undefined && commentUser!='') {
        const formdata=new FormData();
        formdata.append("coment",commentUser)
        const result=await insertComment(context.idComment,formdata)
@@ -105,19 +105,17 @@ async function updateComment() {
         <div>
              <Navbar />
             <div className="contanerCommentsComponent">
-    <main className="contenedor">
-        <section className="contenedorsec">
-             <div className="imagen-usuario">
-             <img src={infoUserC.iconUser} alt="" className="imgcomment"/>
-             </div>
-             <div className="input-com">
-            <input id="nuevoComentario" type="text" placeholder="Nuevo comentario..." />
-            <div className="boton-com">
-                <button className="buttonComments" onClick={sendComment}>comentario</button>
-            </div>
-             </div>
-        </section>
-    </main>
+                  <div className="contenedorsec">
+                      <div className="imagen-usuario">
+                        <img src={infoUserC.iconUser} alt="" className="imgcomment"/>
+                      </div>
+                      <div className="input-com">
+                        <input id="nuevoComentario" type="text" placeholder="Nuevo comentario..." />
+                      <div className="boton-com">
+                          <button className="buttonComments" onClick={sendComment}>Comentar</button>
+                      </div>
+                    </div>
+                </div>
  
     <div className="boton5-modal">
               <label htmlFor="btn5-modal" id="lolbel5">
@@ -161,7 +159,6 @@ async function updateComment() {
    <ul id="cometarios" class="conenedor-2" key={com.id}>
         <section class="contenedorsec" >
        {com.emailcliente==infoUserC.email ? <div>
-            <i className='bx bxs-cog bx-sm' onClick={()=>openModal(com.id)}></i>
         </div> : <div>   </div>}  
         <div class="comments"><div class="imagen-usuario" >
             
@@ -169,7 +166,11 @@ async function updateComment() {
             <img src={com.iconUser} alt="" className="imgcomment" />
             </div>    
                 <p class="commentText"><h2>{com.name} <br /> </h2>{com.comentario}</p>
-            </div></section>
+            <i className='bx bxs-cog bx-sm' onClick={()=>openModal(com.id)}></i>
+
+            </div>
+            
+            </section>
     </ul>
    ))}
    
