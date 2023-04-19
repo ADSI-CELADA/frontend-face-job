@@ -101,7 +101,7 @@ function LeftSide({text}) {
                <Link to='/profile'><img src={infoUser.iconUser} alt="perfil Image" className="cover-chat"/></Link> 
 
             </div>
-            <ul className="nav-icons-chat">
+            <ul>
 
               <li> <Link to='/' className="LinkChat"><ionn-icon>FACE-JOB</ionn-icon></Link> </li>
                 
@@ -109,10 +109,7 @@ function LeftSide({text}) {
         </div>
          
          <div className="search-chat">
-            <div>
                 <input  autocomplete="off" type="text" placeholder="Busca clientes interesados"  onChange={e=> searchNewsUser(e.target.value)} />
-                <ion-icon name="search-outline"></ion-icon>
-            </div>
          </div>
          
          <div className="escoger-chat">

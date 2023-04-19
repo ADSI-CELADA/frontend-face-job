@@ -1700,11 +1700,232 @@ form button{
     text-decoration: none;
     color: var(--color-quinto);
 }
+/*------------------chat ----------------*/
+.chat-box{
+    height: 93vh;
+    width: 96.5vw;
+    margin: 30px;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+}
+.leftSide-chat{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 20px;
+    background: #c7deece7;
+}
+.header-chat{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-quinto);
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+}
+.header-chat .userImg-chat img{ 
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+}
+.header-chat ul li{
+    color: var(--color-blanco);
+    list-style: none;
+}
+.header-chat ul li a{
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+.search-chat{
+    padding: 0 15px;
+}
+.search-chat input{
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+}
+.escoger-chat{
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+    gap: 15px;
+}
+.escoger-chat div{
+    background: var(--color-quinto);
+    color: var(--color-blanco);
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+.chatlist-chat{
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;   
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.block-chat{
+    background: var(--color-quinto);
+    color: var(--color-blanco);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: 15px;
+    height: 120px;
+}
+.block-chat .imgbx-chat img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.rightSide-chat{
+    width: 70%;
+    border-radius: 0 20px 20px 0;
+}
+.header-chat-c{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-quinto);
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+}
+.header-chat-c .imgText-chat{
+    display: flex;
+    gap: 15px;
+    color: var(--color-blanco);
+}
+.header-chat-c .userImg-chat img{ 
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+}
+.header-chat-c ul{
+    display: flex;
+    gap: 15px;
+}
+.header-chat-c ul li{
+    color: var(--color-blanco);
+    list-style: none;
+    font-size: 20px;
+}
+.header-chat-c ul li a{
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+.chatBox-chat{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(#0646638d, #0969968d), url(https://cdn.bizneo.com/blog/wp-content/uploads/2022/05/tiempo-efectivo-de-trabajo.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: calc(100% - 200px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.form-chat{
+    background: var(--color-quinto);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 15px;
+    height: 10vh;
+    border-radius: 0 0 20px 20px;
+}
+.form-chat .chatbox_input-chat{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.form-chat .chatbox_input-chat input{
+    width: 1150px;
+}
+.form-chat .chatbox_input-chat input[type="file"]{
+    width: 1%;
+}
+.form-chat .chatbox_input-chat ion-icon{
+    cursor: pointer;
+     font-size: 1.6em;
+     color: #fff;
+}
+.message-chat{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+}
+.message-chat p{
+    position: relative;
+    right: 0;
+    text-align: right;
+    max-width: 65%;
+    padding: 12px;
+    background: #096A96;
+    border-radius:10px ;
+    font-size: 0.9em;
+    color: #fff;
+}
+.message-chat p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg,#096A96 0%,#096A96 50%,transparent 50%,transparent);
+}
+.message-chat p img{
+    width: 400px;
+}
+.message-chat p span{
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85em;
+    opacity: 0.5;
+}
+.my_message-chat{
+    justify-content: flex-end;
+}
+.client-chat{
+    justify-content: flex-start;
+}
+.client-chat p{
+    background: #fff;
+    text-align: left;
+    color: #0c0c0c;
+}
+.message-chat.client-chat p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(225deg,#fff 0%,#fff 50%,transparent 50%,transparent);
+}
+.message-p-chat{
+    display: flex;
+    gap: 15px;
+}
 
 /* chat */
 
 
-.chat-section{
+/*.chat-section{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1720,9 +1941,9 @@ form button{
     background: #fff;
     box-shadow: 0 1px 1px 0 rgba( 0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
     display: flex;
-}
+}*/
 
-.container-chat .leftSide-chat{
+/*.container-chat .leftSide-chat{
     position: relative;
     flex: 30%;
     background: #fff;
@@ -1846,8 +2067,8 @@ form button{
     gap: 10px;
     display: flex;
     flex-direction: column;
-}
-.chatlist-chat .block-chat{
+}*/
+/*.chatlist-chat .block-chat{
 position: relative;
 width: 100%;
 display: flex;
@@ -1855,7 +2076,7 @@ align-items: center;
 padding: 15px;
 border-bottom: 1px solid rgba(242, 239, 239, 0.966);
 cursor: pointer;
-border-radius: 20px;/* falta decidir*/
+border-radius: 20px;
 
 }
 .chatlist-chat .block-chat2{
@@ -1866,7 +2087,7 @@ border-radius: 20px;/* falta decidir*/
     padding: 15px;
     border-bottom: 1px solid rgba(242, 239, 239, 0.966);
     cursor: pointer;
-    border-radius: 0px;/* falta decidir*/
+    border-radius: 0px;
     
     }
 
@@ -1957,7 +2178,7 @@ overflow: hidden;
 
 
 .message-p-chat b{
-    background: #fff;/*cambie aqui para el estilo cuando hay un nuevo mensaje*/
+    background: #fff;/*cambie aqui para el estilo cuando hay un nuevo mensaje
     color: #096A96;
     min-width: 30px;
     height: 30px;
@@ -1993,7 +2214,7 @@ overflow: hidden;
 
 
 
-/*chat */
+/*chat 
 .chatBox-chat{
     position: relative;
     width: 100%;
@@ -2169,7 +2390,7 @@ overflow: hidden;
     }
    
     
-    
+    */
     
     /* fin chat*/
 

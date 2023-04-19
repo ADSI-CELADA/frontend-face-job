@@ -1,7 +1,7 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements,CardElement,useElements,useStripe } from "@stripe/react-stripe-js";
-import { checkout,updatePack } from "../../../api/api";
+import { checkout,updatePack,getInfoPack } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -11,9 +11,9 @@ const CheckoutForm=()=>{
     const stripe=useStripe()
     const elements=useElements()
     const [loading,setLoading] = useState(false)
+    
     let navigate=useNavigate()
     
-
       const handleSubmit=async(e)=>{
         e.preventDefault()
         const {error,paymentMethod}= await stripe.createPaymentMethod({
@@ -63,15 +63,25 @@ const CheckoutForm=()=>{
             setLoading(false)
             }
       }
-      return(
-        <form onSubmit={handleSubmit}>    
+      return(<>
+       { buttonChange ? <form >    
           <h2>Face-job</h2>
           <h3>Paquete 1</h3>
           <CardElement className="inputPayment"/>
-          <button disabled={!stripe}>{loading ? "cargando..." : "comprar"}
+          <button> comprado
           </button>
-        </form>
-      )
+          
+        </form>: 
+        <form onSubmit={handleSubmit}>    
+        <h2>Face-job</h2>
+        <h3>Paquete 1</h3>
+        <CardElement className="inputPayment"/>
+        <button disabled={!stripe}>{loading ? "cargando..." : "comprar"}
+        </button>
+        
+      </form>
+        }
+        </>)
 }
 
  const FormPay1 = () => {

@@ -51,6 +51,11 @@ export const Navbar = () =>  {
                 Sobre nosotros 
               </NavLink>
             </li>
+            <li>
+              <NavLink className="navigation-link" to="/paquetes">
+                Paquetes
+              </NavLink>
+            </li>
           </ul>
           
           { userContextInfo.loged ? 

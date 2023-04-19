@@ -1,12 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext,useState,useEffect } from "react";
 import { contextUser } from '../Hooks/userContext';
-import { Navbar } from "../components/Header/Navbar";
+import { getInfoPack } from "../api/api";
 
 export const Paquetes = () => {
     
     let userContextInfo=useContext(contextUser)
+    const [buttonChange,setButtonChange] = useState(false)
+
+    useEffect(() => {
+        async function loadButton() {
+          const resp = await getInfoPack()
+          if (resp.data == "no view pack") {
+            setButtonChange(true)
+          }
+        }
+        loadButton()
+    },[])
+
 
   return (
     <div className="contain-membresia">
@@ -28,9 +40,12 @@ export const Paquetes = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div> 
+                    {buttonChange? <Link className="member-button">
+                       Comprado <i className='bx bx-chevron-right'></i>
+                    </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
-                        Comprar <i className='bx bx-chevron-right'></i>
-                    </Link>
+                       Comprar <i className='bx bx-chevron-right'></i>
+                    </Link>} 
                 </div>
                 <div className="member_section-card">
                     <h3>Paquete 2</h3>
@@ -46,9 +61,12 @@ export const Paquetes = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    <Link className="member-button" to={userContextInfo.loged ? "/FormPay2" : "/login"}>
-                        Comprar <i className='bx bx-chevron-right'></i>
-                    </Link>
+                    {buttonChange? <Link className="member-button">
+                       Comprado <i className='bx bx-chevron-right'></i>
+                    </Link> :
+                    <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
+                       Comprar <i className='bx bx-chevron-right'></i>
+                    </Link>}
                 </div>
                 <div className="member_section-card">
                     <h3>Paquete 3</h3>
@@ -64,9 +82,12 @@ export const Paquetes = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    <Link className="member-button" to={userContextInfo.loged ? "/FormPay3" : "/login"}>
-                        Comprar <i className='bx bx-chevron-right'></i>
-                    </Link>
+                    {buttonChange? <Link className="member-button">
+                       Comprado <i className='bx bx-chevron-right'></i>
+                    </Link> :
+                    <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
+                       Comprar <i className='bx bx-chevron-right'></i>
+                    </Link>}
                 </div>
             </div>
         </section>

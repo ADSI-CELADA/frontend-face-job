@@ -35,10 +35,7 @@ export default function Index() {
     <ContainMiniCard/>
     <Separate/>
     <Categorie/>
-    { pack ?
-    <Section/> :
-    <></>
-    } 
+    <Section/>
     <Footer/>
    </>
   )

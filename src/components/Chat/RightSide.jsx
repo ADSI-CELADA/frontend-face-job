@@ -162,8 +162,9 @@ async function deleteOnly(params) {
   }
 }
 
-    return(<div className="rightSide-chat">
-    <div className="header-chat">
+    return(
+    <div className="rightSide-chat">
+    <div className="header-chat-c">
         <div className="imgText-chat" onClick={profileProfessionalChat}>
             <div className="userImg-chat">
                 <img src={infoProfe.iconUser} className="cover-chat"/>
@@ -171,7 +172,7 @@ async function deleteOnly(params) {
             </div>
             <h4>{infoProfe.name} {infoProfe.lastname} <br/> <span>{infoProfe.profession}</span> </h4>
         </div>
-        <ul className="nav-icons-chat">
+        <ul>
             
         {infoProfe.name!="Face-job" ? ((<><li onClick={workingUser}><ion-icon name="bag-add-outline"></ion-icon>Trabajemos</li>
         <li onClick={deleteChat}><ion-icon name="trash-outline" ></ion-icon></li></>)) : "" }    
@@ -200,18 +201,18 @@ async function deleteOnly(params) {
 
 {infoProfe.name!="Face-job" ? (<form onSubmit={handleSubmit} className='form-chat'>
             <div className="chatbox_input-chat">
-            <span onClick={selectedImage}> <ion-icon name="camera-outline"></ion-icon></span>
+            <span onClick={selectedImage}> <ion-icon name="camera-outline"><input type="file" className='form-chat2' id='imageChat' onChange={selectedHandler}/></ion-icon></span>
                 <input  autocomplete="off" id='menssagesSendForemojis' type="text" placeholder="Escribe un mensaje" onChange={e=> setMessage(e.target.value)} value={message}  />
-                <input type="file" className='form-chat2' id='imageChat' onChange={selectedHandler}/>
+                
           
-               <ion-icon name="send-outline" onClick={clickIcon}></ion-icon>  </div>
-           <button type='submit' id='sendForm' className='button-chat'></button> 
-           </form> ) : (<form onSubmit={handleSubmit} className='form-chat2'>
+               <ion-icon name="send-outline" onClick={clickIcon}><button type='submit' id='sendForm' className='button-chat'></button></ion-icon>  </div>
+            
+           </form> ) : (<form onSubmit={handleSubmit} className='form-chat'>
             <div className="chatbox_input-chat">
               <ion-icon name="camera-outline"></ion-icon>
                 <input id='menssagesSendForemojis' type="text" placeholder="Escribe un mensaje" onChange={e=> setMessage(e.target.value)} value={message}  />
-               <ion-icon name="send-outline" onClick={clickIcon}></ion-icon>  </div>
-           <button type='submit' id='sendForm' className='button-chat'></button> 
+               <ion-icon name="send-outline" onClick={clickIcon}><button type='submit' id='sendForm' className='button-chat'></button> </ion-icon>  </div>
+
            </form> )}   
 
 
