@@ -398,25 +398,29 @@ body::-webkit-scrollbar-thumb{
 footer{
     margin: 0 1%;
     width: 98vw;
-    height: 30vh;
+    height: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
     gap: 10px;
     border-top: #064663 1px solid;
 }
+footer div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 footer img{
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     border-radius: 20px
 }
 footer h2{
-    font-size: 26px;
+    font-size: 22px;
     color: var(--color-quinto);
 }
 footer p{
-    font-size: 10px;
+    font-size: 14px;
     color: #5f5f5f;
 }
 .footer-info a{
@@ -1752,11 +1756,14 @@ form button{
     padding: 0 15px;
     justify-content: space-between;
     gap: 15px;
-}
-.escoger-chat div{
-    background: var(--color-quinto);
-    color: var(--color-blanco);
     cursor: pointer;
+}
+.escoger-chat.active-choose{
+    background: #25a51a;
+}
+.escoger-chat .textosEscoger-chat{
+    background: var(--color-blanco);
+    color: var(--color-quinto);
     border-radius: 50px;
     display: flex;
     padding: 5px 0;
@@ -1764,15 +1771,62 @@ form button{
     align-items: center;
     width:50%;
 }
+.escoger-chat .textosEscoger-chat:hover{
+    background: var(--color-quinto);
+    color: var(--color-blanco);
+}
+.escoger-chat .textosEscoger-chat2{
+    background: var(--color-blanco);
+    color: var(--color-quinto);
+    border-radius: 50px;
+    display: flex;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+.escoger-chat .textosEscoger-chat2:hover{
+    background: var(--color-quinto);
+    color: var(--color-blanco);
+}
+.LinkChat{
+    text-decoration: none;
+    color: #096A96;
+}
+.LinkChat:hover{
+    text-decoration: none;
+    color: #0E9FE3;
+}
 .chatlist-chat{
     padding: 0 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;   
     position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: calc(100% - 191px );
+    overflow: auto;
 }
+.chatlist-chat .block-chat.active-chat{
+   
+    background: #0b4d6b;
+}
+.chatlist-chat .block-chat.active-chat:hover{
+    background: #096A96;
+}
+
+.chatlist-chat .block-chat.active-chat2{
+   
+    background: #fff;
+}
+.chatlist-chat .block-chat.active-chat2:hover{
+    background: #aaa;
+}
+.cate-Chats{
+    margin-left:10px ;
+    font-style:unset;
+    color: #0c0c0c;
+}
+
 .block-chat{
     background: var(--color-quinto);
     color: var(--color-blanco);
@@ -1780,15 +1834,69 @@ form button{
     padding: 15px;
     display: flex;
     align-items: center;
-    overflow: hidden;
     gap: 15px;
-    height: 120px;
+    position: relative;
+    cursor: pointer;
 }
 .block-chat .imgbx-chat img{
     width: 50px;
     height: 50px;
     border-radius: 50px;
 }
+
+.chatlist-chat .block-chat .details-chat{
+    position: relative;
+    width: 100%;  
+  }
+  
+  .chatlist-chat .block-chat .details-chat .listHead-chat{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+  }
+  
+  .chatlist-chat .block-chat .details-chat .listHead-chat h4{
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #fff;
+  }
+  .chatlist-chat .block-chat .details-chat .listHead-chat2 h4{
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #064663;
+  }
+  .chatlist-chat .block-chat .details-chat .listHead-chat .time{
+      font-size: 0.75em;
+      color: #fff;
+  }
+
+  .message-p-chat{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.message-p-chat p{
+    color: #dbdbdb;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    font-size: 0.9em;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.message-p-chat b{
+    background: #fff;
+    color: #096A96;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    font-size: 0.75em;
+}
+
 .rightSide-chat{
     width: 70%;
     border-radius: 0 20px 20px 0;
@@ -1805,6 +1913,7 @@ form button{
     display: flex;
     gap: 15px;
     color: var(--color-blanco);
+    cursor: pointer;
 }
 .header-chat-c .userImg-chat img{ 
     border-radius: 50px;
@@ -1819,6 +1928,7 @@ form button{
     color: var(--color-blanco);
     list-style: none;
     font-size: 20px;
+    cursor: pointer;
 }
 .header-chat-c ul li a{
     color: var(--color-blanco);
@@ -2147,7 +2257,6 @@ overflow: hidden;
 .chatlist-chat .block-chat .details-chat .listHead-chat .time{
     font-size: 0.75em;
     color: #fff;
-
 }
 
 .cate-Chats{
@@ -2413,7 +2522,7 @@ overflow: hidden;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        gap: 100px;
     }
     .claims-contain{
         display: flex;
@@ -2422,7 +2531,6 @@ overflow: hidden;
         justify-content: center;
         gap: 15px;
     }
-
     .claims-contain h2{
         font-size: 24px;
         color: var(--color-quinto);
@@ -2430,22 +2538,41 @@ overflow: hidden;
     .claims-contain p{
         text-align: center;
     }
+    .claims-contain-info{
+        display: flex;
+        gap: 100px;
+    }
+    .claims-contain-info div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .claims-contain-info div h2{
+        font-size: 24px;
+        color: var(--color-quinto);
+    }
+    .claims-contain-info div p{
+        text-align: center;
+    }
     .claims-form{
-        width: 35%;
+        width: 100%;
         display: flex;
         justify-content: center;
-        border: 1px solid var(--color-quinto);
-        padding: 5%;
+        background: linear-gradient(#0646638d, #0969968d), url(../img/default.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 30px;
         border-radius: 20px;
     }
     .claims-form form{
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 15px;
     }
     .claims-form form h2{
         font-size: 24px;
-        color: var(--color-quinto);
+        color: var(--color-blanco);
     }
 
         /*admin*/

@@ -113,7 +113,7 @@ function LeftSide({text}) {
          </div>
          
          <div className="escoger-chat">
-            <div className={idCategories=='nuevo' ? "textosEscoger-chat" : "textosEscoger-chat2"} onClick={()=>categories('nuevos')} >nuevos</div>
+            <div className={idCategories=='nuevo' ? "textosEscoger-chat" : "textosEscoger-chat2"} onClick={()=>categories('nuevos')} >Nuevos</div>
             <div className={idCategories=='trabajando' ? "textosEscoger-chat" : "textosEscoger-chat2"}  onClick={()=>categories('trabajando')}>Trabajos <ion-icon name="bag-add-outline"></ion-icon></div>
          </div>
          

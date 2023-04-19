@@ -50,11 +50,21 @@ export const Claims = () => {
         <section className="claims">
             <div className="claims-contain">
               <h2>Sobre nosotros</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.</p>
+            </div>
+            <div className="claims-contain-info">
+                <div>
+                    <h2>Mision</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.</p>
+                </div>
+                <div>
+                    <h2>Vision</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.</p>
+                </div>
             </div>
             <div className="claims-contain">
-                <h2>this is title</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.</p>
+                <h2>Que puedes hacer en esta seccion</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.</p>
             </div>
             <div className="claims-form">
                 <form ref={refForm} onSubmit={handleSubmit}>

@@ -3,8 +3,10 @@ import logo from '../assets/img/logo.png'
 export const Footer = () => {
   return (
     <footer>
+      <div>
             <img src={logo} alt="logo" />
-            <h2>Face-Job</h2>
+            <h2>Face-Job</h2>        
+      </div>
             <div className="footer-info">
                 <a href="">facejob011@gmail.com</a>
             </div>

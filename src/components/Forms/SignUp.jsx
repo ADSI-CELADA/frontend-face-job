@@ -30,6 +30,7 @@ export const SignUp = () => {
             password: "",
           }}
           onSubmit={async (values) => {
+            values.profession
             const response = await singUpUser(values);
             const {
               data: { data },
@@ -87,13 +88,22 @@ export const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-              <input
+              <select name="profession">
+                <option selected disabled>Elija una profesion</option>
+                <option value="Diseñador grafico">Diseñador grafico</option>
+                <option value="Fotografo">Fotografo</option>
+                <option value="Desarrollador de software">Desarrollador de software</option>
+                <option value="Coach personal">Coach personal</option>
+                <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones moviles</option>
+                <option value="Diseñador de interiores">Diseñador de interiores</option>
+              </select>
+              {/*<input
                 placeholder="Profesion"
                 type="text"
                 name="profession"
                 onChange={handleChange}
                 required
-              />
+          />*/}
               <input
                 placeholder="Correo Electronico"
                 type="email"
