@@ -31,6 +31,9 @@ export const SignUp = () => {
           }}
           onSubmit={async (values) => {
             values.profession
+            
+            if (values.profession!='' && values.profession!=undefined) {
+         
             const response = await singUpUser(values);
             const {
               data: { data },
@@ -56,6 +59,10 @@ export const SignUp = () => {
                 timer: 1500,
               });
             }
+            }else{
+              alert("Aun hay datos sin completar")
+            }
+           
           }}
         >
           {({ handleChange, handleSubmit, isSubmitting }) => (
@@ -88,7 +95,7 @@ export const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-              <select name="profession">
+              <select name="profession" onChange={handleChange} required>
                 <option selected disabled>Elija una profesion</option>
                 <option value="Diseñador grafico">Diseñador grafico</option>
                 <option value="Fotografo">Fotografo</option>
