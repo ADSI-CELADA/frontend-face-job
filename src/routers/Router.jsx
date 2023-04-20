@@ -29,6 +29,7 @@ import Cookies from "universal-cookie"
 import ProtectedRoute from "../components/ProtectedRoutes/ProtectedRoute";
 import { loadInfoUser } from "../api/api";
 import { useEffect, useState } from "react";
+import Index2 from "../pages/Index2";
 export const Router = () => {
   const cookies = new Cookies();
   const valorCookie = cookies.get('token');
@@ -47,9 +48,11 @@ loadInfo()
         <Routes>
           <Route element={<ProtectedRoute isAllowsed={infoUser.rol!="ADMIN"} redirectTo={infoUser.rol=="ADMIN" ? "/ADMIN" : "/"}/>}>
         <Route path="/" element={<Index />} />
+        <Route path="/index2" element={<Index2 />} />
         <Route path="/paquetes" element={<Paquetes />} />
         <Route path="/catalogue" element={<Catalogue/> } />
         <Route path="/claims" element={<Claims/> } />
+        <Route path="/posts" element={<PostCategories />} />
           </Route>
         
 
@@ -75,7 +78,7 @@ loadInfo()
           <Route path="/FormPay1" element={<FormPay1 />} />
           <Route path="/FormPay2" element={<FormPay2 />} />
           <Route path="/FormPay3" element={<FormPay3 />} />
-          <Route path="/posts" element={<PostCategories />} />
+          
           <Route path="/createPostImage" element={<CreatePost/> } />
           <Route path="/createPostText" element={<CreatePostTexts/> } />
           <Route path="/ProfileProfessions" element={<ProfileP/> } /> 
