@@ -28,7 +28,6 @@ export const Ajustes = () => {
     }, []);
   return (
     <>
-      <Navbar />
       <section className="ajustes-section">
         <div className="bnr">
             <div className="banner">

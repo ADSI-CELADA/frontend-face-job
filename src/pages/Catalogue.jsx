@@ -6,7 +6,6 @@ import { Navbar } from '../components/Header/Navbar'
 export const Catalogue = () => {
   return (
     <>
-    <Navbar/>
     <UserContain/>
     </>
   )

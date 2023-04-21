@@ -29,7 +29,6 @@ export default function Index() {
   },[])
   return (
   <>
-    <Navbar/>
     <Hero/>
     <HowYouDo/>
     <ContainMiniCard/>

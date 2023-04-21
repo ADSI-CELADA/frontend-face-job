@@ -1,12 +1,12 @@
 import React,{useContext,useEffect,useState} from 'react'
-import { Post } from './Post'
-/*import {PostsTexts} from './PostTexts';
+import {PostsTexts} from './PostTexts';
+/*import { Post } from './Post'
 import { contextUser } from '../../Hooks/userContext';*/
-export const ContainerPost = () => {
+export const ContainerPostText = () => {
 
   return (
     <section className="container-post">
-      <Post />
+      <PostsTexts />
     </section>
   )
 }

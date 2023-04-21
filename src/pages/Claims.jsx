@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Navbar } from "../components/Header/Navbar";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -46,7 +45,6 @@ export const Claims = () => {
     
 
     return (<>
-        <Navbar/>
         <section className="claims">
             <div className="claims-contain">
               <h2>Sobre nosotros</h2>

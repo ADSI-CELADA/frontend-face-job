@@ -6,6 +6,7 @@ import { Catalogue } from "../pages/Catalogue";
 // import { AuthContextProvider } from "../context/AuthContext.jsx";
 import Index from "../pages/Index"
 import { Profile } from "../pages/Profile";
+import { ProfileText } from "../pages/ProfileText";
 import { CreatePost } from "../components/Forms/FormsCreatePosts/PostImages/CreatePostImage";
 import { CreatePostTexts } from "../components/Forms/FormsCreatePosts/PostImages/CreatePostTexts";
 import {RecoveryPass} from '../components/Forms/FormsCreatePosts/postText/RecuperaPassEmail'
@@ -75,6 +76,7 @@ loadInfo()
           {/* loged */}
           <Route element={<ProtectedRoute isAllowsed={infoUser.rol=="Cliente"} redirectTo={infoUser.rol=="ADMIN" ? "/ADMIN" : "/"}/>}>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profileText" element={<ProfileText />} />
           <Route path="/FormPay1" element={<FormPay1 />} />
           <Route path="/FormPay2" element={<FormPay2 />} />
           <Route path="/FormPay3" element={<FormPay3 />} />

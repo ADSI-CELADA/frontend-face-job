@@ -53,7 +53,7 @@ console.log(e.target.files[0]);
     const [ fix, setFix ] = useState(false)
 
     function setFixedBanner(){
-        if (window.scrollY >=20){
+        if (window.scrollY >=0){
             setFix(true)
         } else{
             setFix(false)
