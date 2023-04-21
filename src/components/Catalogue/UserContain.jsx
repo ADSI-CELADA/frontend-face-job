@@ -46,7 +46,7 @@ useEffect(()=>{
 
   return (
 
-    <div>
+    <div className="main-categories">
       <section className="categories">
         <button onClick={chageCategorie}>Desarrollador de<br /> software</button>
         <button onClick={chageCategorie}>Diseñador grafico</button>

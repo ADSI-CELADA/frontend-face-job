@@ -8,6 +8,7 @@ import { Section } from "../components/Main/Section"
 import { Footer } from "../components/Footer"
 import { useState,useEffect } from "react";
 import { getInfoPack } from "../api/api";
+import { Sidebar } from "../components/Header/Sidebar"
 
 
 export default function Index() {
@@ -29,6 +30,7 @@ export default function Index() {
   },[])
   return (
   <>
+    <Sidebar/>
     <Hero/>
     <HowYouDo/>
     <ContainMiniCard/>

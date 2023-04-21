@@ -30,7 +30,6 @@ import Cookies from "universal-cookie"
 import ProtectedRoute from "../components/ProtectedRoutes/ProtectedRoute";
 import { loadInfoUser } from "../api/api";
 import { useEffect, useState } from "react";
-import Index2 from "../pages/Index2";
 export const Router = () => {
   const cookies = new Cookies();
   const valorCookie = cookies.get('token');
@@ -49,7 +48,6 @@ loadInfo()
         <Routes>
           <Route element={<ProtectedRoute isAllowsed={infoUser.rol!="ADMIN"} redirectTo={infoUser.rol=="ADMIN" ? "/ADMIN" : "/"}/>}>
         <Route path="/" element={<Index />} />
-        <Route path="/index2" element={<Index2 />} />
         <Route path="/paquetes" element={<Paquetes />} />
         <Route path="/catalogue" element={<Catalogue/> } />
         <Route path="/claims" element={<Claims/> } />

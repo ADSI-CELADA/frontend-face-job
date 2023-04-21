@@ -268,6 +268,16 @@ body::-webkit-scrollbar-thumb{
 .sidebar.close .profile-details{
   width: 78px;
 }
+.sidebar .profile-details .name-job{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar .profile-details img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
 .sidebar .profile-details .profile_name{
   color: #fff;
   font-size: 18px;
@@ -355,7 +365,7 @@ body::-webkit-scrollbar-thumb{
     font-size: 30px;
 }
 .box-mini{
-    padding: 80px;
+    padding: 80px 0 80px 80px   ;
     overflow: hidden;
     width: 100vw;
     display: flex;
@@ -418,8 +428,7 @@ body::-webkit-scrollbar-thumb{
 
 /*categorias cambia segun seleccione*/
 .title-Profession-Catalogue{
-    font-size: 70px;
-    margin-left: 30px;
+    font-size: 70px;    
     color: var(--color-quinto);
 }
 .categorie-body{
@@ -806,24 +815,6 @@ form button{
 .banner-info p{
     font-size: 15px;
 }
-.banner-stats{
-    margin: 15px 0;
-}
-.banner-stats ul{
-    gap: 50px;
-    display: flex;
-    list-style: none;   
-}
-.banner-stats ul li{
-    background: var(--color-blanco);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    color: #064663;
-}
 .banner-nav{
     display: flex;
     border-radius:20px ;
@@ -837,15 +828,19 @@ form button{
     justify-content: space-evenly;
     flex-direction: column;
 }
+.banner-nav nav ul li{
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.banner-nav nav ul li span{
+    font-weight: 700;
+}
 .banner-nav nav ul li a{
     color: var(--color-blanco);
     text-decoration: none;
     padding: 8px 12px;
-}
-.banner-nav nav ul li a:hover{
-    background: var(--color-cuarto);
-    padding: 8px 12px;
-    border-radius: 20px;
 }
 .modal-type-post{
     color: var(--color-blanco);
@@ -906,6 +901,10 @@ form button{
     width: 600px;
     height: 350px;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .post-img img{
     background: var(--color-blanco);
@@ -917,7 +916,7 @@ form button{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 15px;
+    padding: 15px;
     gap: 10px;
 }
 .post-content div{
@@ -971,18 +970,25 @@ form button{
     color: var(--color-quinto);
 }
 /*----------------------Categorias/Catalogo/Perfiles------------------------*/
+.main-categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+}
 .categories{
     background:linear-gradient(#064663b6, #064663b6), url(../img/default.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     height: 10vh;
-    width: 96.5vw;
-    margin: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 15px;
+    gap: 30px;
 }
 .categories button{
     background: none;
@@ -999,24 +1005,24 @@ form button{
 .mega-user-contain{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 30px;
+    justify-content: center;
+    padding: 30px 30px 30px 110px;
     width: 96.5vw;
+    gap: 30px;
 }
 .user-contain{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px;
 }
 .user-card{
     background: var(--color-quinto);
     border-radius: 20px;
-    width: 450px;
+    width: 370px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     align-items: center;
 }
 .user-card button{
@@ -1041,8 +1047,8 @@ form button{
     gap: 10px;
 }
 .user-icon img{
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
 }
 
@@ -1566,6 +1572,86 @@ form button{
 
 
 
+/*:::Boton-Modal:::*/
+.boton7-modal{
+    display: none;
+}
+.boton7-modal label{
+   display:none
+}
+.boton7-modal label:hover{
+   display: none;
+}
+/*:::Fin Boton-Modal:::*/
+
+/*:::Ventana Modal:::*/
+#btn7-modal{
+    display: none;
+}
+.container7-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#btn7-modal:checked ~ .container7-modal{
+    display: flex;
+}
+.content7-modal{
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #043248;
+}
+.content7-modal h2{
+    margin-bottom: 25px;
+  
+}
+.content7-modal p{
+    padding: 15px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 20px;
+}
+.content7-modal p span{
+   margin-top: 50px;
+   height: 40px;
+}
+.content7-modal .btn7-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content7-modal .btn7-cerrar label{
+    padding: 7px 10px;
+    background-color: #5488a3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content7-modal .btn7-cerrar label:hover{
+    background-color:#185E83;
+}
+.cerrar7-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top:0; left: 0;
+    z-index: -1;
+}
+
+
+
+
 
 /*comentarios */
 
@@ -1597,14 +1683,16 @@ form button{
     gap: 10px; 
 }
 .imagen-usuario{
-    width: 50px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 .imagen-usuario img{
     border-radius: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 .input-com{
@@ -1666,6 +1754,9 @@ form button{
     align-items: flex-start;
     color: black;
     justify-content: center;
+}
+.comments i{
+    color: var(--color-blanco);
 }
 .imgcomment{
     width: 50px;
@@ -2639,8 +2730,12 @@ overflow: hidden;
         justify-content: center;
     }
 
-    .posts-random-container{
-        margin-top: 2%;
+    .posts-random-container {
+        gap: 15px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
     /*reclamos quejas*/

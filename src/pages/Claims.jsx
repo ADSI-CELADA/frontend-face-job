@@ -2,6 +2,7 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Sidebar } from "../components/Header/Sidebar";
 
 export const Claims = () => {
     
@@ -45,6 +46,7 @@ export const Claims = () => {
     
 
     return (<>
+        <Sidebar/>
         <section className="claims">
             <div className="claims-contain">
               <h2>Sobre nosotros</h2>

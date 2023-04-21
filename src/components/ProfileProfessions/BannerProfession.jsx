@@ -65,7 +65,7 @@ console.log(e.target.files[0]);
     const [ fix, setFix ] = useState(false)
 
     function setFixedBanner(){
-        if (window.scrollY >=20){
+        if (window.scrollY >=0){
             setFix(true)
         } else{
             setFix(false)
@@ -106,20 +106,13 @@ console.log(e.target.files[0]);
                     <div className="banner-info">
                         <h2>{infoUser.name}</h2>
                         <p>{infoUser.profession}</p>
-                        <div className="banner-stats">
-                        <ul>
-                               
-                                <li><i className='bx bx-heart bx-md'></i></li>
-                                <li onClick={Chat}><i className='bx bx-message bx-md' ></i></li>
-                            </ul>
-                        </div>
                     </div>  
                     <div className="banner-nav">
                         <nav>
                             <ul>
-                                <li><a href="#" ><span onClick={postImages}>Publicaciones</span> </a></li>
-                                <li><a href="#" ><span onClick={postText}>Postales</span></a></li>
-                               
+                                <li onClick={postImages}>Publicaciones</li>
+                                <li onClick={postText}>Postales</li>
+                                <li onClick={Chat}>Chat</li>
                             </ul>
                         </nav>
                     </div>              

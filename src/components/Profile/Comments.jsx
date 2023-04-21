@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { loadInfoUser } from "../../api/api"
 import { insertComment,getCommentsUsers,updateComments,deleteComments } from "../../api/apiPosts"
-import { Navbar } from "../Header/Navbar"
 import { contextUser } from "../../Hooks/userContext"
 import {AiFillCloseCircle} from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { useContext } from "react"
+import { Sidebar } from "../Header/Sidebar";
 
 
 export  const Comments=()=>{
@@ -102,8 +102,9 @@ async function updateComment() {
 
 
     return(
+      <>
+      <Sidebar/>
         <div>
-             <Navbar />
             <div className="contanerCommentsComponent">
                   <div className="contenedorsec">
                       <div className="imagen-usuario">
@@ -245,6 +246,7 @@ async function updateComment() {
               <label htmlFor="btn4-modal" className="cerrar4-modal"></label>
             </div>
 
-</div>   
+</div>  
+</> 
     )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
-import { Categories } from '../components/Catalogue/Categories'
 import { UserContain } from '../components/Catalogue/UserContain'
-import { Navbar } from '../components/Header/Navbar'
+import { Sidebar } from '../components/Header/Sidebar'
 
 export const Catalogue = () => {
   return (
     <>
+    <Sidebar/>
     <UserContain/>
     </>
   )

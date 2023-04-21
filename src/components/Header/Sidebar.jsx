@@ -3,11 +3,14 @@ import { contextUser } from "../../Hooks/userContext";
 // import logo from "../../assets/img/Logo.png";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie'
-/*import { IconContext } from "react-icons";
-import { AiFillCloseCircle } from "react-icons/ai";*/
+import { IconContext } from "react-icons";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+
 
 
 export const Sidebar = () => {
+  let navigate=useNavigate()
   const cookies = new Cookies();
   let userContextInfo = useContext(contextUser)
   const [styleSide, setStyleSide] = useState("sidebar close")
@@ -24,8 +27,29 @@ export const Sidebar = () => {
 
   }
   function typePost() {
-    document.getElementById("lolbel-post").click();
+    document.getElementById("lolbel-post1").click();
   }
+
+  function postImagesRedirect(){
+    document.getElementById("lolbel-post1").click();
+    if (styleSide == "sidebar") {
+      setStyleSide("sidebar close")
+    }
+  setTimeout(() => {
+    navigate('/createPostImage')
+  }, 400);  
+ }
+
+ function postTextRedirect(){
+  document.getElementById("lolbel-post1").click();
+  if (styleSide == "sidebar") {
+    setStyleSide("sidebar close")
+  }
+  setTimeout(() => {
+    navigate('/createPostText')
+  }, 400);  
+  
+}
 
   const closeSesion = () => {
     cookies.remove('token', { path: "/" })
@@ -37,7 +61,7 @@ export const Sidebar = () => {
       <div className={styleSide}>
         <div className="logo-details">
           <i class='bx bx-menu' onClick={openSide}></i>
-          <Link to="/" className="logo_name">Face-Job</Link>
+          <Link to="/" className="logo_name" onClick={openSide}>Face-Job</Link>
         </div>
         <ul className="nav-links">
           <li>
@@ -46,7 +70,7 @@ export const Sidebar = () => {
               <Link onClick={openSide} to="/catalogue" className="link_name">Perfiles</Link>
             </a>
             <ul className="sub-menu blank">
-              <li><Link onClick={openSide} to="/catalogue" className="link_name">Perfiles</Link></li>
+              <li><Link to="/catalogue" className="link_name">Perfiles</Link></li>
             </ul>
           </li>
           <li>
@@ -55,7 +79,7 @@ export const Sidebar = () => {
               <Link onClick={openSide} to="/posts" className="link_name">Publicaciones</Link>
             </a>
             <ul className="sub-menu">
-              <li><Link onClick={openSide} to="/posts" className="link_name" href="#">Publicaciones</Link></li>
+              <li><Link to="/posts" className="link_name" href="#">Publicaciones</Link></li>
             </ul>
           </li>
           <li>
@@ -64,7 +88,7 @@ export const Sidebar = () => {
               <Link onClick={openSide} to="/claims" className="link_name">Sobre nosotros</Link>
             </a>
             <ul className="sub-menu">
-              <li><Link onClick={openSide} to="/claims" className="link_name" href="#">Sobre nosotros</Link></li>
+              <li><Link to="/claims" className="link_name" href="#">Sobre nosotros</Link></li>
             </ul>
           </li>
           <li>
@@ -73,7 +97,7 @@ export const Sidebar = () => {
               <Link onClick={openSide} to="/paquetes" className="link_name">Paquetes</Link>
             </a>
             <ul className="sub-menu blank">
-              <li><Link onClick={openSide} to="/paquetes" className="link_name" href="#">Paquetes</Link></li>
+              <li><Link to="/paquetes" className="link_name" href="#">Paquetes</Link></li>
             </ul>
           </li>
           {userContextInfo.loged ? <>
@@ -83,7 +107,7 @@ export const Sidebar = () => {
                 <Link onClick={openSide} to="/chat" className="link_name">Chat</Link>
               </a>
               <ul className="sub-menu blank">
-                <li><Link onClick={openSide} to="/chat" className="link_name" href="#">Chat</Link></li>
+                <li><Link to="/chat" className="link_name" href="#">Chat</Link></li>
               </ul>
             </li>
             <li>
@@ -92,7 +116,7 @@ export const Sidebar = () => {
                 <Link onClick={openSide} to="/profile" className="link_name">Mis Publicaciones</Link>
               </a>
               <ul className="sub-menu">
-                <li><Link onClick={openSide} to="/profile" className="link_name" href="#">Mis Publicaciones</Link></li>
+                <li><Link to="/profile" className="link_name" href="#">Mis Publicaciones</Link></li>
               </ul>
             </li>
             <li>
@@ -101,55 +125,63 @@ export const Sidebar = () => {
                 <Link onClick={openSide} to="/profileText" className="link_name">Mis Postales</Link>
               </a>
               <ul className="sub-menu blank">
-                <li><Link onClick={openSide} className="link_name" href="#">Mis Postales</Link></li>
+                <li><Link to="/profileText" className="link_name" href="#">Mis Postales</Link></li>
               </ul>
             </li>
             <li>
               <a href="#">
                 <i class='bx bx-folder-plus' ></i>
-                <span className="link_name" /*onClick={()=>{typePost()}}*/>Publicar</span>
+                <span className="link_name" onClick={()=>{typePost()}}>Publicar</span>
               </a>
               <ul className="sub-menu blank">
-                <li><a className="link_name" href="#">Publicar</a></li>
+                <li><a className="link_name" href="#" onClick={()=>{typePost()}}>Publicar</a></li>
               </ul>
             </li>
             <li>
               <a href="#">
                 <i className='bx bx-cog' ></i>
-                <span className="link_name">Ajustes</span>
+                <Link to="/ajustes" className="link_name">Ajustes</Link>
               </a>
               <ul className="sub-menu blank">
-                <li><a className="link_name" href="#">Ajustes</a></li>
+                <li><Link to="/ajustes" className="link_name">Ajustes</Link></li>
               </ul>
             </li>
           </> : <></>}
           {userContextInfo.loged ?
             <div className="profile-details">
               <div className="name-job">
+              <ul>
+                <li><Link to="/profile" className="link_name"><img src={userContextInfo.infoUser.iconUser} alt="imagen de usuario" /></Link></li>
+              </ul>
                 <Link onClick={openSide} to="/profile" className="profile_name">{userContextInfo.infoUser.name}</Link>
               </div>
               <i className='bx bx-log-out' onClick={closeSesion}></i>
             </div>
+            
              :
             <div className="profile-details">
+              <ul>
+                <li><Link to="/login" className="link_name"><img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1682083366/usericon_eqm409.jpg" alt="icono por defecto" /></Link></li>
+              </ul>
               <div className="name-job">
                 <Link onClick={openSide} to="/login" className="profile_name">Iniciar sesión</Link>
               </div>
             </div>}
         </ul>
       </div>
-      {/* <div className="boton6-modal">
-    <label htmlFor="btn6-modal" id="lolbel-post">
+
+       <div className="boton7-modal">
+    <label htmlFor="btn7-modal" id="lolbel-post1">
       Abrir Modal
     </label>
   </div>
-  <input type="checkbox" id="btn6-modal" />
-  <div className="container6-modal">
-    <div className="content6-modal">
+  <input type="checkbox" id="btn7-modal" />
+  <div className="container7-modal">
+    <div className="content7-modal">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <h2>Tipo de publicación</h2>{" "}
         <span>
-          <label htmlFor="btn6-modal">
+          <label htmlFor="btn7-modal">
             <IconContext.Provider value={{ size: "30px" }}>
               {" "}
               <div>
@@ -162,7 +194,7 @@ export const Sidebar = () => {
       </div>
 
       <p>Que tipo de publicación desea realizar?</p>
-      <div className="btn6-cerrar">
+      <div className="btn7-cerrar">
        
         <label style={{marginRight:"10px"}} onClick={postImagesRedirect}>
           Imagen
@@ -172,8 +204,8 @@ export const Sidebar = () => {
         </label>
       </div>
     </div>
-    <label htmlFor="btn6-modal" className="cerrar6-modal"></label>
-  </div> */}
+    <label htmlFor="btn7-modal" className="cerrar7-modal"></label>
+  </div> 
     </>
 
   )

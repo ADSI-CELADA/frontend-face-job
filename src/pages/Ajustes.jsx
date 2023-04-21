@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { loadInfoUser } from "../api/api";
-import { Navbar } from "../components/Header/Navbar";
+import { Sidebar } from "../components/Header/Sidebar";
 
 export const Ajustes = () => {
   const [infoUser, setInfoUser] = useState([]);
@@ -28,6 +28,7 @@ export const Ajustes = () => {
     }, []);
   return (
     <>
+    <Sidebar/>
       <section className="ajustes-section">
         <div className="bnr">
             <div className="banner">

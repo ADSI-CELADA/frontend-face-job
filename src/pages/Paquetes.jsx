@@ -41,7 +41,7 @@ export const Paquetes = () => {
                         </ul>
                     </div> 
                     {buttonChange? <Link className="member-button">
-                       Comprado <i className='bx bx-chevron-right'></i>
+                       No disponible <i className='bx bx-chevron-right'></i>
                     </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
                        Comprar <i className='bx bx-chevron-right'></i>
@@ -62,7 +62,7 @@ export const Paquetes = () => {
                         </ul>
                     </div>
                     {buttonChange? <Link className="member-button">
-                       Comprado <i className='bx bx-chevron-right'></i>
+                       No disponible <i className='bx bx-chevron-right'></i>
                     </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
                        Comprar <i className='bx bx-chevron-right'></i>
@@ -83,7 +83,7 @@ export const Paquetes = () => {
                         </ul>
                     </div>
                     {buttonChange? <Link className="member-button">
-                       Comprado <i className='bx bx-chevron-right'></i>
+                       No disponible <i className='bx bx-chevron-right'></i>
                     </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
                        Comprar <i className='bx bx-chevron-right'></i>

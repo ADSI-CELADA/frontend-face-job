@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 export const Banner = () => {
   let navigate=useNavigate()
 let contextPosts=useContext(contextUser)
+const [infoAge, setInfoAge] = useState([]);
 const [infoUser,setInfoUser]=useState([])
 const [file, setFile] = useState(null);
 
@@ -18,11 +19,23 @@ useEffect(()=>{
         const  result=await loadInfoUser()
         setInfoUser(result.data[0])
      
-        
+        console.log(result.data[0]);
     }
    loadInfoUserk()
 
 },[])
+
+useEffect(() => {
+  async function loadInfoUserSettings() {
+    const result = await loadInfoUser();
+    let age=""
+    for (let i = 0; i < 10; i++) {
+    age = age+result.data[0].age[i]; 
+    }
+    setInfoAge(age);
+  }
+  loadInfoUserSettings();
+}, []);
 
 function sendImage() {
     async function loadImage() {
@@ -78,10 +91,12 @@ console.log(e.target.files[0]);
       }
      function postImagesRedirect(){
         navigate('/createPostImage')
+        
      }
 
      function postTextRedirect(){
       navigate('/createPostText')
+      
    }
    function Chat() {
     navigate('/Chat')
@@ -99,21 +114,16 @@ console.log(e.target.files[0]);
                     <div className="banner-info">
                         <h2>{infoUser.name}</h2>
                         <p>{infoUser.profession}</p>
-                        <div className="banner-stats">
-                            <ul>
-                           
-                                <li><i className='bx bx-heart bx-md'></i></li>
-                                <li onClick={Chat}><i className='bx bx-message bx-md' ></i></li>
-                            </ul>
-                        </div>
                     </div>  
                     <div className="banner-nav">
                         <nav>
                             <ul>
-                                <li><a href="#" ><span onClick={postImages}>Publicaciones</span> </a></li>
-                                <li><a href="#" ><span onClick={postText}>Postales</span></a></li>
-                                <li> <span className='modal-type-post' onClick={()=>{typePost()}}>Publicar</span></li>
-                                <li> <Link to="/Ajustes" >Ajustes</Link></li>
+                              <li><span>Nombre Completo:</span> {infoUser.namecomplete}</li>
+                              <li><span>Email:</span> {infoUser.email}</li>
+                              <li><span>Fecha Nacimiento:</span> {infoAge}</li>
+                              <li><span>Numero:</span> {infoUser.number}</li>
+                              <li><span>Paquete:</span> {infoUser.cod_paquete}</li>
+                              <li><span>Vistas Disponibles:</span> {infoUser.info_paquete}</li>
                             </ul>
                         </nav>
                     </div>              
