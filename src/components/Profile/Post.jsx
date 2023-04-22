@@ -32,7 +32,7 @@ export const Post = () => {
             const  result=await loadInfoUser()
             setInfoUser(result.data[0])
             setChanges("change")
-         loadImages()
+            loadImages()
         }
         loadInfoUserk()
        

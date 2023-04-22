@@ -832,7 +832,6 @@ form button{
     color: var(--color-blanco);
     text-decoration: none;
     padding: 8px 12px;
-    cursor: pointer;
 }
 .banner-nav nav ul li span{
     font-weight: 700;
