@@ -750,6 +750,7 @@ form button{
     height: 80vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 .banner section{
@@ -1775,27 +1776,78 @@ form button{
     height: 90vh;
 }
   .container-infoUser{
-    height: 85vh;
+    height: 94vh;
     width: 65%;
-    background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+       background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
     border-radius: 20px;
     margin: 30px 30px 30px 0;
   }
 
-  .container-infoUser p{
-    font-size: 125%;
+  .container-infoUser-options{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--color-quinto);
+    height: 10vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .container-infoUser-options a{
+    text-decoration: none;
+    padding: var(--boton-padding);
+    border-radius: 30px;
     color: var(--color-blanco);
   }
-  
-  .container-infoUser h3{
-    font-size: 170%;
-    color: var(--color-blanco);
+  .container-infoUser-options a:hover{
+    background: var(--color-tercer);
   }
+
+  .container-infoUser-posts{
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    height: calc(100% - 163px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .container-infoUser-posts div{
+    display: grid;
+    grid-template-columns: 25% 25% 20% 20% 10%;
+    height: 150px;
+    color: var(--color-blanco);
+    align-items: center;
+    justify-items: center;
+    border-bottom:var(--color-blanco)1px solid ;
+  }
+  .container-infoUser-posts div img{
+    width: 100px;
+    height: 100px;
+  }
+  .container-infoUser-posts div p i{
+    cursor: pointer;
+    font-size: 22px;
+    padding: var(--boton-padding);
+    border-radius: 25px;
+  }
+  .container-infoUser-posts div p i:hover{
+    background: #e20e0e;
+  }
+  .description{
+    display: grid;
+    grid-template-columns: 25% 25% 20% 20% 10%; 
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-items: center;
+    color: var(--color-blanco);
+    background:linear-gradient(#0646638d, #0969968d);
+    background-position: center;
+    background-size: cover;
+  }
+
 /*Pasarela de pagos*/
   .inputPayment{
     width: 100%;
@@ -2936,3 +2988,4 @@ overflow: hidden;
     width: 280px;
 }
     /*admin*/
+

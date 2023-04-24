@@ -1,7 +1,7 @@
 import React, { useState, useEffect,useContext } from "react";
 import { Link } from "react-router-dom";
 import { loadInfoUser } from "../api/api";
-import { getPostsUser } from "../api/apiPosts";
+import { getPostsUser,poststexts } from "../api/apiPosts";
 import { Sidebar } from "../components/Header/Sidebar";
 import { contextUser } from "../Hooks/userContext";
 
@@ -10,19 +10,22 @@ export const Ajustes = () => {
   const [infoUser, setInfoUser] = useState([]);
   const [infoAge, setInfoAge] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [postsText, setPostsText] = useState([]);
 
   useEffect(() => {
     async function loadInfoUserSettings() {
       const result = await loadInfoUser();
       setInfoUser(result.data[0]);
-      loadImages()
+      loadImage()
     }
     loadInfoUserSettings();
   }, []);
 
-  async function loadImages() {
+  async function loadImage() {
     const resp = await getPostsUser(userContext.infoUser.email)
+    const resp1 = await poststexts(userContext.infoUser.email)
     setPosts(resp.data)
+    setPostsText(resp1.data)
   }
 
     useEffect(() => {
@@ -61,22 +64,40 @@ export const Ajustes = () => {
             </div>
         </div>
         <div className="container-infoUser">
-          <section>
-          <Link to="/UpdateForm"><p>Actualizar información</p></Link>  
-            <Link to="/DeleteForm"><p>Eliminar cuenta</p></Link>
+          <section className="container-infoUser-options">
+            <Link to="/UpdateForm"><p>Actualizar información</p></Link>  
+            <Link to="/DeleteForm"><p >Eliminar cuenta</p></Link>
           </section>
-          <section>
-            <h3>Publicaciones</h3>
-            {posts.map((post)=>(
+          <div className="description">
+            <p>Contenido</p>
+            <p>Descripcion</p>
+            <p>Me gustas</p>
+            <p>Comentarios</p>
+            <p>Eliminar</p>
+           </div>
+          <section className="container-infoUser-posts">
+            {posts.map((post)=>(  
               <div key={post.email}>
-                <p>descripción: {post.description}</p>
-                <p>Me gustas: {post.likes}</p>
-                <p>Comentarios: {post.comments}</p>
+                <img src={post.img} alt="hola" />
+                <p>{post.description}</p>
+                <p>{post.likes}</p>
+                <p>{post.comments}</p>
+                <p><i class='bx bx-trash'></i></p>
+              </div>
+            ))}
+            
+            {postsText.map((post)=>(
+              <div key={post.email}>
+                <p>{post.textos}</p>
+                <p>{post.description}</p>
+                <p>{post.likes}</p>
+                <p>{post.comments}</p>
+                <p><i class='bx bx-trash' ></i></p>
               </div>
             ))}
           </section>
         </div>
-      </section>
+      </section>  
     </>
   );
 };
