@@ -3,6 +3,7 @@ import { Form, Formik } from "formik";
 import { updateDataUser } from "../../api/api";
 import logo from "../../assets/img/logo.png";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Update = () => {
     let navigate=useNavigate()
@@ -80,6 +81,7 @@ export const Update = () => {
                 />
                 
                 <button type="submit">{isSubmitting ? "Actualizando..." : "Actualizar" }</button>
+                <Link to="/Ajustes">volver</Link>
                 </Form>
             )}
             </Formik>

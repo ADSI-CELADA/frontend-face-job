@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Form, Formik } from "formik";
 import {deleteDataUser } from "../../api/api";
 import logo from "../../assets/img/logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Cookies from 'universal-cookie'
+import Swal from "sweetalert2";
 
 export const DeleteUser = () => {
     let navigate=useNavigate()
@@ -40,7 +41,13 @@ export const DeleteUser = () => {
                     if (result.data.data == "eliminado") {
                         setTextDelete('Eliminar')
                         closeSesion()
-                        
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Se elimino la cuenta",
+                            showConfirmButton: false,
+                            timer: 1500,
+                          }); 
                         setTimeout(() => {
                           navigate('/')  
                         }, 1500);
@@ -66,6 +73,7 @@ export const DeleteUser = () => {
                     required
                 />
                 <button type="submit">{textDelete}</button>
+                <Link to="/Ajustes">volver</Link>
                 </Form>
             )}
             </Formik>

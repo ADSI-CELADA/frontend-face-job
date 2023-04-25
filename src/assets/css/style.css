@@ -1778,9 +1778,9 @@ form button{
   .container-infoUser{
     height: 94vh;
     width: 65%;
-       background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
-        background-position: center;
-        background-size: cover;
+    background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
     border-radius: 20px;
     margin: 30px 30px 30px 0;
   }
@@ -1974,6 +1974,12 @@ form button{
     align-items: center;
     text-decoration: none;
     color: var(--color-quinto);
+}
+
+.volver{
+    text-decoration: none;
+    color: var(--color-quinto);
+    margin-left: 10px;
 }
 /*------------------chat ----------------*/
 .chat-box{
@@ -2792,7 +2798,7 @@ overflow: hidden;
     /*reclamos quejas*/
 
     .claims{
-        padding: 30px;
+        padding: 30px 30px 30px 110px;
         display: flex;
         flex-direction: column;
         align-items: center;

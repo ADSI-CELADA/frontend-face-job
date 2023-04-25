@@ -1,9 +1,12 @@
 import React, { useState, useEffect,useContext } from "react";
 import { Link } from "react-router-dom";
 import { loadInfoUser } from "../api/api";
-import { getPostsUser,poststexts } from "../api/apiPosts";
+import { getPostsUser,poststexts,DeletePostImage,DeletePostsText } from "../api/apiPosts";
 import { Sidebar } from "../components/Header/Sidebar";
 import { contextUser } from "../Hooks/userContext";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { IconContext } from "react-icons";
+import Swal from "sweetalert2";
 
 export const Ajustes = () => {
   const userContext = useContext(contextUser)
@@ -11,6 +14,16 @@ export const Ajustes = () => {
   const [infoAge, setInfoAge] = useState([]);
   const [posts, setPosts] = useState([]);
   const [postsText, setPostsText] = useState([]);
+  const [boton,setBoton]=useState([])
+  const [gestionImg, setGestionImg] = useState({
+    id: "0",
+    email: "",
+    img: "",
+  });
+  const [gestionText, setgestionText] = useState({
+    id: "0",
+    email: "",
+  });
 
   useEffect(() => {
     async function loadInfoUserSettings() {
@@ -39,6 +52,62 @@ export const Ajustes = () => {
       }
       loadInfoUserSettings();
     }, []);
+
+    function postData(id, email, img) {
+      document.getElementById("lolbel").click();
+      let lista = { id: id, email: email, img: img };
+      setGestionImg(lista);
+    }
+
+    function postDataText(id, email) {
+      document.getElementById("lolbel-text").click();  
+      let lista = { id: id, email: email };
+      setgestionText(lista);
+    }
+
+    function alert() {
+      document.getElementById("lolbel").click();
+    }
+
+    function alertText() {
+      document.getElementById("lolbelEliminarText").click();
+    }
+
+    async function deletePostTexts() {
+      let id = gestionText.id;
+      console.log("Se esta eliminando...");
+      const result = await DeletePostsText(id);
+      console.log("se elimino", result);
+      setBoton(result)
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Se elimino la publicación",
+        showConfirmButton: false,
+        timer: 1500,
+      }); 
+      setTimeout(()=>{
+        window.location.href="/Ajustes"
+      },1500)
+    }
+
+    async function deletePost() {
+      let id = gestionImg.id;
+      console.log("Se esta eliminando...");
+      const result = await DeletePostImage(id);
+      console.log("se elimino", result);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Se elimino la publicación",
+        showConfirmButton: false,
+        timer: 1500,
+      }); 
+      setTimeout(()=>{
+        window.location.href="/Ajustes"
+      },1500)
+    }
+
   return (
     <>
     <Sidebar/>
@@ -82,7 +151,7 @@ export const Ajustes = () => {
                 <p>{post.description}</p>
                 <p>{post.likes}</p>
                 <p>{post.comments}</p>
-                <p><i class='bx bx-trash'></i></p>
+                <p><i class='bx bx-trash' onClick={()=>{ postData(post.id, post.email, post.img)}}></i></p>
               </div>
             ))}
             
@@ -92,12 +161,147 @@ export const Ajustes = () => {
                 <p>{post.description}</p>
                 <p>{post.likes}</p>
                 <p>{post.comments}</p>
-                <p><i class='bx bx-trash' ></i></p>
+                <p><i class='bx bx-trash' onClick={()=>{ postDataText(post.id, post.email, post.img)}}></i></p>
               </div>
             ))}
           </section>
         </div>
       </section>  
+      <div className="boton2-modal">
+            <label htmlFor="btn2-modal" id="lolbel">
+              Abrir Modal
+            </label>
+          </div>
+          <input type="checkbox" id="btn2-modal" />
+          <div className="container2-modal">
+            <div className="content2-modal">
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h2>Gestionar Publicacion</h2>{" "}
+                <span>
+                  <label htmlFor="btn2-modal">
+                    <IconContext.Provider value={{ size: "30px" }}>
+                      {" "}
+                      <div>
+                        {" "}
+                        <AiFillCloseCircle />
+                      </div>
+                    </IconContext.Provider>
+                  </label>
+                </span>
+              </div>
+
+              <p>Deseas eliminar  tu publicacion?</p>
+              <div className="btn2-cerrar">
+               
+                <label  onClick={alert}>
+                  Eliminar
+                </label>
+              </div>
+            </div>
+            <label htmlFor="btn2-modal" className="cerrar2-modal"></label>
+          </div>
+          <div className="boton3-modal">
+            <label htmlFor="btn3-modal" id="lolbel3">
+              Abrir Modal
+            </label>
+          </div>
+          <input type="checkbox" id="btn3-modal" />
+          <div className="container3-modal">
+            <div className="content3-modal">
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h2>Eliminar publicacion</h2>{" "}
+                <span>
+                  <label htmlFor="btn3-modal">
+                    <IconContext.Provider value={{ size: "30px" }}>
+                      {" "}
+                      <div>
+                        {" "}
+                        <AiFillCloseCircle />
+                      </div>
+                    </IconContext.Provider>
+                  </label>
+                </span>
+              </div>
+
+              <p>
+                Estas seguro de eliminar esta publicacion?
+                <img src={gestionImg.img} alt="imagen" />
+              </p>
+              <div className="btn3-cerrar">
+                <label onClick={deletePost}>Eliminar</label>
+              </div>
+            </div>
+            <label htmlFor="btn3-modal" className="cerrar3-modal"></label>
+          </div>
+          
+
+          <div className="boton4-modal">
+              <label htmlFor="btn4-modal" id="lolbel-text">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn4-modal" />
+            <div className="container4-modal">
+              <div className="content4-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Gestionar Publicacion</h2>{" "}
+                  <span>
+                    <label htmlFor="btn4-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        {" "}
+                        <div id='closeOne'>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
+
+                <p>Deseas eliminar o actualizar tu publicacion?</p>
+                <div className="btn4-cerrar">
+                  <label style={{ marginLeft: "20px" }} onClick={alertText}>
+                    Eliminar
+                  </label>
+                </div>
+              </div>
+              <label htmlFor="btn4-modal" className="cerrar4-modal"></label>
+            </div>
+
+            <div className="boton5-modal">
+              <label htmlFor="btn5-modal" id="lolbelEliminarText">
+                Abrir Modal
+              </label>
+            </div>
+            <input type="checkbox" id="btn5-modal" />
+            <div className="container5-modal">
+              <div className="content5-modal">
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h2>Eliminar publicacion</h2>{" "}
+                  <span>
+                    <label htmlFor="btn5-modal">
+                      <IconContext.Provider value={{ size: "30px" }}>
+                        {" "}
+                        <div>
+                          {" "}
+                          <AiFillCloseCircle />
+                        </div>
+                      </IconContext.Provider>
+                    </label>
+                  </span>
+                </div>
+
+                <p>Estas seguro de eliminar esta publicacion?</p>
+                <div className="btn5-cerrar">
+                  <label onClick={deletePostTexts}>Eliminar</label>
+                </div>
+              </div>
+              <label htmlFor="btn5-modal" className="cerrar5-modal"></label>
+            </div>
     </>
   );
 };
