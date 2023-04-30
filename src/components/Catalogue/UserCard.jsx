@@ -46,10 +46,15 @@ async function goProfile(params) {
       }else{
         Swal.fire({
           position: "center",
-          icon: "warning",
-          title: "Necesitas un paquete para ver el perfil",
-          showConfirmButton: false,
-          timer: 1500,
+                icon: "warning",
+                title: "Necesitas un paquete para ver el perfil",
+                showConfirmButton: false,
+                timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
         }); 
         navigate('/paquetes')
       }

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { IconContext } from "react-icons";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export const Banner = () => {
   let navigate=useNavigate()
@@ -57,7 +58,18 @@ const selectedHandler = (e) => {
     console.log("sii");
 console.log(e.target.files[0]);
     if (!e.target.files[0]) {
-      alert("Debes selecionar un archivo de imagen");
+      Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Debes seleccionar un archivo de imagen",
+        showConfirmButton: false,
+        timer: 1500,
+        iconColor : "#064663",
+        backdrop : "white",
+        padding : "3em",
+        color: "#064663",
+        customClass : "border", 
+      });
     } else {
       setFile(e.target.files[0]);
       document.getElementById("labelClick").click();

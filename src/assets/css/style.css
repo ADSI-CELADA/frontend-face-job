@@ -2995,3 +2995,8 @@ overflow: hidden;
 }
     /*admin*/
 
+
+.border {
+    border: 4px solid #043248;
+}
+

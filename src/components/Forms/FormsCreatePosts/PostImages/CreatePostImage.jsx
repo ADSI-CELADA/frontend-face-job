@@ -1,30 +1,30 @@
 import logo from '../../../../assets/img/logo.png'
-import { useState,useContext } from 'react';
+import { useState, useContext } from 'react';
 import { contextUser } from '../../../../Hooks/userContext';
 import { createPostImage } from '../../../../api/apiPosts';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 export const CreatePost = () => {
-    const  navigate=useNavigate()
-   let usercContextInfo=useContext(contextUser)
-    const [descriptions, setDescriptions] = useState("");
+  const navigate = useNavigate()
+  let usercContextInfo = useContext(contextUser)
+  const [descriptions, setDescriptions] = useState("");
   const [file, setFile] = useState(null);
-  const[textoLoad,setTextoLoad]=useState('Subir')
+  const [textoLoad, setTextoLoad] = useState('Subir')
   const selectedHandler = (e) => {
     setFile(e.target.files[0]);
   };
 
   const selectedDescription = () => {
-   let obtainDescription = document.getElementById("description").value;
+    let obtainDescription = document.getElementById("description").value;
     setDescriptions(obtainDescription);
   };
   const sendHandler = async () => {
-   
-   if (!file) {
+
+    if (!file) {
       alert("Debes selecionar un archivo de imagen");
-      
-      
+
+
     } else {
       setTextoLoad('Subiendo...')
       let email = usercContextInfo.infoUser.email;
@@ -44,31 +44,36 @@ export const CreatePost = () => {
       title: "Se cargo la publicación exitosamente",
       showConfirmButton: false,
       timer: 1500,
+      iconColor: "#064663",
+      backdrop: "white",
+      padding: "3em",
+      color: "#064663",
+      customClass: "border",
     });
-    setTimeout(()=>{
+    setTimeout(() => {
       setTextoLoad('Subir')
       navigate('/profile')
-    },1500)
-    
-    
+    }, 1500)
+
+
   };
 
   return (
     <div className="log-in">
-        <div data-aos="fade-left" data-aos-duration="1000"  className="log-in-form">
-            <h2>Bienvenido a</h2>
-            <section>
-                <img src={logo} alt="logo" />
-                <p>Face-Job</p>
-            </section>
-            <p>Crea tu publicación</p>
-            <div className="form-post">
-                <input id='description' placeholder='description image' type="text"   onChange={selectedDescription}/>
-                <input placeholder='image' type="file" id="file" onChange={selectedHandler} />
-                <button id="mandar" onClick={sendHandler}>{textoLoad}</button>
-            </div>
-          
+      <div data-aos="fade-left" data-aos-duration="1000" className="log-in-form">
+        <h2>Bienvenido a</h2>
+        <section>
+          <img src={logo} alt="logo" />
+          <p>Face-Job</p>
+        </section>
+        <p>Crea tu publicación</p>
+        <div className="form-post">
+          <input id='description' placeholder='description image' type="text" onChange={selectedDescription} />
+          <input placeholder='image' type="file" id="file" onChange={selectedHandler} />
+          <button id="mandar" onClick={sendHandler}>{textoLoad}</button>
         </div>
+
+      </div>
     </div>
   )
-  }
+}

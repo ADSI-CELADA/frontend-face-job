@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { contextUser } from '../../../../Hooks/userContext'
 import { useContext } from 'react'
 import { validateCodeEmail } from '../../../../api/api'
+import Swal from 'sweetalert2'
 export const RecoverCode = () => {
     let context=useContext(contextUser)
     let navigate=useNavigate()
@@ -30,9 +31,34 @@ export const RecoverCode = () => {
               console.log(context.recoverPass);
             const result=await validateCodeEmail(context.recoverPass,values)
             if(result.data.data=="CODE_VALIDE"){
-              navigate('/recoverNewPass')
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Codigo correcto",
+                showConfirmButton: false,
+                timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
+              });
+              setTimeout(() => {
+                navigate('/recoverNewPass')
+              }, 1500);
             }else{
-              alert('codigo incorrecto')
+              Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Codigo incorrecto",
+                showConfirmButton: false,
+                timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
+              });
             }
             }}
             >

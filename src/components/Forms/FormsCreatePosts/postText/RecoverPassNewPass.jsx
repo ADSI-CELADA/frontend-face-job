@@ -5,6 +5,7 @@ import { contextUser } from '../../../../Hooks/userContext'
 import { useContext } from 'react'
 import { updatePasswordEmail } from '../../../../api/api'
 import { useNavigate } from 'react-router-dom'
+import Swal from "sweetalert2"
 export const RecoverPassNewPass = () => {
     let context=useContext(contextUser)
     let navigate=useNavigate()
@@ -31,8 +32,21 @@ export const RecoverPassNewPass = () => {
             const result=await updatePasswordEmail(context.recoverPass,values)
             console.log(result);
             if (result.data.data=="PASSWORD_UPDATE") {
-                alert('tu contraseña se cambio exitosamente ve a iniciar sesion!')
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Su cambio de contraseña fue exitoso, ya puedes loguearte",
+                showConfirmButton: false,
+                timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
+              });
+              setTimeout(() => {
                 navigate('/')
+              }, 2000);
             }
             }}
             >

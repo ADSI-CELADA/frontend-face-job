@@ -85,7 +85,12 @@ export const Ajustes = () => {
         title: "Se elimino la publicación",
         showConfirmButton: false,
         timer: 1500,
-      }); 
+        iconColor : "#064663",
+        backdrop : "white",
+        padding : "3em",
+        color: "#064663",
+        customClass : "border", 
+      });
       setTimeout(()=>{
         window.location.href="/Ajustes"
       },1500)

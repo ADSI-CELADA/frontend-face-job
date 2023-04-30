@@ -9,6 +9,8 @@ import { contextUser } from '../../Hooks/userContext'
 import { consultProfileProfessions } from '../../api/api'
 import { Link,useNavigate } from 'react-router-dom'
 import { createNewChat } from '../../api/apiChat'
+import Swal from "sweetalert2"
+
 export const Banner = () => {
   let navigate=useNavigate()
 let contextPosts=useContext(contextUser)
@@ -56,7 +58,18 @@ const selectedHandler = (e) => {
     console.log("sii");
 console.log(e.target.files[0]);
     if (!e.target.files[0]) {
-      alert("Debes selecionar un archivo de imagen");
+      Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Debe seleccionar un archivo de imagen",
+        showConfirmButton: false,
+        timer: 1500,
+        iconColor : "#064663",
+        backdrop : "white",
+        padding : "3em",
+        color: "#064663",
+        customClass : "border", 
+      });
     } else {
       setFile(e.target.files[0]);
       document.getElementById("labelClick").click();
@@ -92,7 +105,18 @@ console.log(e.target.files[0]);
         if (response.data=='connected') {
           navigate('/Chat')
         }else{
-          alert('este usuario esta en proceso de revision por algunos comportamientos toxicos')
+          Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "Este usuario esta en proceso de revisión debido a comportamientos no adecuados",
+            showConfirmButton: false,
+            timer: 2500,
+            iconColor : "#064663",
+            backdrop : "white",
+            padding : "3em",
+            color: "#064663",
+            customClass : "border", 
+          });
         }
        }
   return (

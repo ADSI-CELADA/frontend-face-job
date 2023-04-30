@@ -8,7 +8,7 @@ let url = "http://localhost:4000";
 
 
 export const LogIn = () => {
- const  navigate=useNavigate()
+  const navigate = useNavigate()
   const singInUser = async (values) => {
     return await axios.post(`${url}/loginCliente`, values);
   };
@@ -37,7 +37,7 @@ export const LogIn = () => {
               data: { data, result, token },
             } = response;
             console.log(result);
-           
+
             if (data == "logueado") {
               Swal.fire({
                 position: "center",
@@ -45,12 +45,17 @@ export const LogIn = () => {
                 title: "Logueado",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border",  
               });
-              setTimeout(()=>{
-                document.cookie=`token=${response.data.token};max-age=${60*1440};path=/;samesite=strict`
+              setTimeout(() => {
+                document.cookie = `token=${response.data.token};max-age=${60 * 1440};path=/;samesite=strict`
                 window.location.href="/"
-              },1500)
-              
+              }, 1500)
+
             } else if (data == "PASSWORD_ERROR") {
               Swal.fire({
                 position: "center",
@@ -58,19 +63,29 @@ export const LogIn = () => {
                 title: "Contraseña incorrecta",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
-            } else if (data=="admin") {
+            } else if (data == "admin") {
               Swal.fire({
                 position: "center",
                 icon: "success",
                 title: "Logueado Administrador",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
-              setTimeout(()=>{
-                document.cookie=`token=${response.data.token};max-age=${60*1440};path=/;samesite=strict`
-                window.location.href="/ADMIN"
-              },1500)
+              setTimeout(() => {
+                document.cookie = `token=${response.data.token};max-age=${60 * 1440};path=/;samesite=strict`
+                window.location.href = "/ADMIN"
+              }, 1500)
             } else {
               Swal.fire({
                 position: "center",
@@ -78,6 +93,11 @@ export const LogIn = () => {
                 title: "El usuario no existe",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
             }
           }}

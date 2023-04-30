@@ -122,10 +122,15 @@ async function loadImages(){
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Se elimino la publicación",
+        title: "Se elimino la publicacion",
         showConfirmButton: false,
         timer: 1500,
-      }); 
+        iconColor : "#064663",
+        backdrop : "white",
+        padding : "3em",
+        color: "#064663",
+        customClass : "border", 
+      });
       setTimeout(()=>{
         window.location.href="/profile"
       },1500)

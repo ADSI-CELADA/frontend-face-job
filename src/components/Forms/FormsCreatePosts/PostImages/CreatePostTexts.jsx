@@ -25,10 +25,15 @@ let navigate=useNavigate()
              console.log(response);
              Swal.fire({
               position: "center",
-              icon: "success",
-              title: "Se cargo la publicación exitosamente",
-              showConfirmButton: false,
-              timer: 1500,
+                icon: "success",
+                title: "Se cargo la publicación exitosamente",
+                showConfirmButton: false,
+                timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
             });
             setTimeout(()=>{
               navigate('/profile')

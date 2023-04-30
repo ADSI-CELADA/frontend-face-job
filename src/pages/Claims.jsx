@@ -25,10 +25,15 @@ export const Claims = () => {
         if(value == "OK"){
             Swal.fire({
                 position: "center",
-                icon: "success",
-                title: "se envio su opinión",
+                icon: "warning",
+                title: "Se envio la opinión",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
               setTimeout(() => {
                 navigate('/')
@@ -36,10 +41,15 @@ export const Claims = () => {
         }else{
             Swal.fire({
                 position: "center",
-                icon: "error",
-                title: "Ocuriio un error con el envio",
+                icon: "warning",
+                title: "Ocurrio un error con el envío",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
         }
     }

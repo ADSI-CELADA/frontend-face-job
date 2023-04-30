@@ -1,6 +1,7 @@
 import Cookies from 'universal-cookie'
 import { reports,solucion,messagesUsers,deleteAccountAdmin } from '../../api/api';
 import { useEffect, useState } from 'react';
+import Swal from "sweetalert2"
 
 function Admin() {
    
@@ -85,15 +86,50 @@ if (deleteUser.user!='' && pass!='' && deleteUser.id!='') {
     setPass('')
     if (response.data.data=="eliminado") {
         document.getElementById('lolbel3').click()
-        alert('Usuario eliminado exitosamente')
-        reLoad()
+        Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: "Usuario eliminado exitosamente",
+          showConfirmButton: false,
+          timer: 1500,
+          iconColor : "#064663",
+          backdrop : "white",
+          padding : "3em",
+          color: "#064663",
+          customClass : "border", 
+        });
+        setTimeout(() => {
+          reLoad()
+        }, 1500);
     }else{
         document.getElementById('lolbel3').click()
-        alert('ocurrio un error')
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Ocurrio un error",
+          showConfirmButton: false,
+          timer: 1500,
+          iconColor : "#064663",
+          backdrop : "white",
+          padding : "3em",
+          color: "#064663",
+          customClass : "border", 
+        });
     }
 }else{
     document.getElementById('lolbel3').click()
-    alert('no hay datos aun')
+    Swal.fire({
+      position: "center",
+      icon: "warning",
+      title: "No hay datos aún",
+      showConfirmButton: false,
+      timer: 1500,
+      iconColor : "#064663",
+      backdrop : "white",
+      padding : "3em",
+      color: "#064663",
+      customClass : "border", 
+    });
 }
 
    

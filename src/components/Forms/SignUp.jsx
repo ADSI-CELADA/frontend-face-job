@@ -45,7 +45,11 @@ export const SignUp = () => {
                 title: "Registrado",
                 showConfirmButton: false,
                 timer: 1500,
-                
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
               setTimeout(()=>{
                 navigate('/')
@@ -54,13 +58,29 @@ export const SignUp = () => {
               Swal.fire({
                 position: "center",
                 icon: "error",
-                title: "error",
+                title: "Error al registrar",
                 showConfirmButton: false,
                 timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
               });
             }
             }else{
-              alert("Aun hay datos sin completar")
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Aún hay datos sin completar",
+                showConfirmButton: false,
+                timer: 1500,
+                iconColor : "#064663",
+                backdrop : "white",
+                padding : "3em",
+                color: "#064663",
+                customClass : "border", 
+              });
             }
            
           }}
