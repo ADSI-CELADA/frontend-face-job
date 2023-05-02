@@ -46,10 +46,11 @@ export const LogIn = () => {
                 showConfirmButton: false,
                 timer: 1500,
                 iconColor : "#064663",
-                backdrop : "white",
+                backdrop : "linear-gradient(#064663b6, #064663b6)",
                 padding : "3em",
                 color: "#064663",
-                customClass : "border",  
+                customClass : "border",
+                  
               });
               setTimeout(() => {
                 document.cookie = `token=${response.data.token};max-age=${60 * 1440};path=/;samesite=strict`

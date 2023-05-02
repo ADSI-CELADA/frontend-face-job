@@ -910,7 +910,7 @@ form button{
     background: var(--color-blanco);
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .post-content{
     display: flex;
@@ -2039,8 +2039,8 @@ form button{
     background: #25a51a;
 }
 .escoger-chat .textosEscoger-chat{
-    background: var(--color-blanco);
-    color: var(--color-quinto);
+    background: var(--color-quinto);
+    color: var(--color-blanco);
     border-radius: 50px;
     display: flex;
     padding: 5px 0;
@@ -2048,10 +2048,8 @@ form button{
     align-items: center;
     width:50%;
 }
-.escoger-chat .textosEscoger-chat:hover{
-    background: var(--color-quinto);
-    color: var(--color-blanco);
-}
+
+
 .escoger-chat .textosEscoger-chat2{
     background: var(--color-blanco);
     color: var(--color-quinto);
@@ -2997,6 +2995,7 @@ overflow: hidden;
 
 
 .border {
-    border: 4px solid #043248;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 20px;
 }
 
