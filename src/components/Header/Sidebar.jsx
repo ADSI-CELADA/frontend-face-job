@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { contextUser } from "../../Hooks/userContext";
 // import logo from "../../assets/img/Logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import Cookies from 'universal-cookie'
 import { IconContext } from "react-icons";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
 
 
 
@@ -56,6 +55,9 @@ export const Sidebar = () => {
     window.location.href = "/"
   }
 
+  const catalogue = () =>{
+    navigate('/catalogue')
+  }
   return (
     <>
       <div className={styleSide}>
@@ -66,7 +68,7 @@ export const Sidebar = () => {
         <ul className="nav-links">
           <li>
             <a href="#">
-              <i class='bx bx-user-pin' ></i>
+              <i class='bx bx-user-pin' onClick={catalogue} ></i>
               <Link onClick={openSide} to="/catalogue" className="link_name">Perfiles</Link>
             </a>
             <ul className="sub-menu blank">

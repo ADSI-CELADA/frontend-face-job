@@ -126,7 +126,7 @@ async function loadImages(){
         showConfirmButton: false,
         timer: 1500,
         iconColor : "#064663",
-        backdrop : "white",
+        backdrop : "linear-gradient(#064663b6, #064663b6)",
         padding : "3em",
         color: "#064663",
         customClass : "border", 

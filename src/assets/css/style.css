@@ -272,6 +272,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     gap: 10px;
+    overflow: hidden;
 }
 .sidebar .profile-details img{
     width: 50px;
@@ -856,6 +857,7 @@ form button{
 /*---------------------posts----------------------------*/
 .container-post{
     width: 80%;
+    padding: 0 0 30px 0;
     display: flex;
     flex-direction: column;
     position:absolute;
@@ -1923,7 +1925,7 @@ form button{
     color: var(--color-blanco);
 }
 .member_section-card{
-    background: url(../../../public/layered-waves-haikei.svg) ;
+    background: url(../layered-waves-haikei.svg) ;
     background-position: bottom;
     display: flex;
     flex-direction: column;

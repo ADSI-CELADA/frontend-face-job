@@ -40,7 +40,7 @@ const CheckoutForm = () => {
             showConfirmButton: false,
             timer: 1500,
             iconColor: "#064663",
-            backdrop: "white",
+            backdrop : "linear-gradient(#064663b6, #064663b6)",
             padding: "3em",
             color: "#064663",
             customClass: "border",
@@ -59,7 +59,7 @@ const CheckoutForm = () => {
             showConfirmButton: false,
             timer: 1500,
             iconColor : "#064663",
-            backdrop : "white",
+            backdrop : "linear-gradient(#064663b6, #064663b6)",
             padding : "3em",
             color: "#064663",
             customClass : "border", 
@@ -74,7 +74,8 @@ const CheckoutForm = () => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <h2>paquete 2</h2>
+      <h2>Face-job</h2>
+      <h3>Paquete 2</h3>
       <CardElement className="inputPayment" />
       <button disabled={!stripe}>{loading ? "cargando..." : "comprar"}
       </button>
