@@ -140,7 +140,6 @@ if (deleteUser.user!='' && pass!='' && deleteUser.id!='') {
        {chat ? (
         <>
         <section className="admin-section">
-        <div>
         <h1>Administración De Reportes <span className="admin-logOut" ><i className='bx bx-log-out bx-sm bx-border-circle'  onClick={closeSesion}></i> <p style={{marginLeft:"15px"}}>  </p> <i className='bx bx-revision  bx-sm bx-border-circle' onClick={reLoad}></i></span></h1>
         <span className="admin-infoReport">
             <p className="admin-Reporte-margin">Reporte</p>
@@ -166,12 +165,7 @@ if (deleteUser.user!='' && pass!='' && deleteUser.id!='') {
        {/* --------------------------- */}
              
    </section>
-
-  
-        </div>
-        
        
-      
     </section>
     <div className="boton2-modal">
         <label htmlFor="btn2-modal" id="lolbel">
@@ -226,9 +220,9 @@ if (deleteUser.user!='' && pass!='' && deleteUser.id!='') {
             </div>
       </>
        ) : ( <section className="chat-section">
-       <div className="container-chat">
+       <div className="container-chat-c">
        <div className="rightSide-chat">
-       <div className="header-chat">
+       <div className="header-chat-c">
            <div className="imgText-chat" onClick={changeInterface}>
                <div className="userImg-chat">
                    <img src="" className="cover-chat"/>

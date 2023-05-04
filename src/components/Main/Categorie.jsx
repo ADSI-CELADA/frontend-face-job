@@ -4,32 +4,32 @@ export const Categorie = () => {
       <div className="categorie-body">
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Profesor</a>
+            <a href="">Desarrollador de Software</a>
           </div>
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Programador</a>
+            <a href="">Diseñador Grafico</a>
           </div>
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Diseñador</a>
+            <a href="">Coach Personal</a>
           </div>
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Administrador</a>
+            <a href="">Desarrollador de Aplicaciones Moviles</a>
           </div>
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Constructor</a>
+            <a href="">Diseñador de Interiores</a>
           </div>
         </div>
         <div className="mini-categorie-card">
-          <div className="categorie-btn-other">
-            <a href="">Otros</a>
+          <div className="categorie-btn">
+            <a href="">Fotografo</a>
           </div>
         </div>
       </div>

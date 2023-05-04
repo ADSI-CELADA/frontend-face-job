@@ -445,6 +445,7 @@ body::-webkit-scrollbar-thumb{
 .mini-categorie-card{   
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     align-items: center;
+    text-align: center;
     height: 20vh;
     width: 22vw;
     display: flex;
@@ -454,32 +455,34 @@ body::-webkit-scrollbar-thumb{
     gap: 20px;
 }
 .mini-categorie-card:first-child{
-    background:linear-gradient(#0646638d, #0969968d), url(../img/profesor.jpg)no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.mini-categorie-card:nth-child(2){ 
     background:linear-gradient(#0646638d, #0969968d), url(../img/programer.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
-.mini-categorie-card:nth-child(3){
+.mini-categorie-card:nth-child(2){ 
     background:linear-gradient(#0646638d, #0969968d), url(../img/diseñador.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
+.mini-categorie-card:nth-child(3){
+    background:linear-gradient(#0646638d, #0969968d), url(../img/coach.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 .mini-categorie-card:nth-child(4){
-    background:linear-gradient(#0646638d, #0969968d), url(../img/administracion.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(../img/movilees.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(5){
-    background:linear-gradient(#0646638d, #0969968d), url(../img/constructor.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(../img/interiores.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(6){
-    background: var(--color-blanco);
+    background:linear-gradient(#0646638d, #0969968d), url(../img/fotografo.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .categorie-title{
     color: var(--color-tercer);
@@ -2175,7 +2178,7 @@ form button{
 }
 
 .rightSide-chat{
-    width: 70%;
+    width: 100%;
     border-radius: 0 20px 20px 0;
 }
 .header-chat-c{
@@ -2215,7 +2218,7 @@ form button{
     padding: 15px;
     display: flex;
     flex-direction: column;
-    background:linear-gradient(#0646638d, #0969968d), url(https://cdn.bizneo.com/blog/wp-content/uploads/2022/05/tiempo-efectivo-de-trabajo.jpg) no-repeat;
+    background:var(--color-cuarto);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -2261,7 +2264,7 @@ form button{
     text-align: right;
     max-width: 65%;
     padding: 12px;
-    background: #096A96;
+    background: var(--color-quinto);
     border-radius:10px ;
     font-size: 0.9em;
     color: #fff;
@@ -2273,7 +2276,7 @@ form button{
     right: -12px;
     width: 20px;
     height: 20px;
-    background: linear-gradient(135deg,#096A96 0%,#096A96 50%,transparent 50%,transparent);
+    background: linear-gradient(135deg,#064663 0%,#064663 50%,transparent 50%,transparent);
 }
 .message-chat p img{
     width: 400px;
@@ -2307,6 +2310,25 @@ form button{
 .message-p-chat{
     display: flex;
     gap: 15px;
+}
+
+.chat-section{
+    max-height: 93vh;
+    width: 97vw;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 1px 1px 0 rgba( 0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
+}
+
+.container-chat-c{
+    position: relative;
+    width: 100%;
+    max-width:100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 65px);
+    border-radius: 20px;
+    background:var(--color-cuarto);
 }
 
 /* chat */
@@ -2800,17 +2822,29 @@ overflow: hidden;
     .claims{
         padding: 30px 30px 30px 110px;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 100px;
+        gap: 50px;
+        flex-wrap: wrap;
     }
     .claims-contain{
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
         gap: 15px;
+        width: 40%;
+    }
+    .claims-contain-img{
+        width: 45%;
+        height: 45vh;
+        border-radius: 20px;
+        background:linear-gradient(#0646638d, #0969968d), url(../img/catalogue.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .claims-contain-img img{
+        width: 100%;
     }
     .claims-contain h2{
         font-size: 24px;
@@ -2821,19 +2855,17 @@ overflow: hidden;
     }
     .claims-contain-info{
         display: flex;
-        gap: 100px;
-    }
-    .claims-contain-info div{
-        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        height: 20vh;
+        justify-content: center;
     }
-    .claims-contain-info div h2{
+    .claims-contain-info h2{
         font-size: 24px;
         color: var(--color-quinto);
     }
-    .claims-contain-info div p{
+    .claims-contain-info p{
         text-align: center;
     }
     .claims-form{
@@ -2859,26 +2891,24 @@ overflow: hidden;
         /*admin*/
 .admin-section{
     display: flex;
-    justify-content: center;
-    padding-top: 30px;
     flex-direction: column;
-    padding-left: 15px;
-  
-}
-.admin-section div{
-    height: 93vh;
-    width: 98vw;
+    align-items: center;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 30px;
     background:linear-gradient(#0646638d, #0969968d), url(../img/Hero.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    overflow-y: auto; 
-    
+    overflow-y: auto;   
+    height: 93vh;
+    width: 97vw;
+    gap: 25px;
 }
-.admin-section div h1{
+
+.admin-section h1{
     color: #fff;
     text-align: center;
-    margin-top: 30px;
     font-size: 35px;
     width: 100%;
    
@@ -2893,62 +2923,42 @@ overflow: hidden;
 }
 .admin-infoReport{
     display: flex;
-    width: 83%;
+    margin: 0 355px 0 0;
+    width: 55%;
     color: #fff;
-    margin-top: 40px;
-    height: 30px;
-  
+    justify-content: space-between;
 }
-.admin-Reporte-margin{
-    margin-left: 13%;
+.admin-infoReport p{
     font-size: 25px;
    height: 30px;
-}
-.admin-Reportado-margin{
-    margin-left: 13%;
-    font-size: 25px;
-    height: 30px;
-}
-.admin-Razones-margin{
-    margin-left: 8%;
-    font-size: 25px;
-    height: 30px;
-  
-}
-.admin-chast-margin{
-    margin-left: 7%;
-    font-size: 25px;
-    height: 30px;
-    
 }
 .admin-reports{
     display: flex;
     justify-content: center;
      flex-direction: column;
      width: 95%; 
+     align-items: center;
+     gap: 25px;
 }
 .admin-reportUsers{
     display: flex;
     justify-content: space-around;
     background: #064663;
     width: 92%;
-    height: 70px;
-    margin-top: 20px;
+    height: 10vh;
     border-radius: 20px;
-    margin-left: 80px;
-
+    align-items: center;
 }
 .admin-reportUsers p{
-   margin-top: 20px;
    color: #fff;
 }
 .admin-pointer{
     cursor: pointer;
-
+    padding: var(--boton-padding);
+    border-radius: 25px;
 }
 .admin-pointer:hover{
-    cursor: pointer;
-    font-size: 22px;
+    background: var(--color-cuarto);
 }
 .admin-buttons:hover{
     margin-top: 8px;
