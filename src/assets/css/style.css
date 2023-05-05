@@ -1983,8 +1983,10 @@ form button{
 
 .volver{
     text-decoration: none;
-    color: var(--color-quinto);
-    margin-left: 10px;
+    color: var(--color-blanco);
+    padding: var(--boton-padding);
+    background: var(--color-quinto);
+    border-radius: 25px;
 }
 /*------------------chat ----------------*/
 .chat-box{

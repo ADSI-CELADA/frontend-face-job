@@ -22,7 +22,6 @@ export const Paquetes = () => {
 
   return (
     <div className="contain-membresia"> 
-    <Link to="/" className='volver'>Volver</Link>
         <section className="member">
             <h2>Membresia</h2>
             <p className='member-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus nobis distinctio sunt officiis rem id asperiores, aut illo doloremque assumenda! Quo, non ea sapiente iusto fuga dolorum quasi voluptas ipsa.</p>
@@ -91,6 +90,7 @@ export const Paquetes = () => {
                     </Link>}
                 </div>
             </div>
+            <Link to="/" className='volver'>Volver</Link>
         </section>
     </div>
   )
