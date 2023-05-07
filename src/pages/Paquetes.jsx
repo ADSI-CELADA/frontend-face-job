@@ -40,7 +40,7 @@ export const Paquetes = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div> 
-                    {buttonChange? <Link className="member-button">
+                    {buttonChange? <Link className="member-button" style={{cursor:"no-drop"}}>
                        No disponible <i className='bx bx-chevron-right'></i>
                     </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay1" : "/login"}>
@@ -61,7 +61,7 @@ export const Paquetes = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    {buttonChange? <Link className="member-button">
+                    {buttonChange? <Link className="member-button" style={{cursor:"no-drop"}}>
                        No disponible <i className='bx bx-chevron-right'></i>
                     </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay2" : "/login"}>
@@ -82,7 +82,7 @@ export const Paquetes = () => {
                             <li><span>✔</span> this is four</li>
                         </ul>
                     </div>
-                    {buttonChange? <Link className="member-button">
+                    {buttonChange? <Link className="member-button" style={{cursor:"no-drop"}}>
                        No disponible <i className='bx bx-chevron-right'></i>
                     </Link> :
                     <Link className="member-button" to={userContextInfo.loged ? "/FormPay3" : "/login"}>

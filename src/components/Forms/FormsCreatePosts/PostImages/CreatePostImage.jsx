@@ -34,28 +34,42 @@ export const CreatePost = () => {
       const result = await createPostImage(email, formdata);
       console.log(result);
     }
-    document.getElementById("description").value = null;
-    document.getElementById("file").value = null;
-    setFile(null);
-    setDescriptions("");
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Se cargo la publicación exitosamente",
-      showConfirmButton: false,
-      timer: 1500,
-      iconColor: "#064663",
-      backdrop : "linear-gradient(#064663b6, #064663b6)",
-      padding: "3em",
-      color: "#064663",
-      customClass: "border",
-    });
-    setTimeout(() => {
-      setTextoLoad('Subir')
-      navigate('/profile')
-    }, 1500)
-
-
+    if (result.data.data != "No disponible") {
+      document.getElementById("description").value = null;
+      document.getElementById("file").value = null;
+      setFile(null);
+      setDescriptions("");
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Se cargo la publicación exitosamente",
+        showConfirmButton: false,
+        timer: 1500,
+        iconColor: "#064663",
+        backdrop : "linear-gradient(#064663b6, #064663b6)",
+        padding: "3em",
+        color: "#064663",
+        customClass: "border",
+      });
+      setTimeout(() => {
+        setTextoLoad('Subir')
+        navigate('/profile')
+      }, 1500)
+    }else{
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "ocurrio un error inesperado o tienes más de las publicaciones permitidas",
+        showConfirmButton: false,
+        timer: 1500,
+        iconColor: "#064663",
+        backdrop : "linear-gradient(#064663b6, #064663b6)",
+        padding: "3em",
+        color: "#064663",
+        customClass: "border",
+      });
+    }
+    
   };
 
   return (

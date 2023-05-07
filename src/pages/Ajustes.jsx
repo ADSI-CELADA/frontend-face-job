@@ -151,7 +151,7 @@ export const Ajustes = () => {
            </div>
           <section className="container-infoUser-posts">
             {posts.map((post)=>(  
-              <div key={post.email}>
+              <div key={post.id}>
                 <img src={post.img} alt="hola" />
                 <p>{post.description}</p>
                 <p>{post.likes}</p>
@@ -161,7 +161,7 @@ export const Ajustes = () => {
             ))}
             
             {postsText.map((post)=>(
-              <div key={post.email}>
+              <div key={post.id}>
                 <p>{post.textos}</p>
                 <p>{post.description}</p>
                 <p>{post.likes}</p>
@@ -198,7 +198,7 @@ export const Ajustes = () => {
               <p>Deseas eliminar  tu publicacion?</p>
               <div className="btn2-cerrar">
                
-                <label  onClick={alert}>
+                <label  onClick={deletePost}>
                   Eliminar
                 </label>
               </div>

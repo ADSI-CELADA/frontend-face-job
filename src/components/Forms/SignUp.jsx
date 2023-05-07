@@ -123,6 +123,7 @@ export const SignUp = () => {
                 <option value="Coach personal">Coach personal</option>
                 <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones moviles</option>
                 <option value="Diseñador de interiores">Diseñador de interiores</option>
+                <option value="No aplica">No aplica</option>
               </select>
               {/*<input
                 placeholder="Profesion"
