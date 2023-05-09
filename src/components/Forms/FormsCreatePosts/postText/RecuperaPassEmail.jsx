@@ -1,4 +1,3 @@
-import logo from '../../../../assets/img/logo.png'
 import { Form,Formik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -15,7 +14,7 @@ export const RecoveryPass = () => {
         <div data-aos="fade-left" data-aos-duration="1000"  className="log-in-form">
             <h2>Bienvenido a</h2>
             <section>
-                <img src={logo} alt="logo" />
+                <img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1681834064/Logo_st4un7.png" alt="logo" />
                 <p>Face-Job</p>
             </section>
             <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>

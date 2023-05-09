@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Formik } from "formik";
 import { deleteDataUser } from "../../api/api";
-import logo from "../../assets/img/logo.png";
 import { useNavigate, Link } from "react-router-dom";
 import Cookies from 'universal-cookie'
 import Swal from "sweetalert2";
@@ -24,7 +23,7 @@ export const DeleteUser = () => {
             >
                 <h2>Bienvenido a</h2>
                 <section>
-                    <img src={logo} alt="logo" />
+                    <img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1681834064/Logo_st4un7.png" alt="logo" />
                     <p>Face-Job</p>
                 </section>
                 <p>Eliminar cuenta</p>

@@ -64,7 +64,7 @@ body::-webkit-scrollbar-thumb{
 .navigation{
     display: flex;
     justify-content: space-between;
-    width: 30vw;
+    width: 30%;
 }
 .navigation li{
     list-style: none;
@@ -308,17 +308,19 @@ body::-webkit-scrollbar-thumb{
     align-items: center;    
 }
 .hero-body{
-    width: 45vw;
-    height: 80vh;
+    width: 50%;
     margin: 0 20px 0 20px;
     display: flex;
     align-items: center;
 }
 .hero-image{
-    width:50vw;
+    width:40%;
     margin: 0 20px 0 20px;
     display: flex;
     justify-content: center;
+}
+.hero-image img{
+    width: 100%;
 }
 .hero-title{
     color: var(--color-blanco);
@@ -346,7 +348,7 @@ body::-webkit-scrollbar-thumb{
 .HowYouDo-text{
     display: flex;
     justify-content: space-around;
-    width: 50vw;
+    width: 50%;
 }
 .HowYouDo-text p{
     width: 45%;
@@ -366,27 +368,27 @@ body::-webkit-scrollbar-thumb{
     font-size: 30px;
 }
 .box-mini{
-    padding: 80px 0 80px 80px   ;
-    overflow: hidden;
-    width: 100vw;
+    padding: 80px 0 80px 80px;
+    width: 100%;
+    gap: 20px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: nowrap;
 }
 .mini-card{
     background: var(--color-blanco);    
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     align-items: center;
-    height: 26vh;
-    width: 19vw;
-    min-width:14vw ;
+    height: 20vh;
+    width: 25%; 
     display: flex;
     padding: 20px;
     border-radius: 25px;
     gap: 20px;
 }
 .mini-card img{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 
@@ -398,8 +400,9 @@ body::-webkit-scrollbar-thumb{
     gap: 6px;
     align-items: start;
 }
-.mini-card-info h2{
-    font-size:22px;
+.mini-card-info h2,
+.mini-card-info p{
+    font-size:100%;
 }
 .mini-card-info span{
     text-decoration: none;
@@ -415,7 +418,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
 }
 /*--------------categorie-------------*/
 .categorie{
@@ -433,7 +436,7 @@ body::-webkit-scrollbar-thumb{
     color: var(--color-quinto);
 }
 .categorie-body{
-    width: 50vw;
+    width: 50%;
     height: max-content;
     gap: 20px;
     margin: 0 20px 0 20px;
@@ -447,7 +450,7 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     text-align: center;
     height: 20vh;
-    width: 22vw;
+    width: 22%;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -506,7 +509,7 @@ body::-webkit-scrollbar-thumb{
 }
 /*------------Section----------------*/
 .section{
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     gap: 20px;
     padding: 80px;
@@ -517,7 +520,7 @@ body::-webkit-scrollbar-thumb{
 }
 .section-info{
     gap: 20px;
-    width: 50vw;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -541,7 +544,7 @@ body::-webkit-scrollbar-thumb{
 /*-----------footer-----------*/
 footer{
     padding: 20px 90px;
-    width: 98vw;
+    width: 98%;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -577,7 +580,7 @@ footer p{
     background-position: center;
     background-size: cover;
     height: 93vh;
-    width: 96.5vw;
+    width: 96.5%;
     margin: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
@@ -585,7 +588,7 @@ footer p{
 .sign-up-form{
     background:var(--color-blanco);
     height: 93vh;
-    width: 40vw;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -624,20 +627,20 @@ form{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 20vw;
+    width: 20%;
 }
 form input,
 form select{
     border: #c7c7c7 1px solid; 
     border-radius: 20px;
     padding:8px 28px;
-    width: 20vw;
+    width: 20%;
 }
 form textarea{
     border: #c7c7c7 1px solid; 
     border-radius: 20px;
     padding:8px 28px;
-    width: 20vw;
+    width: 20%;
 }
 form input:focus{
     outline: none;
@@ -657,7 +660,7 @@ form button{
     background-size: cover;
     padding: 0;
     height: 93vh;
-    width: 96.5vw;
+    width: 96.5%;
     margin: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
@@ -667,7 +670,7 @@ form button{
 .log-in-form{
     background:var(--color-blanco);
     height: 93vh;
-    width: 40vw;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -707,13 +710,13 @@ form button{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 20vw;
+    width: 20%;
 }
 .form-post input{
     border: #c7c7c7 1px solid; 
     border-radius: 20px;
     padding:8px 28px;
-    width: 20vw;
+    width: 20%;
 }
 .form-post input:focus{
     outline: none;
@@ -736,7 +739,7 @@ form button{
     background-size: cover;
     padding: 0;
     height: 94vh;
-    width: 30vw;
+    width: 30%;
     margin: 30px 30px 30px 110px;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
@@ -1012,7 +1015,7 @@ form button{
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 30px 30px 110px;
-    width: 96.5vw;
+    width: 96.5%;
     gap: 30px;
 }
 .user-contain{
@@ -1132,12 +1135,6 @@ form button{
     top:0; left: 0;
     z-index: -1;
 }
-@media screen and (max-width:800px) {
-    .content-modal{
-        width: 90%;
-    }
-}
-
 /*:::Boton-Modal:::*/
 .boton2-modal{
     display: none;
@@ -1214,11 +1211,6 @@ form button{
     top:0; left: 0;
     z-index: -1;
 }
-@media screen and (max-width:800px) {
-    .content2-modal{
-        width: 90%;
-    }
-}
 /*:::Boton-Modal:::*/
 .boton3-modal{
     display: none;
@@ -1245,9 +1237,6 @@ form button{
     align-items: center;
     z-index: 100;
 }
-
-
-
 #btn3-modal:checked ~ .container3-modal{
     display: flex;
 }
@@ -1298,20 +1287,12 @@ form button{
     top:0; left: 0;
     z-index: -1;
 }
-@media screen and (max-width:800px) {
-    .content2-modal{
-        width: 90%;
-    }
-}
 /* css Dropdown */
 .fontMenu {
     background: #043248;
     font-family: "Poppins", sans-serif;
   }
-  
-
-
-  /*:::Boton-Modal:::*/
+    /*:::Boton-Modal:::*/
 .boton4-modal{
     display: none;
 }
@@ -1387,18 +1368,6 @@ form button{
     top:0; left: 0;
     z-index: -1;
 }
-@media screen and (max-width:800px) {
-    .content4-modal{
-        width: 90%;
-    }
-}
-
-
-
-
-
-
-
 /*:::Boton-Modal:::*/
 .boton5-modal{
     display: none;
@@ -1475,12 +1444,6 @@ form button{
     top:0; left: 0;
     z-index: -1;
 }
-@media screen and (max-width:800px) {
-    .content5-modal{
-        width: 90%;
-    }
-}
-
 /*:::Boton-Modal:::*/
 .boton6-modal{
     display: none;
@@ -1556,11 +1519,6 @@ form button{
     position: absolute;
     top:0; left: 0;
     z-index: -1;
-}
-@media screen and (max-width:800px) {
-    .content6-modal{
-        width: 90%;
-    }
 }
 /*:::Boton-Modal:::*/
 .boton3-modal{
@@ -1928,7 +1886,7 @@ form button{
     color: var(--color-blanco);
 }
 .member_section-card{
-    background: url(../layered-waves-haikei.svg) ;
+    background: url(../layered-waves-haikei.svg) no-repeat;
     background-position: bottom;
     display: flex;
     flex-direction: column;
@@ -1991,7 +1949,7 @@ form button{
 /*------------------chat ----------------*/
 .chat-box{
     height: 93vh;
-    width: 96.5vw;
+    width: 96.5%;
     margin: 30px;
     border-radius: 20px;
     display: flex;
@@ -2316,7 +2274,7 @@ form button{
 
 .chat-section{
     max-height: 93vh;
-    width: 97vw;
+    width: 97%;
     margin: 30px;
     border-radius: 20px;
     box-shadow: 0 1px 1px 0 rgba( 0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
@@ -2904,7 +2862,7 @@ overflow: hidden;
     background-attachment: fixed;
     overflow-y: auto;   
     height: 93vh;
-    width: 97vw;
+    width: 97%;
     gap: 25px;
 }
 
@@ -3013,3 +2971,65 @@ overflow: hidden;
     border-radius: 20px;
 }
 
+/*------------------Media Queries-----------------*/
+@media screen and (min-width:1024px) {  
+    .hero-body{
+        width: 50%;
+        height: 80vh;
+        margin: 0 20px 0 20px;
+        display: flex;
+        align-items: center;
+    }
+    .hero-image{    
+        margin: 0 20px 0 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-title{
+        color: var(--color-blanco);
+    }
+    .hero-title .text-primary{
+        font-weight: 400 ;
+        font-size: 30px;
+    }
+    .hero-title .text-second{
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .box-mini{
+        padding: 50px 0 50px 50px;
+        width: 100%;
+        gap: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .mini-card{
+        height: 20vh;
+        width: 45%;
+    }
+    .mini-card img{
+        width: 25%;
+        height: 55%;
+        border-radius: 50%; 
+    }
+    
+    /* .mini-card-info{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 100%;
+        gap: 6px;
+        align-items: start;
+    }
+    .mini-card-info h2{
+        font-size:22px;
+    }
+    .mini-card-info span{
+        text-decoration: none;
+        border: var(--color-cuarto) 1px solid;
+        padding: 4px 10px;
+        color: var(--color-cuarto);
+        cursor: pointer;
+    } */
+}

@@ -1,4 +1,3 @@
-import logo from "../../assets/img/logo.png";
 import { singUpUser } from "../../api/api";
 import Swal from "sweetalert2";
 import { Form, Formik } from "formik";
@@ -15,7 +14,7 @@ export const SignUp = () => {
       >
         <h2>Bienvenido a</h2>
         <section>
-          <img src={logo} alt="logo" />
+          <img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1681834064/Logo_st4un7.png" alt="logo" />
           <p>Face-Job</p>
         </section>
         <p>Unete a nosotros, crea tu perfil y sube publicaciones</p>

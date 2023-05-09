@@ -12,8 +12,9 @@ import {
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import logo from "../../assets/img/Logo.png";
+
 function RightSide({text}) {
+  const logo = "https://res.cloudinary.com/de2sdukuk/image/upload/v1681834064/Logo_st4un7.png"
   const context=useContext(contextUser)
     const soket=text.text
     let navigate=useNavigate()
