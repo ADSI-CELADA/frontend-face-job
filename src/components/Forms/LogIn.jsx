@@ -3,10 +3,12 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Cookie from "universal-cookie";
 let url = "http://localhost:4000";
 
 
 export const LogIn = () => {
+  const cookie = new Cookie()
   const navigate = useNavigate()
   const singInUser = async (values) => {
     return await axios.post(`${url}/loginCliente`, values);
@@ -35,7 +37,7 @@ export const LogIn = () => {
             const {
               data: { data, result, token },
             } = response;
-            console.log(result);
+            console.log(response);
 
             if (data == "logueado") {
               Swal.fire({
@@ -53,6 +55,7 @@ export const LogIn = () => {
               });
               setTimeout(() => {
                 document.cookie = `token=${response.data.token};max-age=${60 * 1440};path=/;samesite=strict`
+                // cookie.set('token', response.data.token);
                 window.location.href="/"
               }, 1500)
 

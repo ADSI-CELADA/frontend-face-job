@@ -1,7 +1,9 @@
 import axios from "axios";
+import Cookie from "universal-cookie";
 
 let url = "http://localhost:4000"
-let token=document.cookie.replace('token=','')
+const cookie = new Cookie();
+let token = cookie.get('token')
 
 export const createPostImage= async (param,data) =>
   await axios.post(`${url}/user/createpost/${param}`, data);

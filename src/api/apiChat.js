@@ -1,7 +1,9 @@
 import axios from "axios";
+import Cookie from "universal-cookie";
 
 let url = "http://localhost:4000"
-let token=document.cookie.replace('token=','')
+const cookie = new Cookie();
+let token = cookie.get('token')
 
 export const sendMenssageUser= async (message,param) =>
   await axios.post(`${url}/sendMenssage/${param}`,message,{
