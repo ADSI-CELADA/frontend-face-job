@@ -27,6 +27,7 @@ body::-webkit-scrollbar-thumb{
 *::selection{
     background:var(--color-primer);
     line-height: 1em;
+    color: var(--color-blanco);
 }
 /*---------------Navigation Bar---------------*/
 /* .nav{
@@ -371,24 +372,22 @@ body::-webkit-scrollbar-thumb{
     padding: 80px 0 80px 80px;
     width: 100%;
     gap: 20px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
 }
 .mini-card{
     background: var(--color-blanco);    
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     align-items: center;
     height: 20vh;
-    width: 25%; 
     display: flex;
     padding: 20px;
     border-radius: 25px;
     gap: 20px;
 }
 .mini-card img{
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 
@@ -402,7 +401,7 @@ body::-webkit-scrollbar-thumb{
 }
 .mini-card-info h2,
 .mini-card-info p{
-    font-size:100%;
+    font-size:20px;
 }
 .mini-card-info span{
     text-decoration: none;
@@ -427,30 +426,28 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     flex-direction: column;
     height:max-content;
-    padding:80px; 
+    padding:80px 60px 80px 120px; 
 }
 
 /*categorias cambia segun seleccione*/
 .title-Profession-Catalogue{
-    font-size: 70px;    
+    font-size: 60px;    
     color: var(--color-quinto);
 }
 .categorie-body{
-    width: 50%;
+    width: 70%;
     height: max-content;
     gap: 20px;
     margin: 0 20px 0 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);   
     color: var(--color-blanco);
-    flex-wrap: wrap;
-    justify-content: center;
 }
 .mini-categorie-card{   
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     align-items: center;
     text-align: center;
     height: 20vh;
-    width: 22%;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -493,18 +490,9 @@ body::-webkit-scrollbar-thumb{
     font-size: 56px;
     -webkit-text-stroke: 2px var(--color-blanco);
 }
-.categorie-body p{
-    font-weight: 400 ;
-    font-size: 30px;
-}
 .categorie-btn a{
     font-size: 22px;
     color: var(--color-blanco);
-    text-decoration: none;
-}
-.categorie-btn-other a{
-    font-size: 22px;
-    color: var(--color-negro);
     text-decoration: none;
 }
 /*------------Section----------------*/
@@ -512,7 +500,7 @@ body::-webkit-scrollbar-thumb{
     width: 100%;
     height: 50vh;
     gap: 20px;
-    padding: 80px;
+    padding:80px 60px 80px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -627,20 +615,20 @@ form{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 20%;
+    width: 100%;
 }
 form input,
 form select{
     border: #c7c7c7 1px solid; 
     border-radius: 20px;
     padding:8px 28px;
-    width: 20%;
+    width: 50%;
 }
 form textarea{
     border: #c7c7c7 1px solid; 
     border-radius: 20px;
     padding:8px 28px;
-    width: 20%;
+    width: 50%;
 }
 form input:focus{
     outline: none;
@@ -1874,10 +1862,9 @@ form button{
     width: 60%;
     height: 55%;
 }
-
 .member h2{
     color: var(--color-blanco);
-    font-size: 250%;
+    font-size: 50px;
     font-weight: 400;
 }
 .member-info{
@@ -2972,31 +2959,174 @@ overflow: hidden;
 }
 
 /*------------------Media Queries-----------------*/
-@media screen and (min-width:1024px) {  
-    .hero-body{
-        width: 50%;
-        height: 80vh;
-        margin: 0 20px 0 20px;
-        display: flex;
-        align-items: center;
-    }
-    .hero-image{    
-        margin: 0 20px 0 20px;
-        display: flex;
-        justify-content: center;
-    }
-    .hero-title{
-        color: var(--color-blanco);
-    }
+@media screen and (max-width:1024px) { 
+    .hero{
+        height: 55vh;    
+    } 
     .hero-title .text-primary{
-        font-weight: 400 ;
-        font-size: 30px;
+        font-size: 25px;
     }
     .hero-title .text-second{
-        font-size: 50px;
-        font-weight: 700;
+        font-size: 40px;
+    }
+    .contain h2{    
+        font-size: 25px;
     }
     .box-mini{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .mini-card-info h2,
+    .mini-card-info p{
+        font-size:18px;
+    }
+    .mini-card-info span{
+        padding: 4px 10px;
+        font-size: 16px;
+    }
+    .HowYouDo h1{
+        font-weight: 600;
+        font-size: 22px;
+        width: 20%;
+    }
+    .HowYouDo-text{
+        width: 70%;
+    }
+    .HowYouDo-text p{
+        width: 45%;
+        font-size: 18px;
+    }
+    .categorie-title{
+        font-size: 46px;
+    }
+    .separate{
+        height: 160px;
+    }
+    .categorie-body{
+        grid-template-columns: repeat(2,1fr); 
+    }
+    .categorie-btn a{
+        font-size: 18px;
+    }
+    .section-info{
+        width: 80%;
+    }
+    .section-info h2{
+        font-size: 24px;
+    }
+    .section-info p{
+        font-size: 16px;
+    }
+    .section-btn{
+        padding: 6px 26px;
+    }
+    .section-btn a{
+        font-size: 14px;
+    }
+    .sign-up{
+        width: 94%;
+    }
+    .sign-up-form{
+        width: 55%;
+    }
+    .log-in{
+        width: 94%;
+    }
+    .log-in-form{
+        width: 55%;
+    }
+    .categories{
+        height: 12vh;
+        padding: 20px;
+        gap: 30px;
+        margin:20px 20px 20px 100px;
+    }
+    .categories button{
+        padding: 8px 12px;
+        font-size: 13px
+    }
+    .title-Profession-Catalogue{
+        font-size: 40px;
+    }
+    .member h2{
+        font-size: 35px;
+    }
+    .member-info{
+        width: 80%;
+        font-size: 16px;
+    }
+    .member_section{
+        width: 90%;
+    }
+    .member-button {
+        padding: 10px 40px;
+        font-size: 14px;
+    }   
+    .chat-box{
+        gap: 20px;
+        overflow: hidden;
+    }
+    .leftSide-chat{
+        width: 35%;
+    }
+    .rightSide-chat{
+        width: 60%;
+    }
+    .chatBox-chat{
+        height: calc(100% - 175px );
+    }
+    .form-chat .chatbox_input-chat input {
+        width: 475px;
+    }
+    .bnr.fixed{
+        position: static;
+        height: 35vh;
+    }
+    .bnr{
+        width: 100%;
+        height: 35vh;
+    }
+    .banner{
+        padding: 20px;
+        height: 35vh;
+        flex-direction: row;
+    }
+    .banner section{
+        flex-direction: row;
+    }
+    .banner-icon{
+        width: 200px;
+        height: 200px;
+    }
+    .banner-icon img{
+        width: 200px;
+        height: 200px;
+    }
+    .banner .banner-icon .banner-icon-cape{
+        height: 200px;
+        width: 200px;
+    }
+    .banner-nav nav ul{
+        height: 30vh;
+    }
+    .banner-nav nav ul li{
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    .banner-nav nav ul li span{
+        font-size: 16px;
+    }
+    .container-post{
+        padding: 300px 0 0 0;
+    }
+    .ajustes-section{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .container-infoUser{
+        margin: 0 0 30px 70px;
+        width: 86%;
+    }
+    /* .box-mini{
         padding: 50px 0 50px 50px;
         width: 100%;
         gap: 20px;
@@ -3012,7 +3142,7 @@ overflow: hidden;
         width: 25%;
         height: 55%;
         border-radius: 50%; 
-    }
+    } */
     
     /* .mini-card-info{
         display: flex;

@@ -71,7 +71,7 @@ export const MiniCard = () =>  {
     <>
     { 
       infoUser.map((user)=>(
-        <div data-aos="fade-left" data-aos-duration="1000" className="mini-card" key={user.email}>
+        <div data-aos="fade-right" data-aos-duration="1000" className="mini-card" key={user.email}>
       <img src={user.iconUser} alt="Icon User"/>
       <div className="mini-card-info">
         <h2>{user.name}</h2>
