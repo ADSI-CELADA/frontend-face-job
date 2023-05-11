@@ -37,10 +37,10 @@ useEffect(()=>{
   loadLoged()
 },[])
   const chageCategorie=(event)=> {
-   let profession= event.target.textContent
-   if (profession!=categories) {
-    setCategories(profession)
-   }
+    let profession= event.target.value
+    if (profession!=categories) {
+     setCategories(profession)
+    }
    
   }
 
@@ -48,15 +48,21 @@ useEffect(()=>{
 
     <div className="main-categories">
       <section className="categories">
-        <button onClick={chageCategorie}>Desarrollador de<br /> software</button>
-        <button onClick={chageCategorie}>Diseñador grafico</button>
-        <button onClick={chageCategorie}>Coach personal</button>
-        <button onClick={chageCategorie}>Desarrollador de<br /> aplicaciones moviles</button>
-        <button onClick={chageCategorie}>Diseñador de interiores</button>
-        <button onClick={chageCategorie}>Fotografo</button>
-        {loged ? <button onClick={chageCategorie}>Vistos</button> : <></>}
+      <select name="profession" onChange={chageCategorie}>
+                <option selected disabled>Elija una profesion</option>
+                <option value="Diseñador grafico">Diseñador grafico</option>
+                <option value="Fotografo">Fotografo</option>
+                <option value="Desarrollador de software">Desarrollador de software</option>
+                <option value="Coach personal">Coach personal</option>
+                <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones moviles</option>
+                <option value="Diseñador de interiores">Diseñador de interiores</option>
+                {loged ? <option value="Vistos" >Vistos</option> : null} 
+                
+              </select>
+              <div className="main-title">
+                <p className='title-Profession-Catalogue'>{categories}</p>
+              </div>
     </section>
-      <p className='title-Profession-Catalogue'>{categories}</p>
     <section className="mega-user-contain">
         <UserCard arrayProfessions={{arrayProfessions:professions}}/>
     </section>

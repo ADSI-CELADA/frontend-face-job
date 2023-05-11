@@ -58,17 +58,38 @@ export const Sidebar = () => {
   const catalogue = () =>{
     navigate('/catalogue')
   }
+  const post = () =>{
+    navigate('/posts')
+  }
+  const claims = () =>{
+    navigate('/claims')
+  }
+  const pack = () =>{
+    navigate('/paquetes')
+  }
+  const chat = () =>{
+    navigate('/chat')
+  }
+  const profile = () =>{
+    navigate('/profile')
+  }
+  const profileText = () =>{
+    navigate('/profileText')
+  }
+  const ajustes = () =>{
+    navigate('/ajustes')
+  }
   return (
     <>
       <div className={styleSide}>
         <div className="logo-details">
-          <i class='bx bx-menu' onClick={openSide}></i>
+          <i className='bx bx-menu' onClick={openSide}></i>
           <Link to="/" className="logo_name" onClick={openSide}>Face-Job</Link>
         </div>
         <ul className="nav-links">
           <li>
-            <a href="#">
-              <i class='bx bx-user-pin' onClick={catalogue} ></i>
+            <a>
+              <i className='bx bx-user-pin' onClick={catalogue} ></i>
               <Link onClick={openSide} to="/catalogue" className="link_name">Perfiles</Link>
             </a>
             <ul className="sub-menu blank">
@@ -76,72 +97,72 @@ export const Sidebar = () => {
             </ul>
           </li>
           <li>
-            <a href="#">
-              <i class='bx bx-carousel' ></i>
+            <a>
+              <i className='bx bx-carousel' onClick={post} ></i>
               <Link onClick={openSide} to="/posts" className="link_name">Publicaciones</Link>
             </a>
             <ul className="sub-menu">
-              <li><Link to="/posts" className="link_name" href="#">Publicaciones</Link></li>
+              <li><Link to="/posts" className="link_name">Publicaciones</Link></li>
             </ul>
           </li>
           <li>
-            <a href="#">
-              <i class='bx bx-help-circle' ></i>
+            <a>
+              <i className='bx bx-help-circle' onClick={claims}></i>
               <Link onClick={openSide} to="/claims" className="link_name">Sobre nosotros</Link>
             </a>
             <ul className="sub-menu">
-              <li><Link to="/claims" className="link_name" href="#">Sobre nosotros</Link></li>
+              <li><Link to="/claims" className="link_name">Sobre nosotros</Link></li>
             </ul>
           </li>
           <li>
-            <a href="#">
-              <i class='bx bx-purchase-tag-alt' ></i>
+            <a>
+              <i className='bx bx-purchase-tag-alt' onClick={pack}></i>
               <Link onClick={openSide} to="/paquetes" className="link_name">Paquetes</Link>
             </a>
             <ul className="sub-menu blank">
-              <li><Link to="/paquetes" className="link_name" href="#">Paquetes</Link></li>
+              <li><Link to="/paquetes" className="link_name">Paquetes</Link></li>
             </ul>
           </li>
           {userContextInfo.loged ? <>
             <li>
-              <a href="#">
-                <i class='bx bx-chat'></i>
+              <a>
+                <i className='bx bx-chat' onClick={chat}></i>
                 <Link onClick={openSide} to="/chat" className="link_name">Chat</Link>
               </a>
               <ul className="sub-menu blank">
-                <li><Link to="/chat" className="link_name" href="#">Chat</Link></li>
+                <li><Link to="/chat" className="link_name">Chat</Link></li>
               </ul>
             </li>
             <li>
-              <a href="#">
-                <i class='bx bx-camera'></i>
+              <a>
+                <i className='bx bx-camera' onClick={profile}></i>
                 <Link onClick={openSide} to="/profile" className="link_name">Mis Publicaciones</Link>
               </a>
               <ul className="sub-menu">
-                <li><Link to="/profile" className="link_name" href="#">Mis Publicaciones</Link></li>
+                <li><Link to="/profile" className="link_name">Mis Publicaciones</Link></li>
               </ul>
             </li>
             <li>
-              <a href="#">
-                <i class='bx bx-note' ></i>
+              <a>
+                <i className='bx bx-note' onClick={profileText}></i>
                 <Link onClick={openSide} to="/profileText" className="link_name">Mis Postales</Link>
               </a>
               <ul className="sub-menu blank">
-                <li><Link to="/profileText" className="link_name" href="#">Mis Postales</Link></li>
+                <li><Link to="/profileText" className="link_name">Mis Postales</Link></li>
               </ul>
             </li>
             <li>
-              <a href="#">
-                <i class='bx bx-folder-plus' ></i>
+              <a>
+                <i className='bx bx-folder-plus' onClick={()=>{typePost()}}></i>
                 <span className="link_name" onClick={()=>{typePost()}}>Publicar</span>
               </a>
               <ul className="sub-menu blank">
-                <li><a className="link_name" href="#" onClick={()=>{typePost()}}>Publicar</a></li>
+                <li><a className="link_name" onClick={()=>{typePost()}}>Publicar</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">
-                <i className='bx bx-cog' ></i>
+              <a>
+                <i className='bx bx-cog' onClick={ajustes}></i>
                 <Link to="/ajustes" className="link_name">Ajustes</Link>
               </a>
               <ul className="sub-menu blank">

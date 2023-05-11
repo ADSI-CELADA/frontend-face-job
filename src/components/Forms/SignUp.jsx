@@ -101,7 +101,8 @@ export const SignUp = () => {
                 required
               />
               <input
-                placeholder="Fecha de Nacimiento"
+                placeholder=""
+                value=""
                 type="date"
                 name="date"
                 onChange={handleChange}

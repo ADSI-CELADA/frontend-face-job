@@ -30,7 +30,7 @@ export const CreatePost = () => {
       const formdata = new FormData();
       formdata.append("description", descriptions);
       formdata.append("img", file);
-      const result = await createPostImage(email, formdata);
+      var result = await createPostImage(email, formdata);
       console.log(result);
     }
     if (result.data.data != "No disponible") {

@@ -7,8 +7,8 @@ export const Hero = () =>  {
       <div data-aos="fade-up" data-aos-duration="1000" className="hero">
           <div className="hero-body">
             <h1 className="hero-title">
-              <p data-aos="fade-up" data-aos-duration="1500" className="text-primary">FaceJob</p>
-              <p data-aos="fade-up" data-aos-duration="1500" className="text-second">Contacta Con Trabajadores</p>
+              <p className="text-primary">FaceJob</p>
+              <p className="text-second">Contacta Con Trabajadores</p>
             </h1>
           </div>
           

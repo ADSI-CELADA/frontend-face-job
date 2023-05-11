@@ -111,7 +111,7 @@ body::-webkit-scrollbar-thumb{
   transition: all 0.5s ease;
 }
 .sidebar.close{
-  width: 78px;
+  width:80px;
 }
 .sidebar .logo-details{
   height: 60px;
@@ -430,9 +430,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 /*categorias cambia segun seleccione*/
+.main-title{
+    width: 50%;
+    text-align: center;
+}
 .title-Profession-Catalogue{
-    font-size: 60px;    
-    color: var(--color-quinto);
+    font-size: 30px;    
+    color: var(--color-blanco);
 }
 .categorie-body{
     width: 70%;
@@ -455,32 +459,32 @@ body::-webkit-scrollbar-thumb{
     gap: 20px;
 }
 .mini-categorie-card:first-child{
-    background:linear-gradient(#0646638d, #0969968d), url(../img/programer.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(https://res.cloudinary.com/de2sdukuk/image/upload/v1683728494/programer_p6xtnv.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(2){ 
-    background:linear-gradient(#0646638d, #0969968d), url(../img/diseñador.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(https://res.cloudinary.com/de2sdukuk/image/upload/v1683728524/dise%C3%B1ador_qpybil.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(3){
-    background:linear-gradient(#0646638d, #0969968d), url(../img/coach.jpg)no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(https://res.cloudinary.com/de2sdukuk/image/upload/v1683728793/coach_nikwja.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(4){
-    background:linear-gradient(#0646638d, #0969968d), url(../img/movilees.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(https://res.cloudinary.com/de2sdukuk/image/upload/v1683728857/movilees_bcu5g1.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(5){
-    background:linear-gradient(#0646638d, #0969968d), url(../img/interiores.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(https://res.cloudinary.com/de2sdukuk/image/upload/v1683728868/interiores_zooffr.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .mini-categorie-card:nth-child(6){
-    background:linear-gradient(#0646638d, #0969968d), url(../img/fotografo.jpg) no-repeat;
+    background:linear-gradient(#0646638d, #0969968d), url(https://res.cloudinary.com/de2sdukuk/image/upload/v1683728890/fotografo_jzxdu4.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -971,13 +975,18 @@ form button{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px;
+    padding: 30px;    
+    padding: 30px 30px 30px 110px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .categories{
     background:linear-gradient(#064663b6, #064663b6), url(../img/default.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     height: 10vh;
+    width: 100%;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     display: flex;
@@ -986,25 +995,29 @@ form button{
     padding: 15px;
     gap: 30px;
 }
-.categories button{
-    background: none;
-    color: var(--color-blanco);
-    padding: 8px 12px;
+.categories select{
+    border: #c7c7c7 1px solid; 
     border-radius: 20px;
-    border: none;
+    padding:8px 28px;
+    width: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
 }
-.categories button:hover{
-    cursor: pointer;
-    background: var(--color-cuarto);
+.categories select:focus{
+    outline: none;
 }
 /*-----------------------user Card-------------------------*/
 .mega-user-contain{
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     justify-content: center;
-    padding: 30px 30px 30px 110px;
-    width: 96.5%;
-    gap: 30px;
+    padding: 30px 30px 30px 100px;
+    width: 90%;
+    gap: 20px;
 }
 .user-contain{
     display: flex;
@@ -1013,13 +1026,14 @@ form button{
     align-items: center;
 }
 .user-card{
-    background: var(--color-quinto);
+    background: var(--color-quinto);  
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
     border-radius: 20px;
-    width: 370px;
     display: flex;
     flex-direction: column;
     padding: 20px 20px 40px 20px;
     align-items: center;
+    width: 360px;
 }
 .user-card button{
     background: var(--color-blanco);
@@ -1857,9 +1871,11 @@ form button{
 }
 
 .member_section{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     justify-content: space-between;
-    width: 60%;
+    width: 90%;
+    justify-items: center;
     height: 55%;
 }
 .member h2{
@@ -1880,7 +1896,8 @@ form button{
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--color-blanco);
-    width: 30%;
+    width: 60%;
+    height: 100%;
     border-radius: 5px;
 }
 .member_section-card h3{
@@ -2868,6 +2885,7 @@ overflow: hidden;
     cursor: pointer;
  
 }
+
 .admin-infoReport{
     display: flex;
     margin: 0 355px 0 0;
@@ -2959,6 +2977,11 @@ overflow: hidden;
 }
 
 /*------------------Media Queries-----------------*/
+@media screen and (max-width: 1440px){
+    .mega-user-contain{
+        grid-template-columns: repeat(3,1fr)
+    }
+}
 @media screen and (max-width:1024px) { 
     .hero{
         height: 55vh;    
@@ -3034,18 +3057,18 @@ overflow: hidden;
     .log-in-form{
         width: 55%;
     }
+    .mega-user-contain{
+        grid-template-columns: repeat(2,1fr);
+        padding: 20px 20px 20px 20px;
+    }
     .categories{
         height: 12vh;
         padding: 20px;
         gap: 30px;
-        margin:20px 20px 20px 100px;
-    }
-    .categories button{
-        padding: 8px 12px;
-        font-size: 13px
+        margin:20px;
     }
     .title-Profession-Catalogue{
-        font-size: 40px;
+        font-size: 25px;
     }
     .member h2{
         font-size: 35px;
@@ -3054,7 +3077,7 @@ overflow: hidden;
         width: 80%;
         font-size: 16px;
     }
-    .member_section{
+    .member_section-card{
         width: 90%;
     }
     .member-button {
@@ -3126,40 +3149,175 @@ overflow: hidden;
         margin: 0 0 30px 70px;
         width: 86%;
     }
-    /* .box-mini{
-        padding: 50px 0 50px 50px;
-        width: 100%;
-        gap: 20px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+    .hero{
+        height: 50vh;    
+    } 
+    .hero-title .text-primary{
+        font-size: 20px;
     }
-    .mini-card{
-        height: 20vh;
-        width: 45%;
+    .hero-title .text-second{
+        font-size:35px;
+    }
+    .HowYouDo{
+        flex-direction: column;
+        padding: 20px 60px 0 110px;
+        gap: 10px;
+    }
+    .HowYouDo h1{
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+    }
+    .HowYouDo-text{
+        width: 100%;
+    }
+    .HowYouDo-text p{
+        font-size: 16px;
+    }
+    .contain h2{
+        font-size: 20px;
+    }
+    .box-mini{
+        padding: 40px 0 40px 60px;
+        gap: 10px;
     }
     .mini-card img{
-        width: 25%;
-        height: 55%;
-        border-radius: 50%; 
-    } */
-    
-    /* .mini-card-info{
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        height: 100%;
-        gap: 6px;
-        align-items: start;
+        width: 80px;
+        height: 80px;
+    }
+    .mini-card-info{
+        gap: 0;
     }
     .mini-card-info h2{
-        font-size:22px;
+        font-size: 16px;
     }
-    .mini-card-info span{
+    .mini-card-info p {
+        font-size: 13px;
+    }
+    .mini-card-info span {
+        padding: 2px 8px;
+        font-size: 13px;
+    }
+    .separate {
+        height: 120px;
+    }
+    .categorie-title {
+        font-size: 38px;
+        -webkit-text-stroke: 1px var(--color-blanco);
+    }
+    .categorie-body{
+        width: 100%;
+    }
+    .section{
+        padding: 0 60px 80px 120px;
+    }
+    .section-info{
+        gap: 10px;
+    }
+    .section-info h2 {
+        font-size: 22px;
+    }
+    .section-info p {
+        font-size: 14px;
+    }
+    footer{
+        justify-content: flex-end;
+    }
+    footer h2 {
+        font-size: 20px;
+        color: var(--color-quinto);
+    }
+    .footer-info a {
+        color: var(--color-negro);
         text-decoration: none;
-        border: var(--color-cuarto) 1px solid;
-        padding: 4px 10px;
-        color: var(--color-cuarto);
-        cursor: pointer;
-    } */
+        font-size: 16px;
+    }
+    .categories {
+        display: flex;
+        flex-wrap: wrap;
+        height: 15vh;
+        margin: 0;
+        gap: 10px;
+    }
+    .categories select{
+        width: 100%;
+    }
+    .main-title{
+        width: 100%;
+    }
+    .title-Profession-Catalogue {
+        font-size: 30px;
+    }
+    .mega-user-contain{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .posts-random-container {
+        padding: 15px 15px 15px 90px;
+    }
+    .container-post {
+        margin: 0 0 0 110px;
+    }  
+    .banner section{
+        gap: 0;
+    }
+    .banner-icon{
+        width: 150px;
+        height: 150px;
+    }
+    .banner-icon img{
+        width: 150px;
+        height: 150px;
+    }
+    .banner .banner-icon .banner-icon-cape{
+        height: 150px;
+        width: 150px;
+    }
+    .banner-info{
+        text-align: center;
+    }
+    .banner-nav nav ul li{
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    .banner-nav nav ul li span{
+        font-size: 14px;
+    }
+    .contanerCommentsComponent {
+        padding: 30px 30px 30px 110px
+    }
+    .contenedorsec{
+        width: 600px;
+    }
+    .description p{
+        font-size: 16px;
+    }
+    .sign-up{
+        width: 92%;
+        background: none;
+    }
+    .sign-up-form{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .log-in{
+        width: 92%;
+        background: none;
+    }
+    .log-in-form{
+        width: 100%;
+    }
+    .member{
+        height: max-content;
+        padding: 30px;
+    }
+    .member_section{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3,500px);
+        gap: 30px;
+    }
+    .member_section-card{
+        width: 50%;
+    }
 }
