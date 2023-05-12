@@ -4,10 +4,16 @@ import CategoriesChats from "./CategoriesChats"
 import { contextUser } from "../../Hooks/userContext"
 import { Link } from "react-router-dom";
 import { loadInfoUser } from "../../api/api";
+import Cookie from "universal-cookie";
+
 
 function LeftSide({text}) {
     const soket=text.text
+    const cookie = new Cookie()
+    
 
+
+    const [styleComplete,setStyleComplete] = useState(localStorage.getItem("style-left") || "")
     const context=useContext(contextUser)
     const [chats,setChats]=useState([])
     const [changes,setChanges]=useState()
@@ -67,6 +73,13 @@ function LeftSide({text}) {
    function changeParamsChat(params) {
     context.changePramUserChat(params)
     
+    let styleLeft = localStorage.getItem("style-left")
+    if (styleLeft == "leftSide-chat") {
+        localStorage.setItem("style-left","leftSide-chat-responsive")
+        
+    }else{
+        localStorage.setItem("style-left","leftSide-chat")
+    }
    }
     function searchNewsUser(params) {
     const palabraClave = params;
@@ -88,13 +101,24 @@ function LeftSide({text}) {
             setChanges(filterUser)
         }
        
-
-
-    
-    
    }
+
+   useEffect(() => {
+    function handleStorageChange() {
+      setStyleComplete(localStorage.getItem('style-left'));
+    }
+
+    window.addEventListener('style-left', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('style-left', handleStorageChange);
+    };
+  }, []);
+
+    console.log(localStorage.getItem('style-left'));
+
     return(
-        <div className="leftSide-chat">
+        <div className={localStorage.getItem("style-left")}>
        
         <div className="header-chat">
             <div className="userImg-chat">

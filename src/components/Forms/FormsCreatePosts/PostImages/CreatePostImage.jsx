@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { contextUser } from '../../../../Hooks/userContext';
 import { createPostImage } from '../../../../api/apiPosts';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 export const CreatePost = () => {
@@ -81,11 +81,11 @@ export const CreatePost = () => {
         </section>
         <p>Crea tu publicación</p>
         <div className="form-post">
-          <input id='description' placeholder='description image' type="text" onChange={selectedDescription} />
+          <input id='description' placeholder='Descripcion de la Imagen' type="text" onChange={selectedDescription} />
           <input placeholder='image' type="file" id="file" onChange={selectedHandler} />
           <button id="mandar" onClick={sendHandler}>{textoLoad}</button>
         </div>
-
+        <Link to="/">volver</Link>
       </div>
     </div>
   )

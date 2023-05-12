@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { contextUser } from '../../../../Hooks/userContext';
 import { createPostText } from '../../../../api/apiPosts';
 import { Formik, Form } from "formik";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 export const CreatePostTexts = () => {
@@ -35,7 +35,7 @@ let navigate=useNavigate()
                 customClass : "border", 
             });
             setTimeout(()=>{
-              navigate('/profile')
+              navigate('/profileText')
             },1500)
              
             } catch  {
@@ -56,11 +56,11 @@ let navigate=useNavigate()
             <p>Crea tu publicación</p>
             <Form onSubmit={handleSubmit}>
             <div>
-                <input  name='textos' id='description' placeholder='texto ' type="text"  style={{marginTop:"10px"}}  onChange={handleChange}/>
-                <input name='description' placeholder='description' type="text"  style={{marginTop:"10px"}}  onChange={handleChange}/>
-                <button id="mandar"  style={{marginTop:"10px"}}>  {isSubmitting ? "publicando..." : "publicar" }</button>
+                <textarea name="textos" id="description" cols="30" rows="10" placeholder='Contenido de la Publicacion' onChange={handleChange}></textarea>
+                <input name='description' placeholder='Descripcion de la publicacion' type="text"  onChange={handleChange}/>
+                <button id="mandar">  {isSubmitting ? "publicando..." : "publicar" }</button>
             </div>
-           
+              <Link to="/">volver</Link>
               </Form>
         </div>
        
