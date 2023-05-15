@@ -61,25 +61,31 @@ export const Claims = () => {
         <section className="claims">
             <div className="claims-contain">
               <h2>Sobre nosotros</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>En Face-Job, estamos comprometidos en ayudar a los profesionales a mostrar sus habilidades y talentos a través de nuestra plataforma. Creemos que cada persona tiene un potencial único, y nuestra misión es proporcionar un espacio donde puedan mostrarlo y conectarse con otros profesionales y clientes.
+                En Face-Job, valoramos la transparencia, la honestidad y la ética en todas nuestras operaciones. Nos esforzamos por brindar un servicio excepcional y satisfacer las necesidades de nuestros clientes de manera efectiva y eficiente.
+
+                Estamos comprometidos en seguir mejorando y creciendo como empresa para brindar la mejor experiencia posible a nuestros usuarios. Gracias por elegir Face-Job como su plataforma profesional en línea.
+                </p>
             </div>
             <div className="claims-contain-img"></div>
             <div className="claims-contain-img"></div>
                 <div className="claims-contain">
                     <h2>Mision</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Face-Job quiere brindar a los profesionales la oportunidad de mostrar sus habilidades y formas de pensar a través de imágenes y publicaciones. Además, nos comprometemos a proporcionar a los clientes un amplio catálogo de profesionales con los que puedan interactuar y encontrar la ayuda que necesitan en su campo de interés.</p>
                 </div>
             
                 <div className="claims-contain">
                     <h2>Vision</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit. Voluptas, quas! Numquam asperiores repellendus necessitatibus qui ipsam quasi modi voluptate.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Ser la plataforma digital más innovadora y eficiente en conectar a profesionales con clientes, ofreciendo una experiencia de usuario excepcional y un catálogo amplio y diverso de profesionales en diferentes áreas, generando así un impacto positivo en la economía global y en la forma en que se desarrollan las relaciones laborales.</p>
                 </div>
                 <div className="claims-contain-img">
                 
                 </div>
             <div className="claims-contain-info">
                 <h2>Que puedes hacer en esta seccion</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ut quas soluta aliquid dolor eius, unde illum culpa consectetur expedita odit? Maiores, eius in similique qui cumque placeat libero illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi suscipit voluptatibus ad obcaecati error accusantium porro praesentium distinctio odit.</p>
+                <p>En FaceJob nos importa mucho tu opinión y sugerencias. Queremos que tengas una experiencia satisfactoria en nuestro aplicativo web, por lo que hemos creado una sección especial para que puedas expresarte libremente. ¿Te gustaría compartir alguna idea para mejorar la plataforma? ¿Hay algo que no te haya gustado o que te gustaría que cambie? ¡Queremos escucharte!
+Tu opinión es muy importante para nosotros, ¡así que no dudes en hacerte escuchar! Juntos podemos hacer de FaceJob una plataforma cada vez mejor
+</p>
             </div>
             <div className="claims-form">
                 <form ref={refForm} onSubmit={handleSubmit}>

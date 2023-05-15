@@ -2187,9 +2187,13 @@ form button{
 }
 .header-chat-c .imgText-chat{
     display: flex;
+    align-items: center;
     gap: 15px;
     color: var(--color-blanco);
     cursor: pointer;
+}
+.header-chat-c .imgText-chat i{
+    display: none;
 }
 .header-chat-c .userImg-chat img{ 
     border-radius: 50px;
@@ -3127,11 +3131,17 @@ overflow: hidden;
     .leftSide-chat{
         width: 35%;
     }
+    .leftSide-chat-responsive{
+        width: 35%;
+    }
     .rightSide-chat{
         width: 60%;
     }
+    .rightSide-chat-responsive{
+        width: 60%;
+    }
     .chatBox-chat{
-        height: calc(100% - 175px );
+        height: calc(100% - 180px );
     }
     .form-chat .chatbox_input-chat input {
         width: 475px;
@@ -3187,6 +3197,13 @@ overflow: hidden;
     }
     .container-infoUser-posts div {
         gap: 0;
+    }
+    .container-formPay form{
+        width: 50%;
+    }
+    .header-chat-c .imgText-chat h4 span{
+        font-size: 16px;
+        font-weight: 300;
     }
 }
 @media screen and (max-width: 768px) {
@@ -3360,6 +3377,13 @@ overflow: hidden;
     .member_section-card{
         width: 50%;
     }
+    .header-chat-c .imgText-chat i{
+        color: var(--color-blanco);
+        cursor: pointer;
+        font-size: 22px;
+        text-decoration: none;
+        display: block;
+    }
     .leftSide-chat{
         width: 96%;
     }
@@ -3373,5 +3397,65 @@ overflow: hidden;
     }
     .rightSide-chat-responsive{
         width: 96%;
+    }
+    .container-formPay form{
+        width: 70%;
+    }
+}
+@media screen and (max-width:425px){
+    .hero{
+        width: 86%;
+    }  
+    .hero-image img{
+        visibility: hidden;
+        position: absolute;
+    }  
+    .HowYouDo{
+        width: 100%;
+        margin: 30px 30px 30px 60px;
+        padding: 30px;
+    }
+    .contain{
+        margin: 30px;
+        width: 100%;
+        padding: 30px 0 30px 70px;
+    }
+    .box-mini{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+    }
+    .separate{
+        margin: 0 0 0 60px;
+    }
+    .categorie{
+        margin: 30px;
+        width: 100%;
+        padding: 40px 20px 40px 90px;
+    }
+    .categorie-body{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .section{
+        width: 100%;
+        padding: 40px 0 0 110px;
+    }
+    .section-info{
+        width: 100%;
+    }
+    footer{
+        padding: 0 0 0 100px;
+        width: 100%;
+    }
+    footer div{
+        gap: 5px;
+    }
+    footer h2{
+        font-size: 14px;
+    }
+    .footer-info a {
+        font-size: 12px;
+    }
+    footer p{
+        font-size: 12px;
     }
 }

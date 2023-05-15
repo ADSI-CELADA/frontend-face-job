@@ -71,15 +71,18 @@ function LeftSide({text}) {
     
    }
    function changeParamsChat(params) {
-    context.changePramUserChat(params)
-    
-    let styleLeft = localStorage.getItem("style-left")
-    if (styleLeft == "leftSide-chat") {
-        localStorage.setItem("style-left","leftSide-chat-responsive")
-        
-    }else{
-        localStorage.setItem("style-left","leftSide-chat")
+    context.changePramUserChat(params); 
+    if (context.styleLeft == "leftSide-chat") {
+        context.setStyleLeftFun("leftSide-chat-responsive")
+    } else {
+        context.setStyleLeftFun("leftSide-chat")
     }
+    if (context.styleRight == "rightSide-chat") {
+        context.setStyleRightFun("rightSide-chat-responsive")
+    } else {
+        context.setStyleRightFun("rightSide-chat")
+    }
+    
    }
     function searchNewsUser(params) {
     const palabraClave = params;
@@ -102,23 +105,10 @@ function LeftSide({text}) {
         }
        
    }
-
-   useEffect(() => {
-    function handleStorageChange() {
-      setStyleComplete(localStorage.getItem('style-left'));
-    }
-
-    window.addEventListener('style-left', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('style-left', handleStorageChange);
-    };
-  }, []);
-
-    console.log(localStorage.getItem('style-left'));
+console.log(context.styleLeft);
 
     return(
-        <div className={localStorage.getItem("style-left")}>
+        <div className={context.styleLeft}>
        
         <div className="header-chat">
             <div className="userImg-chat">

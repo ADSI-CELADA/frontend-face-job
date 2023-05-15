@@ -14,6 +14,9 @@ export default function ContextUserData({children}){
     const [idComment,setIdComment]=useState(null)
     const [paramUserChat,setparamUserChat]=useState('')
     const [changesMenssage,setChangesMenssage]=useState()
+    const [styleLeft,setstyleLeft]=useState("leftSide-chat")
+    const [styleRight,setstyleRight]=useState("rightSide-chat")
+
   useEffect(()=>{
     
     loadInfoUserPage()
@@ -58,11 +61,18 @@ function changesMenssageUser(params) {
   setChangesMenssage(params)
 }
 
+function setStyleLeftFun(style) {
+  setstyleLeft(style)
+}
+
+function setStyleRightFun(style) {
+  setstyleRight(style)
+}
 
 
 const soket=io('http://localhost:4000')
     return(
-        <contextUser.Provider value={{soket,idComment,changeIdComment,emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts,paramUserChat,changePramUserChat,changesMenssageUser,changesMenssage}}>
+        <contextUser.Provider value={{soket,idComment,changeIdComment,emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts,paramUserChat,changePramUserChat,changesMenssageUser,changesMenssage,setStyleLeftFun,styleLeft,setStyleRightFun,styleRight}}>
             {children}
         </contextUser.Provider>
     )

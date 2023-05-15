@@ -163,15 +163,29 @@ async function deleteOnly(params) {
   }
 }
 
+const styleChanges = () =>{
+  if (context.styleLeft == "leftSide-chat") {
+    context.setStyleLeftFun("leftSide-chat-responsive")
+} else {
+    context.setStyleLeftFun("leftSide-chat")
+}
+if (context.styleRight == "rightSide-chat") {
+    context.setStyleRightFun("rightSide-chat-responsive")
+} else {
+    context.setStyleRightFun("rightSide-chat")
+}
+}
+
     return(
-    <div className="rightSide-chat">
+    <div className={context.styleRight}>
     <div className="header-chat-c">
-        <div className="imgText-chat" onClick={profileProfessionalChat}>
-            <div className="userImg-chat">
+        <div className="imgText-chat">
+        <i class='bx bx-chevron-left-square' onClick={styleChanges} ></i>
+            <div className="userImg-chat"  onClick={profileProfessionalChat}>
                 <img src={infoProfe.iconUser} className="cover-chat"/>
 
             </div>
-            <h4>{infoProfe.name} {infoProfe.lastname} <br/> <span>{infoProfe.profession}</span> </h4>
+            <h4  onClick={profileProfessionalChat}>{infoProfe.name} {infoProfe.lastname} <br/> <span  onClick={profileProfessionalChat}>{infoProfe.profession}</span> </h4>
         </div>
         <ul>
             

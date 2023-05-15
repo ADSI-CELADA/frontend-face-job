@@ -24,20 +24,20 @@ export const Paquetes = () => {
     <div className="contain-membresia"> 
         <section className="member">
             <h2>Membresia</h2>
-            <p className='member-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus nobis distinctio sunt officiis rem id asperiores, aut illo doloremque assumenda! Quo, non ea sapiente iusto fuga dolorum quasi voluptas ipsa.</p>
+            <p className='member-info'>En Face-job, te ofrecemos tres paquetes para que elijas el que mejor se adapte a tus necesidades y presupuesto. Nuestra prioridad es cuidar tu bolsillo, por lo que nuestros precios son competitivos y accesibles para todos.</p>
             <div className="member_section">
                 <div className="member_section-card">
                     <h3>Paquete 1</h3>
                     <div className="price">
                         <p>$10.000</p>
-                        <p>per mounth</p>
+                        <p>COP</p>
                     </div>
                     <div className="list-benefits">
                         <ul>
-                            <li> <span>✔</span> this is one</li>
-                            <li><span>✔</span> this is two</li>
-                            <li><span>✔</span> this is three</li>
-                            <li><span>✔</span> this is four</li>
+                            <li> <span>✔</span> 5 vistas</li>
+                            <li><span>✔</span> Acceso a contacto</li>
+                            <li><span>✔</span> Chat con profesionales</li>
+                            <li><span>✔</span> Ver publicaciones</li>
                         </ul>
                     </div> 
                     {buttonChange? <Link className="member-button" style={{cursor:"no-drop"}}>
@@ -51,14 +51,14 @@ export const Paquetes = () => {
                     <h3>Paquete 2</h3>
                     <div className="price">
                         <p>$18.000</p>
-                        <p>per mounth</p>
+                        <p>COP</p>
                     </div>
                     <div className="list-benefits">
                         <ul>
-                            <li><span>✔</span> this is one</li>
-                            <li><span>✔</span> this is two</li>
-                            <li><span>✔</span> this is three</li>
-                            <li><span>✔</span> this is four</li>
+                            <li> <span>✔</span> 10 vistas</li>
+                            <li><span>✔</span> Acceso a contacto</li>
+                            <li><span>✔</span> Chat con profesionales</li>
+                            <li><span>✔</span> Ver publicaciones</li>
                         </ul>
                     </div>
                     {buttonChange? <Link className="member-button" style={{cursor:"no-drop"}}>
@@ -72,14 +72,14 @@ export const Paquetes = () => {
                     <h3>Paquete 3</h3>
                     <div className="price">
                         <p>$25.000</p>
-                        <p>per mounth</p>
+                        <p>COP</p>
                     </div>
                     <div className="list-benefits">
                         <ul>
-                            <li><span>✔</span> this is one</li>
-                            <li><span>✔</span> this is two</li>
-                            <li><span>✔</span> this is three</li>
-                            <li><span>✔</span> this is four</li>
+                            <li> <span>✔</span> 15 vistas</li>
+                            <li><span>✔</span> Acceso a contacto</li>
+                            <li><span>✔</span> Chat con profesionales</li>
+                            <li><span>✔</span> Ver publicaciones</li>
                         </ul>
                     </div>
                     {buttonChange? <Link className="member-button" style={{cursor:"no-drop"}}>
