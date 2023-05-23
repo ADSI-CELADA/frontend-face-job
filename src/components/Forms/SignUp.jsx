@@ -109,7 +109,7 @@ export const SignUp = () => {
               />
               <input
                 placeholder="Telefono"
-                type="text"
+                type="number"
                 name="number"
                 onChange={handleChange}
                 required

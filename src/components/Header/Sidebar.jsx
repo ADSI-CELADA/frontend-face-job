@@ -82,11 +82,27 @@ export const Sidebar = () => {
   return (
     <>
       <div className={styleSide}>
-        <div className="logo-details">
-          <i className='bx bx-menu' onClick={openSide}></i>
-          <Link to="/" className="logo_name" onClick={openSide}>Face-Job</Link>
-        </div>
         <ul className="nav-links">
+        {userContextInfo.loged ?
+            <div className="profile-details">
+              <div className="name-job">
+              <ul>
+                <li><Link to="/profile" className="link_name"><img src={userContextInfo.infoUser.iconUser} alt="imagen de usuario" /></Link></li>
+              </ul>
+                <Link onClick={openSide} to="/profile" className="profile_name">{userContextInfo.infoUser.name}</Link>
+              </div>
+              <i className='bx bx-log-out' onClick={closeSesion}></i>
+            </div>
+            
+             :
+            <div className="profile-details">
+              <ul>
+                <li><Link to="/login" className="link_name"><img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1682083366/usericon_eqm409.jpg" alt="icono por defecto" /></Link></li>
+              </ul>
+              <div className="name-job">
+                <Link onClick={openSide} to="/login" className="profile_name">Iniciar sesión</Link>
+              </div>
+            </div>}
           <li>
             <a>
               <i className='bx bx-user-pin' onClick={catalogue} ></i>
@@ -170,27 +186,11 @@ export const Sidebar = () => {
               </ul>
             </li>
           </> : <></>}
-          {userContextInfo.loged ?
-            <div className="profile-details">
-              <div className="name-job">
-              <ul>
-                <li><Link to="/profile" className="link_name"><img src={userContextInfo.infoUser.iconUser} alt="imagen de usuario" /></Link></li>
-              </ul>
-                <Link onClick={openSide} to="/profile" className="profile_name">{userContextInfo.infoUser.name}</Link>
-              </div>
-              <i className='bx bx-log-out' onClick={closeSesion}></i>
-            </div>
-            
-             :
-            <div className="profile-details">
-              <ul>
-                <li><Link to="/login" className="link_name"><img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1682083366/usericon_eqm409.jpg" alt="icono por defecto" /></Link></li>
-              </ul>
-              <div className="name-job">
-                <Link onClick={openSide} to="/login" className="profile_name">Iniciar sesión</Link>
-              </div>
-            </div>}
         </ul>
+        <div className="logo-details">
+          <i className='bx bx-menu' onClick={openSide}></i>
+          <Link to="/" className="logo_name" onClick={openSide}>Face-Job</Link>
+        </div>
       </div>
 
        <div className="boton7-modal">

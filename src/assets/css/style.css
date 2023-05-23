@@ -102,9 +102,12 @@ body::-webkit-scrollbar-thumb{
 
 .sidebar{
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 0;
   left: 0;
-  height: 100%;
+  bottom: 0;
   width: 260px;
   background: var(--color-quinto);
   z-index: 100;
@@ -142,7 +145,6 @@ body::-webkit-scrollbar-thumb{
 }
 .sidebar .nav-links{
   height: 100%;
-  padding: 30px 0 150px 0;
   overflow: auto;
 }
 .sidebar.close .nav-links{
@@ -247,18 +249,15 @@ body::-webkit-scrollbar-thumb{
 }
 .sidebar .nav-links li:hover .sub-menu.blank{
   top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 }
 .sidebar .profile-details{
-  position: fixed;
-  bottom: 0;
-  width: 260px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--color-quinto);
-  padding: 12px;
   transition: all 0.5s ease;
+  padding: 14px;
 }
 .sidebar .profile-details:hover{
     background: var(--color-tercer);
@@ -1799,11 +1798,13 @@ form button{
     display: grid;
     grid-template-columns: 25% 25% 20% 20% 10%;
     min-height: 150px;
+    max-height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
     color: var(--color-blanco);
     align-items: center;
     justify-items: center;
     border-bottom:var(--color-blanco)1px solid ;
-    overflow: hidden;
     padding: 10px;
     gap: 5px;
   }
@@ -3404,46 +3405,67 @@ overflow: hidden;
 }
 @media screen and (max-width:425px){
     .hero{
-        width: 86%;
+        width: 77%;
+        margin: 20px 0 20px 80px;
+        justify-content: center;
     }  
+    .hero-body{
+        width: 100%;
+        margin: 0 20px 0 60px;
+    }
+    .hero-title{
+        text-align: center;
+    }
     .hero-image img{
         visibility: hidden;
         position: absolute;
     }  
     .HowYouDo{
         width: 100%;
-        margin: 30px 30px 30px 60px;
-        padding: 30px;
+        margin: 20px 20px 20px 30px;
+        padding: 10px;
+    }
+    .HowYouDo-text{
+        width: 80%;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .HowYouDo-text p{
+        width: 100%;
+        text-align: center;
     }
     .contain{
         margin: 30px;
-        width: 100%;
-        padding: 30px 0 30px 70px;
+        width: 90%;
+        padding: 30px 0 30px 30px;
     }
     .box-mini{
         grid-template-columns: repeat(1, 1fr);
-        padding: 0;
+        padding: 20px;
     }
     .separate{
-        margin: 0 0 0 60px;
+        margin: 0 0 0 30px;
     }
     .categorie{
         margin: 30px;
         width: 100%;
-        padding: 40px 20px 40px 90px;
+        padding: 0 20px 40px 20px;
     }
     .categorie-body{
         grid-template-columns: repeat(1, 1fr);
+        width: 90%;
     }
     .section{
-        width: 100%;
-        padding: 40px 0 0 110px;
+        width: 95%;
+        padding: 20px 0 0 80px;
+        height: 40vh;
     }
     .section-info{
         width: 100%;
     }
     footer{
-        padding: 0 0 0 100px;
+        padding: 0 0 0 70px;
         width: 100%;
     }
     footer div{
@@ -3457,5 +3479,236 @@ overflow: hidden;
     }
     footer p{
         font-size: 12px;
+    }
+    .sidebar.close{
+        width: 60px;
+    }
+    .sidebar{
+        width: 220px;
+    }
+    .sidebar .logo-details i{
+        min-width: 60px;
+    }
+    .sidebar .nav-links li i{
+        min-width: 60px;
+    }
+    .sidebar .nav-links li a .link_name{
+        font-size: 16px;
+    }
+    .sidebar .profile-details{
+        padding: 10px;
+    }
+    .sidebar .profile-details img {
+        width: 40px;
+        height: 40px;
+    }
+    .log-in{
+        width: 87%;
+    }
+    .sign-up{
+        width: 87%;
+    }
+    form input,
+    form select{
+        width: 80%;
+    }
+    form textarea{
+        width: 80%;
+    }
+    .claims{
+        padding: 20px 20px 20px 80px;
+        gap: 20px;
+    }
+    .claims-contain{
+        width: 100%;
+    }
+    .claims-contain p{
+        font-size: 14px;
+    }
+    .claims-contain-img{
+        visibility: hidden;
+        position: absolute;
+    }
+    .claims-contain-info{
+        height: 50vh;
+    }
+    .claims-contain-info p{
+        font-size: 14px;
+    }
+    .claims-contain-info h2{
+        text-align: center;
+    }
+    .member_section {
+        grid-template-rows: repeat(3,400px);
+    }
+    .member-info{
+        font-size: 14px;
+        width: 100%;
+    }
+    .member_section-card{
+        width: 90%;
+    }
+    .main-categories{
+        padding: 20px 20px 20px 80px;
+    }
+    .title-Profession-Catalogue {
+        font-size: 16px;
+    }
+    .user-card{
+        width: 320px;
+        padding: 20px;
+    }
+    .user-icon img {
+        width: 180px;
+        height: 180px;  
+    }
+    .user-info div {
+        text-align: center;
+    }
+    .post{
+        width: 320px;
+    }
+    .post-img{
+        width: 320px;
+    }
+    .post-icon img {
+        width: 50px;
+        height: 50px;
+    }
+    .post-info--c p{
+        font-size: 14px;
+    }
+    .post-content p{
+        font-size: 14px;
+    }
+    .post-stats{
+        height: 5vh;
+    }
+    .post-stats .post-like p{
+        flex-direction: row;
+    }
+    .bnr.fixed{
+        height: 40vh;
+    }
+    .bnr{
+        width: 75%;
+        height: 40vh;
+        margin: 20px 20px 20px 80px;
+    }
+    .banner{
+        height: 40vh;
+    }
+    .banner section{
+        flex-direction: column
+    }
+    .banner-info h2{
+        font-size: 14px;
+    }
+    .banner-info p{
+        font-size: 12px;
+    }
+    .banner-icon{
+        width: 100px;
+        height: 100px;
+    }
+    .banner-icon img{
+        width: 100px;
+        height: 100px;
+    }
+    .banner .banner-icon .banner-icon-cape{
+        width: 100px;
+        height: 100px;
+    }
+    .banner-nav nav ul{
+        height: 20vh;
+    }
+    .banner-nav nav ul li{
+        font-size: 12px;
+    }
+    .banner-nav nav ul li span{
+        font-size: 12px;
+    }
+    .container-post{
+        padding: 350px 0 0 0;
+        margin: 0 0 0 60px;
+    }
+    .contanerCommentsComponent{
+        padding: 20px 20px 20px 80px;
+    }
+    .contenedorsec{
+        width: 320px;
+    }   
+    .commentText{
+        width: 200px;
+        font-size: 12px;
+        overflow-wrap: break-word;
+    }
+    .commentText h2{
+        font-size: 12px;
+    }
+    .imagen-usuario{
+        width: 50px;
+        height: 50px;
+    }
+    .imagen-usuario img{
+        width: 50px;
+        height: 50px;
+    }
+    .form-post{
+        width: 90%;
+    }
+    .form-post input{
+        width: 80%;
+    }
+    .description{
+        padding: 10px;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+    }
+    .description p{
+        font-size: 10px;
+    }
+    .container-infoUser{
+        margin: 0 0 30px 60px;
+        width: 80%;
+    }
+    .container-infoUser-options a p{
+        font-size: 10px;
+    }
+    .container-infoUser-posts div{
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        min-height: 100px;
+        max-height: 100px;
+        overflow-y: auto;
+    }
+    .container-infoUser-posts div img{
+        width: 50px;
+        height: 50px;
+    }
+    .container-infoUser-posts div p{
+        font-size: 10px;
+    }
+    .container-infoUser-posts div p i{
+        font-size: 14px;
+    }
+    .leftSide-chat{
+        width: 93%;
+    }
+    .rightSide-chat{
+        width: 93%;
+    }
+    .header-chat-c .imgText-chat{
+        gap: 5px;
+    }
+    .header-chat-c .imgText-chat h4{
+        font-size: 14px;
+    }
+    .header-chat-c .imgText-chat h4 span{
+        font-size: 12px;
+    }
+    .header-chat-c ul{
+        align-items: center;
+    }
+    .header-chat-c ul li{
+        font-size: 16px;
     }
 }
