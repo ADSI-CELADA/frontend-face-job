@@ -47,11 +47,11 @@ export const Router = () => {
       {/* <AuthContextProvider> */}
       <Routes>
         <Route element={<ProtectedRoute isAllowsed={infoUser.rol != "ADMIN"} redirectTo={infoUser.rol == "ADMIN" ? "/ADMIN" : "/"} />}>
-          <Route path="/*" element={<Index />} />
-          <Route path="/*paquetes" element={<Paquetes />} />
-          <Route path="/*catalogue" element={<Catalogue />} />
-          <Route path="/*claims" element={<Claims />} />
-          <Route path="/*posts" element={<PostCategories />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/paquetes" element={<Paquetes />} />
+          <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/claims" element={<Claims />} />
+          <Route path="/posts" element={<PostCategories />} />
         </Route>
 
 
@@ -61,11 +61,11 @@ export const Router = () => {
 
         <Route element={<ProtectedRoute isAllowsed={valorCookie == undefined} redirectTo={infoUser.rol == "ADMIN" ? "/ADMIN" : "/"} />}>
 
-          <Route path="/*signup" element={<SignUp />} />
-          <Route path="/*login" element={<LogIn />} />
-          <Route path="/*RecoveryPass" element={<RecoveryPass />} />
-          <Route path="/*RecoverCode" element={<RecoverCode />} />
-          <Route path="/*recoverNewPass" element={<RecoverPassNewPass />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/RecoveryPass" element={<RecoveryPass />} />
+          <Route path="/RecoverCode" element={<RecoverCode />} />
+          <Route path="/recoverNewPass" element={<RecoverPassNewPass />} />
         </Route>
 
 
