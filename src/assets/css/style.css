@@ -3721,6 +3721,330 @@ overflow: hidden;
         font-size: 16px;
     }
 }
+@media screen and (max-width:375px){
+    .hero{
+        width: 70%;
+        height: 20vh;
+        border-radius: 15px;
+    }
+    .hero-body{
+        width: 120%;
+    }
+    .hero-title .text-primary{
+        font-size: 14px;
+    }
+    .hero-title .text-second{
+        font-size: 18px;
+    }
+    .HowYouDo{
+        width: 80%;
+        padding: 0;
+        margin: 20px 20px 20px 65px;
+    }
+    .HowYouDo h1{
+        font-size: 14px;
+    }
+    .HowYouDo-text p{
+        font-size: 12px;
+    }
+    .contain h2{
+        font-size: 16px;
+    }
+    .mini-card{
+        height: 15vh;
+    }
+    .mini-card img{
+        width: 50px;
+        height: 50px;
+    }
+    .mini-card-info h2{
+        font-size: 12px;
+    }
+    .mini-card-info p{
+        font-size: 10px;
+    }
+    .categorie{
+        padding:0 20px 0 20px ;
+    }
+    .categorie-body{
+        width: 80%;
+    }
+    .mini-categorie-card{
+        height: 15vh;
+    }
+    .categorie-btn a{
+        font-size: 14px;
+    }
+    .section-info h2{
+        font-size: 14px;
+    }
+    .section-info p{
+        font-size: 12px;
+    }
+    .footer-info{
+        visibility: hidden;
+        position: absolute;
+    }
+    footer{
+        padding: 0 20px 0 40px;
+    }
+    .user-card{
+        width: 220px;
+    }
+    .user-icon img{
+        width: 120px;
+        height: 120px;
+    }
+    .user-info h2{
+        font-size: 14px;
+    }
+    .user-info p{
+        font-size: 12px;
+    }
+    .user-card button{
+        padding: 6px 26px;
+        font-size: 14px;
+    }
+    .post{
+        width: 220px;
+    }
+    .post-img{
+        width: 220px;
+        height: 200px;
+    }
+    .post-info--c h2{
+        font-size: 14px;
+    }
+    .post-info--c p{
+        font-size: 12px;
+    }
+    .post-content h2{
+        font-size: 14px;
+    }
+    .post-content p{
+        font-size: 12px;
+    }
+    .claims-contain-info{
+        height: 70vh;
+    }
+    .claims-form{
+        padding: 15px;
+    }
+    .claims-form form{
+        width: 80%;
+    }
+    .claims-form form h2{
+        font-size: 14px;
+    }
+    .claims-form form textarea{
+        height: 20vh;
+        width: 90%;
+        font-size: 12px;
+    }
+    .claims-form form input{
+        width: 90%;
+        font-size: 12px;
+    }
+    form button{
+        padding: 6px 26px;
+        font-size: 14px;
+    }
+    .member{
+        padding: 15px;
+    }
+    .member-info{
+        font-size: 12px;
+    }
+    .member_section{
+        width: 100%;
+        grid-template-rows: repeat(3, 350px);
+    }
+    .member_section-card h3{
+        font-size: 14px;
+    }
+    .list-benefits li{
+        font-size: 70%;
+    }
+    .banner-nav nav ul li{
+        font-size: 10px;
+        padding: 0;
+        text-align: center;
+    }
+    .banner-nav nav ul li span{
+        font-size: 10px;
+    }
+    .banner-icon{
+        width: 80px;
+        height: 80px;
+    }
+    .banner-icon-cape{
+        width: 80px;
+        height: 80px;
+    }
+    .banner-icon img{
+        width: 80px;
+        height: 80px;
+    }
+    .banner-info h2{
+        font-size: 12px;
+    }
+    .banner-info p{
+        font-size: 10px;
+    }
+    .banner{
+        padding: 15px;
+    }
+    .container-post{
+        width: 75%;
+    }
+    .post-img p{
+        font-size: 10px;
+    }
+    .post-content input{
+        width: 150px;
+        font-size: 10px;
+    }
+    .contenedorsec{
+        width: 220px;
+    }
+    .input-com{
+        width: 130px;
+    }
+    .buttonComments{
+        padding: 6px 24px;
+        font-size: 12px;
+    }
+    #nuevoComentario{
+        font-size: 12px;
+    }
+    .imagen-usuario img{
+        width: 40px;
+        height: 40px;
+    }
+    .sign-up-form section p{
+        font-size: 24px;
+    }
+    .sign-up-form p{
+        font-size: 12px;
+        text-align: center;
+    }
+    .sign-up-form h2{
+        font-size: 26px;
+    }
+    .sign-up-form section img{
+        width: 40px;
+        height: 40px;
+    }
+    .log-in-form section p{
+        font-size: 24px;
+    }
+    .log-in-form p{
+        font-size: 12px;
+        text-align: center;
+    }
+    .log-in-form h2{
+        font-size: 26px;
+    }
+    .log-in-form section img{
+        width: 40px;
+        height: 40px;
+    }
+    form input,
+    form select{
+        padding: 6px 20px;
+        font-size: 14px;
+    }
+    .categories select{
+        font-size: 14px;
+    }
+    .description{
+        padding: 5px;
+    }
+    .description p{
+        font-size: 8px;
+    }
+    .container-infoUser-options{
+        height: 5vh;
+    }
+    .container-infoUser-posts{
+        padding: 10px;
+    }
+    .container-infoUser-posts div{
+        min-height: 80px;
+        padding: 5px;
+        max-height: 80px;
+    }
+    .container-infoUser-posts div img{
+        width: 40px;
+        height: 40px;
+    }
+    .container-infoUser-posts div p{
+        font-size: 8px;
+    }
+    .container-infoUser-posts div p i{
+        font-size: 12px;
+    }
+    .container-infoUser{
+        height: 60vh;
+    }
+    .sidebar.close .nav-links li .sub-menu {
+        visibility: hidden;
+        position: absolute;
+    }
+    .chat-box{
+        margin: 15px;
+    }
+    .chatlist-chat .block-chat .details-chat .listHead-chat h4 {
+        font-size: 12px;
+    }
+    .block-chat .imgbx-chat img {
+        width: 40px;
+        height: 40px;
+    }
+    .message-p-chat p {
+        font-size: 12px;
+    }
+    .escoger-chat .textosEscoger-chat2 p,
+    .escoger-chat .textosEscoger-chat p{
+        visibility: hidden;
+        position: absolute;
+    }
+    .header-chat-c ul li p{
+        visibility: hidden;
+        position: absolute;
+    }
+    .header-chat-c .userImg-chat img {
+        width: 40px;
+        height: 40px;
+    }
+    .header-chat-c .imgText-chat i {
+        font-size: 18px;
+    }
+    .client-chat p {
+        font-size: 12px;
+        max-width: 250px;
+    }
+    .message-chat p {
+        font-size: 12px;
+        max-width: 250px;
+    }
+    .message-chat p img {
+        max-width: 200px;
+    }
+    .form-chat{
+        padding: 5px;
+    }
+    .form-chat .chatbox_input-chat {
+        gap: 5px;
+    }
+    .form-chat .chatbox_input-chat input {
+        width: 280px;
+        font-size: 12px;
+    }
+    .form-chat .chatbox_input-chat ion-icon {
+        font-size: 1.4em;
+    }
+}
 @media screen and (max-width:320px){
     .hero{
         width: 70%;
