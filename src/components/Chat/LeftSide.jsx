@@ -128,7 +128,9 @@ console.log(context.styleLeft);
          
          <div className="escoger-chat">
             <div className={idCategories=='nuevo' ? "textosEscoger-chat" : "textosEscoger-chat2"} onClick={()=>categories('nuevos')} >Nuevos</div>
-            <div className={idCategories=='trabajando' ? "textosEscoger-chat" : "textosEscoger-chat2"}  onClick={()=>categories('trabajando')}>Trabajos <ion-icon name="bag-add-outline"></ion-icon></div>
+            <div className={idCategories=='trabajando' ? "textosEscoger-chat" : "textosEscoger-chat2"}  onClick={()=>categories('trabajando')}>
+                <p>Trabajos</p>
+                <ion-icon name="bag-add-outline"></ion-icon></div>
          </div>
          
          <div className="chatlist-chat">

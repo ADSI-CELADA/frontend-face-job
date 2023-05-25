@@ -189,7 +189,7 @@ if (context.styleRight == "rightSide-chat") {
         </div>
         <ul>
             
-        {infoProfe.name!="Face-job" ? ((<><li onClick={workingUser}><ion-icon name="bag-add-outline"></ion-icon>Trabajemos</li>
+        {infoProfe.name!="Face-job" ? ((<><li onClick={workingUser}><ion-icon name="bag-add-outline"></ion-icon><p>Trabajemos</p></li>
         <li onClick={deleteChat}><ion-icon name="trash-outline" ></ion-icon></li></>)) : "" }    
         
           

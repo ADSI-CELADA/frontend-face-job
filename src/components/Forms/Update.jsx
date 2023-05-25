@@ -32,6 +32,7 @@ export const Update = () => {
           }}
           onSubmit={async (values) => {
             try {
+              
             if (values.profession!='' && values.profession!=undefined){
               const result = await updateDataUser(values);
               const {
@@ -77,26 +78,24 @@ export const Update = () => {
           {({ handleChange, handleSubmit, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
               <input
-                value={userContextInfo.infoUser.name}
                 name="name"
-                placeholder="Nombre"
+                placeholder={userContextInfo.infoUser.name}
                 type="text"
                 id="name"
                 onChange={handleChange}
                 required
               />
               <input
-                value={userContextInfo.infoUser.lastname}
+                
                 name="lastname"
-                placeholder="Apellido"
+                placeholder={userContextInfo.infoUser.lastname}
                 type="text"
                 id="lastname"
                 onChange={handleChange}
                 required
               />
               <input
-                value={userContextInfo.infoUser.number}
-                placeholder="Numero"
+                placeholder={userContextInfo.infoUser.number}
                 type="text"
                 id="number"
                 onChange={handleChange}

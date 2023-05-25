@@ -3141,6 +3141,15 @@ overflow: hidden;
     .rightSide-chat-responsive{
         width: 60%;
     }
+    .client-chat p {
+        max-width: 350px;
+    }
+    .message-chat p {
+        max-width: 350px;
+    }
+    .message-chat p img {
+        max-width: 300px;
+    }
     .chatBox-chat{
         height: calc(100% - 180px );
     }
@@ -3911,5 +3920,128 @@ overflow: hidden;
     .imagen-usuario img{
         width: 40px;
         height: 40px;
+    }
+    .sign-up-form section p{
+        font-size: 24px;
+    }
+    .sign-up-form p{
+        font-size: 12px;
+        text-align: center;
+    }
+    .sign-up-form h2{
+        font-size: 26px;
+    }
+    .sign-up-form section img{
+        width: 40px;
+        height: 40px;
+    }
+    .log-in-form section p{
+        font-size: 24px;
+    }
+    .log-in-form p{
+        font-size: 12px;
+        text-align: center;
+    }
+    .log-in-form h2{
+        font-size: 26px;
+    }
+    .log-in-form section img{
+        width: 40px;
+        height: 40px;
+    }
+    form input,
+    form select{
+        padding: 6px 20px;
+        font-size: 14px;
+    }
+    .categories select{
+        font-size: 14px;
+    }
+    .description{
+        padding: 5px;
+    }
+    .description p{
+        font-size: 8px;
+    }
+    .container-infoUser-options{
+        height: 5vh;
+    }
+    .container-infoUser-posts{
+        padding: 10px;
+    }
+    .container-infoUser-posts div{
+        min-height: 80px;
+        padding: 5px;
+        max-height: 80px;
+    }
+    .container-infoUser-posts div img{
+        width: 40px;
+        height: 40px;
+    }
+    .container-infoUser-posts div p{
+        font-size: 8px;
+    }
+    .container-infoUser-posts div p i{
+        font-size: 12px;
+    }
+    .container-infoUser{
+        height: 60vh;
+    }
+    .sidebar.close .nav-links li .sub-menu {
+        visibility: hidden;
+        position: absolute;
+    }
+    .chat-box{
+        margin: 15px;
+    }
+    .chatlist-chat .block-chat .details-chat .listHead-chat h4 {
+        font-size: 12px;
+    }
+    .block-chat .imgbx-chat img {
+        width: 40px;
+        height: 40px;
+    }
+    .message-p-chat p {
+        font-size: 12px;
+    }
+    .escoger-chat .textosEscoger-chat2 p,
+    .escoger-chat .textosEscoger-chat p{
+        visibility: hidden;
+        position: absolute;
+    }
+    .header-chat-c ul li p{
+        visibility: hidden;
+        position: absolute;
+    }
+    .header-chat-c .userImg-chat img {
+        width: 40px;
+        height: 40px;
+    }
+    .header-chat-c .imgText-chat i {
+        font-size: 18px;
+    }
+    .client-chat p {
+        font-size: 12px;
+        max-width: 250px;
+    }
+    .message-chat p {
+        font-size: 12px;
+        max-width: 250px;
+    }
+    .message-chat p img {
+        max-width: 200px;
+    }
+    .form-chat{
+        padding: 5px;
+    }
+    .form-chat .chatbox_input-chat {
+        gap: 5px;
+    }
+    .form-chat .chatbox_input-chat input {
+        width: 280px;
+        font-size: 12px;
+    }
+    .form-chat .chatbox_input-chat ion-icon {
+        font-size: 1.4em;
     }
 }
