@@ -48,10 +48,10 @@ export const Router = () => {
       <Routes>
         <Route element={<ProtectedRoute isAllowsed={infoUser.rol != "ADMIN"} redirectTo={infoUser.rol == "ADMIN" ? "/ADMIN" : "/"} />}>
           <Route path="/" element={<Index />} />
-          <Route path="/paquetes" element={<Paquetes />} />
-          <Route path="/catalogue" element={<Catalogue />} />
-          <Route path="/claims" element={<Claims />} />
-          <Route path="/posts" element={<PostCategories />} />
+          <Route exact path="/paquetes" element={<Paquetes />} />
+          <Route exact path="/catalogue" element={<Catalogue />} />
+          <Route exact path="/claims" element={<Claims />} />
+          <Route exact path="/posts" element={<PostCategories />} />
         </Route>
 
 
