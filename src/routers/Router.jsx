@@ -61,11 +61,11 @@ export const Router = () => {
 
         <Route element={<ProtectedRoute isAllowsed={valorCookie == undefined} redirectTo={infoUser.rol == "ADMIN" ? "/ADMIN" : "/"} />}>
 
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/RecoveryPass" element={<RecoveryPass />} />
-          <Route path="/RecoverCode" element={<RecoverCode />} />
-          <Route path="/recoverNewPass" element={<RecoverPassNewPass />} />
+          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/login" element={<LogIn />} />
+          <Route exact path="/RecoveryPass" element={<RecoveryPass />} />
+          <Route exact path="/RecoverCode" element={<RecoverCode />} />
+          <Route exact path="/recoverNewPass" element={<RecoverPassNewPass />} />
         </Route>
 
 
@@ -73,21 +73,21 @@ export const Router = () => {
 
         {/* loged */}
         <Route element={<ProtectedRoute isAllowsed={infoUser.rol == "Cliente"} redirectTo={infoUser.rol == "ADMIN" ? "/ADMIN" : "/"} />}>
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profileText" element={<ProfileText />} />
-          <Route path="/FormPay1" element={<FormPay1 />} />
-          <Route path="/FormPay2" element={<FormPay2 />} />
-          <Route path="/FormPay3" element={<FormPay3 />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/profileText" element={<ProfileText />} />
+          <Route exact path="/FormPay1" element={<FormPay1 />} />
+          <Route exact path="/FormPay2" element={<FormPay2 />} />
+          <Route exact path="/FormPay3" element={<FormPay3 />} />
 
-          <Route path="/createPostImage" element={<CreatePost />} />
-          <Route path="/createPostText" element={<CreatePostTexts />} />
-          <Route path="/ProfileProfessions" element={<ProfileP />} />
-          <Route path="/CommentsUsers" element={<Comments />} />
-          <Route path="/CommentsTextUsers" element={<CommentsText />} />
-          <Route path="/Ajustes" element={<Ajustes />} />
-          <Route path="/UpdateForm" element={<Update />} />
-          <Route path="/DeleteForm" element={<DeleteUser />} />
-          <Route path="/Chat" element={<Chat />} />
+          <Route exact path="/createPostImage" element={<CreatePost />} />
+          <Route exact path="/createPostText" element={<CreatePostTexts />} />
+          <Route exact path="/ProfileProfessions" element={<ProfileP />} />
+          <Route exact path="/CommentsUsers" element={<Comments />} />
+          <Route exact path="/CommentsTextUsers" element={<CommentsText />} />
+          <Route exact path="/Ajustes" element={<Ajustes />} />
+          <Route exact path="/UpdateForm" element={<Update />} />
+          <Route exact path="/DeleteForm" element={<DeleteUser />} />
+          <Route exact path="/Chat" element={<Chat />} />
         </Route>
 
         {/* loged */}
@@ -95,7 +95,7 @@ export const Router = () => {
 
         {/* admin */}
         <Route element={<ProtectedRoute isAllowsed={infoUser.rol == "ADMIN"} />}>
-          <Route path="/ADMIN" element={<AdminChats />} />
+          <Route exact path="/ADMIN" element={<AdminChats />} />
         </Route>
 
         {/* admin */}
