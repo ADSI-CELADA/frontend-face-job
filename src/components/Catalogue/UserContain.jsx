@@ -49,12 +49,12 @@ useEffect(()=>{
     <div className="main-categories">
       <section className="categories">
       <select name="profession" onChange={chageCategorie}>
-                <option selected disabled>Elija una profesion</option>
-                <option value="Diseñador grafico">Diseñador grafico</option>
-                <option value="Fotografo">Fotografo</option>
+                <option selected disabled>Elija una profesión</option>
+                <option value="Diseñador grafico">Diseñador gráfico</option>
+                <option value="Fotografo">Fotógrafo</option>
                 <option value="Desarrollador de software">Desarrollador de software</option>
                 <option value="Coach personal">Coach personal</option>
-                <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones moviles</option>
+                <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones móviles</option>
                 <option value="Diseñador de interiores">Diseñador de interiores</option>
                 {loged ? <option value="Vistos" >Vistos</option> : null} 
                 

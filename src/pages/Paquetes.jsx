@@ -23,7 +23,7 @@ export const Paquetes = () => {
   return (
     <div className="contain-membresia"> 
         <section className="member">
-            <h2>Membresia</h2>
+            <h2>Membresía</h2>
             <p className='member-info'>En Face-job, te ofrecemos tres paquetes para que elijas el que mejor se adapte a tus necesidades y presupuesto. Nuestra prioridad es cuidar tu bolsillo, por lo que nuestros precios son competitivos y accesibles para todos.</p>
             <div className="member_section">
                 <div className="member_section-card">

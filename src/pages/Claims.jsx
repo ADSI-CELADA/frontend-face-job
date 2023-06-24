@@ -70,21 +70,21 @@ export const Claims = () => {
             <div className="claims-contain-img"></div>
             <div className="claims-contain-img"></div>
                 <div className="claims-contain">
-                    <h2>Mision</h2>
+                    <h2>Misión</h2>
                     <p>Face-Job quiere brindar a los profesionales la oportunidad de mostrar sus habilidades y formas de pensar a través de imágenes y publicaciones. Además, nos comprometemos a proporcionar a los clientes un amplio catálogo de profesionales con los que puedan interactuar y encontrar la ayuda que necesitan en su campo de interés.</p>
                 </div>
             
                 <div className="claims-contain">
-                    <h2>Vision</h2>
+                    <h2>Visión</h2>
                     <p>Ser la plataforma digital más innovadora y eficiente en conectar a profesionales con clientes, ofreciendo una experiencia de usuario excepcional y un catálogo amplio y diverso de profesionales en diferentes áreas, generando así un impacto positivo en la economía global y en la forma en que se desarrollan las relaciones laborales.</p>
                 </div>
                 <div className="claims-contain-img">
                 
                 </div>
             <div className="claims-contain-info">
-                <h2>Que puedes hacer en esta seccion</h2>
+                <h2>Que puedes hacer en esta sección</h2>
                 <p>En FaceJob nos importa mucho tu opinión y sugerencias. Queremos que tengas una experiencia satisfactoria en nuestro aplicativo web, por lo que hemos creado una sección especial para que puedas expresarte libremente. ¿Te gustaría compartir alguna idea para mejorar la plataforma? ¿Hay algo que no te haya gustado o que te gustaría que cambie? ¡Queremos escucharte!
-Tu opinión es muy importante para nosotros, ¡así que no dudes en hacerte escuchar! Juntos podemos hacer de FaceJob una plataforma cada vez mejor
+Tu opinión es muy importante para nosotros, ¡así que no dudes en hacerte escuchar! Juntos podemos hacer de FaceJob una plataforma cada vez mejor.
 </p>
             </div>
             <div className="claims-form">

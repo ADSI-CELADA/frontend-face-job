@@ -134,7 +134,7 @@ export const Ajustes = () => {
                 <li><span>Nombre Completo:</span> {infoUser.namecomplete}</li>
                 <li><span>Email:</span> {infoUser.email}</li>
                 <li><span>Fecha Nacimiento:</span> {infoAge}</li>
-                <li><span>Numero:</span> {infoUser.number}</li>
+                <li><span>Número:</span> {infoUser.number}</li>
                 <li><span>Paquete:</span> {infoUser.cod_paquete}</li>
                 <li><span>Vistas Disponibles:</span> {infoUser.info_paquete}</li>     
               </ul>
@@ -149,7 +149,7 @@ export const Ajustes = () => {
           </section>
           <div className="description">
             <p>Contenido</p>
-            <p>Descripcion</p>
+            <p>Descripción</p>
             <p>Me gustas</p>
             <p>Comentarios</p>
             <p>Eliminar</p>
@@ -200,7 +200,7 @@ export const Ajustes = () => {
                 </span>
               </div>
 
-              <p>Deseas eliminar  tu publicacion?</p>
+              <p>Deseas eliminar  tu publicación?</p>
               <div className="btn2-cerrar">
                
                 <label  onClick={deletePost}>
@@ -234,7 +234,7 @@ export const Ajustes = () => {
               </div>
 
               <p>
-                Estas seguro de eliminar esta publicacion?
+                Estas seguro de eliminar esta publicación?
                 <img src={gestionImg.img} alt="imagen" />
               </p>
               <div className="btn3-cerrar">
@@ -270,7 +270,7 @@ export const Ajustes = () => {
                   </span>
                 </div>
 
-                <p>Deseas eliminar o actualizar tu publicacion?</p>
+                <p>Deseas eliminar o actualizar tu publicación?</p>
                 <div className="btn4-cerrar">
                   <label style={{ marginLeft: "20px" }} onClick={alertText}>
                     Eliminar
@@ -291,7 +291,7 @@ export const Ajustes = () => {
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <h2>Eliminar publicacion</h2>{" "}
+                  <h2>Eliminar publicación</h2>{" "}
                   <span>
                     <label htmlFor="btn5-modal">
                       <IconContext.Provider value={{ size: "30px" }}>
@@ -305,7 +305,7 @@ export const Ajustes = () => {
                   </span>
                 </div>
 
-                <p>Estas seguro de eliminar esta publicacion?</p>
+                <p>Estas seguro de eliminar esta publicación?</p>
                 <div className="btn5-cerrar">
                   <label onClick={deletePostTexts}>Eliminar</label>
                 </div>

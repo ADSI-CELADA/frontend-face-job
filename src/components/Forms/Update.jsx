@@ -104,16 +104,16 @@ export const Update = () => {
               />
               <select name="profession" onChange={handleChange} required>
                 <option selected disabled>
-                  Elija una profesion
+                  Elija una profesión
                 </option>
-                <option value="Diseñador grafico">Diseñador grafico</option>
-                <option value="Fotografo">Fotografo</option>
+                <option value="Diseñador grafico">Diseñador gráfico</option>
+                <option value="Fotografo">Fotógrafo</option>
                 <option value="Desarrollador de software">
                   Desarrollador de software
                 </option>
                 <option value="Coach personal">Coach personal</option>
                 <option value="Desarrollador de aplicaciones moviles">
-                  Desarrollador de aplicaciones moviles
+                  Desarrollador de aplicaciones móviles
                 </option>
                 <option value="Diseñador de interiores">
                   Diseñador de interiores

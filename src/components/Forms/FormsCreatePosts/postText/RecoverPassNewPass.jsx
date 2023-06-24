@@ -51,7 +51,7 @@ export const RecoverPassNewPass = () => {
             >
               {({handleChange,handleSubmit,isSubmitting})=>(
               <Form onSubmit={handleSubmit}>
-                <input placeholder='escribe tu nueva contraseña' type="password" id="password" name='password' onChange={handleChange} />
+                <input placeholder='Escribe tu nueva contraseña' type="password" id="password" name='password' onChange={handleChange} />
                  <button>enviar</button>
               </Form>
             )}

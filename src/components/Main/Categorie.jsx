@@ -9,7 +9,7 @@ export const Categorie = () => {
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Diseñador Grafico</a>
+            <a href="">Diseñador Gráfico</a>
           </div>
         </div>
         <div className="mini-categorie-card">
@@ -19,7 +19,7 @@ export const Categorie = () => {
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Desarrollador de Aplicaciones Moviles</a>
+            <a href="">Desarrollador de Aplicaciones Móviles</a>
           </div>
         </div>
         <div className="mini-categorie-card">
@@ -29,7 +29,7 @@ export const Categorie = () => {
         </div>
         <div className="mini-categorie-card">
           <div className="categorie-btn">
-            <a href="">Fotografo</a>
+            <a href="">Fotógrafo</a>
           </div>
         </div>
       </div>

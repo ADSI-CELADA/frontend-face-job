@@ -57,7 +57,7 @@ let navigate=useNavigate()
             <Form onSubmit={handleSubmit}>
             <div>
                 <textarea name="textos" id="description" cols="30" rows="10" placeholder='Contenido de la Publicacion' onChange={handleChange}></textarea>
-                <input name='description' placeholder='Descripcion de la publicacion' type="text"  onChange={handleChange}/>
+                <input name='description' placeholder='Descripción de la publicación' type="text"  onChange={handleChange}/>
                 <button id="mandar">  {isSubmitting ? "publicando..." : "publicar" }</button>
             </div>
               <Link to="/">volver</Link>

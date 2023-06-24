@@ -33,7 +33,7 @@ export const RecoveryPass = () => {
             >
               {({handleChange,handleSubmit,isSubmitting})=>(
               <Form onSubmit={handleSubmit}>
-                <input placeholder='Correo Electronico' type="email" id="email" name='email' onChange={handleChange} />
+                <input placeholder='Correo Electrónico' type="email" id="email" name='email' onChange={handleChange} />
                  <button type='submit'>enviar</button>
               </Form>
             )}

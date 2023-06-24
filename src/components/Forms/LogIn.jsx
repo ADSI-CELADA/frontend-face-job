@@ -26,7 +26,7 @@ export const LogIn = () => {
           <img src="https://res.cloudinary.com/de2sdukuk/image/upload/v1681834064/Logo_st4un7.png" alt="logo" />
           <p>Face-Job</p>
         </section>
-        <p>Hola de nuevo, inicia sesion para continuar</p>
+        <p>Hola de nuevo, inicia sesión para continuar</p>
         <Formik
           initialValues={{
             email: "",
@@ -109,7 +109,7 @@ export const LogIn = () => {
             <Form onSubmit={handleSubmit}>
               <input
                 name="email"
-                placeholder="Correo Electronico"
+                placeholder="Correo Electrónico"
                 type="email"
                 id="email"
                 onChange={handleChange}

@@ -108,19 +108,19 @@ export const SignUp = () => {
                 required
               />
               <input
-                placeholder="Telefono"
+                placeholder="Teléfono"
                 type="number"
                 name="number"
                 onChange={handleChange}
                 required
               />
               <select name="profession" onChange={handleChange} required>
-                <option selected disabled>Elija una profesion</option>
-                <option value="Diseñador grafico">Diseñador grafico</option>
-                <option value="Fotografo">Fotografo</option>
+                <option selected disabled>Elija una profesión</option>
+                <option value="Diseñador grafico">Diseñador gráfico</option>
+                <option value="Fotografo">Fotógrafo</option>
                 <option value="Desarrollador de software">Desarrollador de software</option>
                 <option value="Coach personal">Coach personal</option>
-                <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones moviles</option>
+                <option value="Desarrollador de aplicaciones moviles">Desarrollador de aplicaciones móviles</option>
                 <option value="Diseñador de interiores">Diseñador de interiores</option>
                 <option value="No aplica">No aplica</option>
               </select>
@@ -132,7 +132,7 @@ export const SignUp = () => {
                 required
           />*/}
               <input
-                placeholder="Correo Electronico"
+                placeholder="Correo Electrónico"
                 type="email"
                 name="email"
                 onChange={handleChange}
@@ -152,7 +152,7 @@ export const SignUp = () => {
             </Form>
           )}
         </Formik>
-        <Link to="/login">¿Ya tienes cuenta? Inicia sesion</Link>
+        <Link to="/login">¿Ya tienes cuenta? Inicia sesión</Link>
         <Link to="/">volver</Link>
       </div>
     </div>

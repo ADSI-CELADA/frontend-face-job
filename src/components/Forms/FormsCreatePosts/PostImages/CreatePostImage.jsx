@@ -81,7 +81,7 @@ export const CreatePost = () => {
         </section>
         <p>Crea tu publicación</p>
         <div className="form-post">
-          <input id='description' placeholder='Descripcion de la Imagen' type="text" onChange={selectedDescription} />
+          <input id='description' placeholder='Descripción de la Imagen' type="text" onChange={selectedDescription} />
           <input placeholder='image' type="file" id="file" onChange={selectedHandler} />
           <button id="mandar" onClick={sendHandler}>{textoLoad}</button>
         </div>

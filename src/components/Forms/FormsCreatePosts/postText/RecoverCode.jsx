@@ -63,7 +63,7 @@ export const RecoverCode = () => {
             >
               {({handleChange,handleSubmit,isSubmitting})=>(
               <Form onSubmit={handleSubmit}>
-                <input placeholder='escribe el codigo' type="number" id="codigo" name='codigo' onChange={handleChange} />
+                <input placeholder='Escribe el código' type="number" id="codigo" name='codigo' onChange={handleChange} />
                  <button>enviar</button>
               </Form>
             )}
