@@ -70,7 +70,7 @@ function setStyleRightFun(style) {
 }
 
 
-const soket=io('https://backend-face-job.onrender.com')
+const soket=io('http://localhost:4000')
     return(
         <contextUser.Provider value={{soket,idComment,changeIdComment,emailProfessions,chageEmailProfessions,recoverPass,changeEmail,loged,setLoget,infoUser,setInfoUser,loadInfoUserPage,imagesTexts,postImages,postTexts,paramUserChat,changePramUserChat,changesMenssageUser,changesMenssage,setStyleLeftFun,styleLeft,setStyleRightFun,styleRight}}>
             {children}

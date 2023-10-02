@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Cookie from "universal-cookie";
-let url = "https://backend-face-job.onrender.com";
+let url = "http://localhost:4000";
 
 
 export const LogIn = () => {
