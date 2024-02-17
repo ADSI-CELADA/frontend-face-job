@@ -1,8 +1,8 @@
 import axios from "axios";
 import Cookie from "universal-cookie";
 
-let url = "http://localhost:4000"
-// let url = "https://backend-face-job.onrender.com"
+// let url = "http://localhost:4000"
+let url = "https://backend-face-job.onrender.com"
 const cookie = new Cookie();
 let token = cookie.get('token')
 
